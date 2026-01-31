@@ -3,6 +3,137 @@ $page_title = 'Chuyển giọng nói thành văn bản - Studio';
 require_once '../../config/header.php';
 require_once '../../config/sidebar.php';
 
+$translations = [
+    'vi' => [
+        'important_note_title' => 'Lưu ý quan trọng:',
+        'support_audio_files' => 'Hỗ trợ file audio: MP3, AAC, WAV',
+        'max_size' => 'Kích thước tối đa: 200MB',
+        'output_format' => 'Kết quả trả về: SRT subtitle',
+        'audio_file_label' => 'Tệp audio',
+        'upload_title' => 'Nhấp hoặc kéo thả file vào đây',
+        'upload_desc_formats' => 'Định dạng hỗ trợ: MP3, AAC, WAV',
+        'upload_desc_output' => 'Trả ra: SRT subtitle',
+        'selected_files' => 'Đã chọn:',
+        'file_unit' => 'file',
+        'add_file' => 'Thêm file',
+        'clear_all' => 'Xóa hết',
+        'estimate_cost' => 'Chi phí dự kiến',
+        'start_transcription' => 'Bắt đầu chuyển đổi',
+        'select_all' => 'Chọn tất cả',
+        'download_srt' => 'Tải SRT',
+        'delete' => 'Xóa',
+        'refresh_list_title' => 'Làm mới danh sách',
+        'no_tasks' => 'Chưa có tác vụ nào',
+        'delete_modal_title' => 'Xác nhận xóa',
+        'delete_modal_prefix' => 'Bạn có chắc chắn muốn xóa',
+        'delete_modal_suffix' => 'task đã chọn?',
+        'delete_modal_note' => 'Hành động này không thể hoàn tác.',
+        'cancel' => 'Hủy',
+        'toast_refresh_success' => '✅ Đã làm mới!',
+        'toast_refresh_fail' => '❌ Không thể tải dữ liệu',
+        'toast_connection_error' => '❌ Lỗi kết nối',
+        'invalid_format' => 'định dạng không hỗ trợ',
+        'invalid_too_large' => 'quá lớn, max 200MB',
+        'invalid_duplicate' => 'đã tồn tại',
+        'invalid_files_prefix' => '{count} file không hợp lệ: {files}',
+        'duration_loading' => 'Đang tải...',
+        'duration_na' => 'N/A',
+        'remove' => 'Xóa',
+        'confirm_clear_all' => 'Xóa tất cả {count} file?',
+        'select_audio_first' => 'Vui lòng chọn file audio!',
+        'wait_metadata' => 'Vui lòng đợi tất cả file load xong metadata!',
+        'insufficient_credits' => 'Không đủ credits! Cần {required}, còn {current}',
+        'uploading_files' => 'Đang tải {count} file...',
+        'task_create_success' => 'Đã tạo task thành công!',
+        'upload_error_generic' => 'Có lỗi xảy ra!',
+        'failed_files_header' => 'File thất bại:',
+        'history_empty' => 'Không có dữ liệu',
+        'download_subtitle' => 'Tải Subtitle',
+        'status_failed' => 'Thất bại',
+        'status_processing' => 'Đang xử lý',
+        'status_processing_with_progress' => 'Đang xử lý ({progress}%)',
+        'credits_used' => 'Tín dụng sử dụng',
+        'bulk_select_min_one' => 'Vui lòng chọn ít nhất 1 item!',
+        'bulk_download_json_start' => 'Đang tải {count} file JSON...',
+        'bulk_download_srt_start' => 'Đang tải {count} file SRT...',
+        'bulk_no_json' => 'Không có file JSON nào để tải!',
+        'bulk_no_srt' => 'Không có file SRT nào để tải!',
+        'bulk_select_delete' => 'Vui lòng chọn ít nhất 1 item để xóa!',
+        'delete_no_ids' => 'Không có ID hợp lệ để xóa!',
+        'delete_success' => '✅ Đã xóa {count} task!',
+        'delete_error_generic' => 'Có lỗi xảy ra!',
+        'delete_connection_error' => '❌ Lỗi kết nối!',
+        'task_completed' => '✅ Task hoàn thành!',
+        'error_prefix' => 'Lỗi kết nối:',
+        'retry_timeout' => 'Timeout hoặc server không phản hồi',
+    ],
+    'en' => [
+        'important_note_title' => 'Important notes:',
+        'support_audio_files' => 'Supported audio files: MP3, AAC, WAV',
+        'max_size' => 'Maximum size: 200MB',
+        'output_format' => 'Output: SRT subtitle',
+        'audio_file_label' => 'Audio file',
+        'upload_title' => 'Click or drag & drop files here',
+        'upload_desc_formats' => 'Supported formats: MP3, AAC, WAV',
+        'upload_desc_output' => 'Output: SRT subtitle',
+        'selected_files' => 'Selected:',
+        'file_unit' => 'files',
+        'add_file' => 'Add file',
+        'clear_all' => 'Clear all',
+        'estimate_cost' => 'Estimated cost',
+        'start_transcription' => 'Start transcription',
+        'select_all' => 'Select all',
+        'download_srt' => 'Download SRT',
+        'delete' => 'Delete',
+        'refresh_list_title' => 'Refresh list',
+        'no_tasks' => 'No tasks yet',
+        'delete_modal_title' => 'Confirm deletion',
+        'delete_modal_prefix' => 'Are you sure you want to delete',
+        'delete_modal_suffix' => 'selected task(s)?',
+        'delete_modal_note' => 'This action cannot be undone.',
+        'cancel' => 'Cancel',
+        'toast_refresh_success' => '✅ Refreshed!',
+        'toast_refresh_fail' => '❌ Unable to load data',
+        'toast_connection_error' => '❌ Connection error',
+        'invalid_format' => 'unsupported format',
+        'invalid_too_large' => 'too large, max 200MB',
+        'invalid_duplicate' => 'already exists',
+        'invalid_files_prefix' => '{count} invalid file(s): {files}',
+        'duration_loading' => 'Loading...',
+        'duration_na' => 'N/A',
+        'remove' => 'Remove',
+        'confirm_clear_all' => 'Remove all {count} file(s)?',
+        'select_audio_first' => 'Please select audio files!',
+        'wait_metadata' => 'Please wait for all files to finish loading metadata!',
+        'insufficient_credits' => 'Not enough credits! Need {required}, have {current}',
+        'uploading_files' => 'Uploading {count} file(s)...',
+        'task_create_success' => 'Task created successfully!',
+        'upload_error_generic' => 'An error occurred!',
+        'failed_files_header' => 'Failed files:',
+        'history_empty' => 'No data',
+        'download_subtitle' => 'Download subtitle',
+        'status_failed' => 'Failed',
+        'status_processing' => 'Processing',
+        'status_processing_with_progress' => 'Processing ({progress}%)',
+        'credits_used' => 'Credits used',
+        'bulk_select_min_one' => 'Please select at least one item!',
+        'bulk_download_json_start' => 'Downloading {count} JSON file(s)...',
+        'bulk_download_srt_start' => 'Downloading {count} SRT file(s)...',
+        'bulk_no_json' => 'No JSON files to download!',
+        'bulk_no_srt' => 'No SRT files to download!',
+        'bulk_select_delete' => 'Please select at least one item to delete!',
+        'delete_no_ids' => 'No valid IDs to delete!',
+        'delete_success' => '✅ Deleted {count} task(s)!',
+        'delete_error_generic' => 'An error occurred!',
+        'delete_connection_error' => '❌ Connection error!',
+        'task_completed' => '✅ Task completed!',
+        'error_prefix' => 'Connection error:',
+        'retry_timeout' => 'Timeout or server did not respond',
+    ],
+];
+
+$t = $translations[$lang] ?? $translations['vi'];
+
 // Khởi tạo giá trị mặc định
 $user_credits = 0;
 
@@ -222,42 +353,42 @@ if (isset($_SESSION['Users']) && isset($mysqli)) {
         <div class="alert-box">
             <i class="bi bi-exclamation-triangle-fill"></i>
             <div>
-                <strong>Lưu ý quan trọng:</strong>
+                <strong><?php echo $t['important_note_title']; ?></strong>
                 <ul>
-                    <li>Hỗ trợ file audio: MP3, AAC, WAV</li>
-                    <li>Kích thước tối đa: 200MB</li>
-                    <li>Kết quả trả về: SRT subtitle</li>
+                    <li><?php echo $t['support_audio_files']; ?></li>
+                    <li><?php echo $t['max_size']; ?></li>
+                    <li><?php echo $t['output_format']; ?></li>
                 </ul>
             </div>
         </div>
 
         <div class="upload-zone-wrap">
     <label class="upload-label">
-        Tệp audio <span class="required">*</span>
+        <?php echo $t['audio_file_label']; ?> <span class="required">*</span>
     </label>
 
     <input type="file" id="audioInput" accept=".mp3,.aac,.wav" style="display: none;" onchange="handleFile(this)" multiple>
 
     <div class="upload-zone" id="uploadZone" onclick="$('#audioInput').click()">
         <i class="bi bi-cloud-arrow-up-fill upload-icon"></i>
-        <div class="upload-title">Nhấp hoặc kéo thả file vào đây</div>
+        <div class="upload-title"><?php echo $t['upload_title']; ?></div>
         <div class="upload-desc">
-            Định dạng hỗ trợ: MP3, AAC, WAV<br>Trả ra: SRT subtitle
+            <?php echo $t['upload_desc_formats']; ?><br><?php echo $t['upload_desc_output']; ?>
         </div>
     </div>
 
     <!-- DANH SÁCH FILE ĐÃ CHỌN -->
     <div id="fileListContainer" style="display: none;">
         <div class="file-list-header">
-            <span class="file-count">Đã chọn: <span id="fileCount">0</span> file</span>
+            <span class="file-count"><?php echo $t['selected_files']; ?> <span id="fileCount">0</span> <?php echo $t['file_unit']; ?></span>
             <div class="file-list-actions">
-                <button class="btn-add-more" onclick="$('#audioInput').click()" title="Thêm file">
+                <button class="btn-add-more" onclick="$('#audioInput').click()" title="<?php echo $t['add_file']; ?>">
                     <i class="bi bi-plus-circle"></i>
-                    <span>Thêm file</span>
+                    <span><?php echo $t['add_file']; ?></span>
                 </button>
-                <button class="btn-clear-all" onclick="clearAllFiles()" title="Xóa hết">
+                <button class="btn-clear-all" onclick="clearAllFiles()" title="<?php echo $t['clear_all']; ?>">
                     <i class="bi bi-trash"></i>
-                    <span>Xóa hết</span>
+                    <span><?php echo $t['clear_all']; ?></span>
                 </button>
             </div>
         </div>
@@ -270,7 +401,7 @@ if (isset($_SESSION['Users']) && isset($mysqli)) {
 
         <div class="bottom-actions">
     <div class="cost-display">
-        <span class="cost-label">Chi phí dự kiến</span>
+        <span class="cost-label"><?php echo $t['estimate_cost']; ?></span>
         <span class="cost-amount">
             <span id="estimatedCost">~0</span> 
             <span style="color: #888; font-weight: 400; margin: 0 6px;">/</span>
@@ -283,7 +414,7 @@ if (isset($_SESSION['Users']) && isset($mysqli)) {
 
     <button onclick="startTranscription()" id="btnSTT" class="btn-stt">
         <i class="bi bi-play-circle-fill"></i>
-        <span>Bắt đầu chuyển đổi</span>
+        <span><?php echo $t['start_transcription']; ?></span>
     </button>
 </div>
 
@@ -296,24 +427,24 @@ if (isset($_SESSION['Users']) && isset($mysqli)) {
         <!-- Nút Chọn tất cả (giữ nguyên) -->
         <button class="btn-check-all" onclick="toggleCheckAll()" id="btnCheckAll">
             <i class="bi bi-square"></i>
-            <span>Chọn tất cả (<span id="selectedCount">0</span>)</span>
+            <span><?php echo $t['select_all']; ?> (<span id="selectedCount">0</span>)</span>
         </button>
         
         <!-- Bulk Actions -->
         <div class="bulk-actions" id="bulkActions">
             <div class="separator"></div>
-            <button class="btn-bulk" onclick="bulkDownloadSRT()" title="Tải xuống SRT">
+            <button class="btn-bulk" onclick="bulkDownloadSRT()" title="<?php echo $t['download_srt']; ?>">
                 <i class="bi bi-file-text"></i>
-                <span>Tải SRT</span>
+                <span><?php echo $t['download_srt']; ?></span>
             </button>
-            <button class="btn-bulk delete" onclick="bulkDelete()" title="Xóa">
+            <button class="btn-bulk delete" onclick="bulkDelete()" title="<?php echo $t['delete']; ?>">
                 <i class="bi bi-trash"></i>
-                <span>Xóa</span>
+                <span><?php echo $t['delete']; ?></span>
             </button>
         </div>
         
         <!-- 🔥 NÚT MỚI: LÀM MỚI -->
-        <button class="btn-refresh" onclick="refreshHistory()" id="btnRefresh" title="Làm mới danh sách">
+        <button class="btn-refresh" onclick="refreshHistory()" id="btnRefresh" title="<?php echo $t['refresh_list_title']; ?>">
             <i class="bi bi-arrow-clockwise"></i>
         </button>
     </div>
@@ -322,7 +453,7 @@ if (isset($_SESSION['Users']) && isset($mysqli)) {
         <div id="historyList" class="history-list">
             <div class="history-empty">
                 <i class="bi bi-inbox"></i>
-                <span>Chưa có tác vụ nào</span>
+                <span><?php echo $t['no_tasks']; ?></span>
             </div>
         </div>
     </div>
@@ -333,22 +464,22 @@ if (isset($_SESSION['Users']) && isset($mysqli)) {
     <div class="modal-content">
         <div class="modal-header">
             <i class="bi bi-exclamation-triangle-fill" style="color: #ef4444; font-size: 32px;"></i>
-            <h3>Xác nhận xóa</h3>
+            <h3><?php echo $t['delete_modal_title']; ?></h3>
         </div>
         <div class="modal-body">
-            <p>Bạn có chắc chắn muốn xóa <strong id="deleteCount">0</strong> task đã chọn?</p>
+            <p><?php echo $t['delete_modal_prefix']; ?> <strong id="deleteCount">0</strong> <?php echo $t['delete_modal_suffix']; ?></p>
             <p style="color: #888; font-size: 14px; margin-top: 8px;">
-                Hành động này không thể hoàn tác.
+                <?php echo $t['delete_modal_note']; ?>
             </p>
         </div>
         <div class="modal-actions">
             <button class="btn-cancel" onclick="closeDeleteModal()">
                 <i class="bi bi-x-circle"></i>
-                <span>Hủy</span>
+                <span><?php echo $t['cancel']; ?></span>
             </button>
             <button class="btn-confirm-delete" onclick="confirmDelete()">
                 <i class="bi bi-trash"></i>
-                <span>Xóa</span>
+                <span><?php echo $t['delete']; ?></span>
             </button>
         </div>
     </div>
@@ -365,6 +496,7 @@ if (isset($_SESSION['Users']) && isset($mysqli)) {
 
 <script>
     const userCreditsFromDB = <?php echo $user_credits; ?>;
+    window.sttLang = <?php echo json_encode($t); ?>;
 </script>
 
 <script src="/pages/AI/js/stt.js?v=<?php echo time(); ?>"></script>

@@ -7,6 +7,16 @@ let historyPlayer = document.getElementById('sttAudio');
 let currentPlayingId = null;
 let autoRefreshInterval = null;
 
+const sttLang = window.sttLang || {};
+const t = (key, fallback) => sttLang[key] || fallback || key;
+const tFormat = (key, vars, fallback) => {
+    let text = t(key, fallback);
+    Object.keys(vars || {}).forEach((k) => {
+        text = text.replace(new RegExp(`\\{${k}\\}`, 'g'), vars[k]);
+    });
+    return text;
+};
+
 // Files với metadata
 let selectedFiles = []; // Array of {file, duration, id}
 let fileIdCounter = 0;
@@ -55,15 +65,15 @@ function refreshHistory() {
                 updateBulkActions();
                 
                 // 5. Thông báo thành công
-                showToast('success', '✅ Đã làm mới!');
+                showToast('success', t('toast_refresh_success'));
             } else {
-                showToast('error', '❌ Không thể tải dữ liệu');
+                showToast('error', t('toast_refresh_fail'));
             }
         },
         
         error: function(xhr, status, error) {
             console.error('Refresh Error:', {xhr, status, error});
-            showToast('error', '❌ Lỗi kết nối');
+            showToast('error', t('toast_connection_error'));
         },
         
         complete: function() {
@@ -87,19 +97,19 @@ function handleFile(input) {
         const ext = file.name.split('.').pop().toLowerCase();
         
         if (!allowedExts.includes(ext)) {
-            invalidFiles.push(file.name + ' (định dạng không hỗ trợ)');
+            invalidFiles.push(`${file.name} (${t('invalid_format')})`);
             return;
         }
         
         if (file.size > 200 * 1024 * 1024) {
-            invalidFiles.push(file.name + ' (quá lớn, max 200MB)');
+            invalidFiles.push(`${file.name} (${t('invalid_too_large')})`);
             return;
         }
         
         // Check duplicate
         const isDuplicate = selectedFiles.some(f => f.file.name === file.name && f.file.size === file.size);
         if (isDuplicate) {
-            invalidFiles.push(file.name + ' (đã tồn tại)');
+            invalidFiles.push(`${file.name} (${t('invalid_duplicate')})`);
             return;
         }
         
@@ -117,7 +127,10 @@ function handleFile(input) {
     });
     
     if (invalidFiles.length > 0) {
-        showToast('warning', `${invalidFiles.length} file không hợp lệ: ${invalidFiles.join(', ')}`);
+        showToast('warning', tFormat('invalid_files_prefix', {
+            count: invalidFiles.length,
+            files: invalidFiles.join(', ')
+        }));
     }
     
     // Reset input để có thể chọn lại cùng file
@@ -170,9 +183,9 @@ function updateFileListUI() {
     let html = '';
     selectedFiles.forEach(fileObj => {
         const sizeMB = (fileObj.file.size / 1024 / 1024).toFixed(2);
-        const durationStr = fileObj.loading ? 
-            'Đang tải...' : 
-            (fileObj.duration > 0 ? formatTime(fileObj.duration) : 'N/A');
+    const durationStr = fileObj.loading ? 
+        t('duration_loading') : 
+        (fileObj.duration > 0 ? formatTime(fileObj.duration) : t('duration_na'));
         
         html += `
             <div class="file-item ${fileObj.loading ? 'loading' : ''}" data-id="${fileObj.id}">
@@ -187,7 +200,7 @@ function updateFileListUI() {
                         <span class="file-item-duration">${durationStr}</span>
                     </div>
                 </div>
-                <button class="btn-remove-file" onclick="removeFile(${fileObj.id})" title="Xóa">
+                <button class="btn-remove-file" onclick="removeFile(${fileObj.id})" title="${t('remove')}">
                     <i class="bi bi-x-circle"></i>
                 </button>
             </div>
@@ -206,7 +219,7 @@ function removeFile(fileId) {
 function clearAllFiles() {
     if (selectedFiles.length === 0) return;
     
-    if (!confirm(`Xóa tất cả ${selectedFiles.length} file?`)) return;
+    if (!confirm(tFormat('confirm_clear_all', { count: selectedFiles.length }))) return;
     
     selectedFiles = [];
     updateFileListUI();
@@ -246,14 +259,14 @@ function setupDragDrop() {
 // ========== 2. START TRANSCRIPTION (MULTIPLE FILES) ==========
 function startTranscription() {
     if (selectedFiles.length === 0) {
-        showToast('error', 'Vui lòng chọn file audio!');
+        showToast('error', t('select_audio_first'));
         $('#uploadZone').click();
         return;
     }
     
     const hasLoading = selectedFiles.some(f => f.loading);
     if (hasLoading) {
-        showToast('warning', 'Vui lòng đợi tất cả file load xong metadata!');
+        showToast('warning', t('wait_metadata'));
         return;
     }
     
@@ -276,7 +289,10 @@ function startTranscription() {
     
     // Kiểm tra đủ tiền không
     if (currentCredits < estimatedCost) {
-        showToast('error', `Không đủ credits! Cần ${estimatedCost.toLocaleString()}, còn ${currentCredits.toLocaleString()}`);
+        showToast('error', tFormat('insufficient_credits', {
+            required: estimatedCost.toLocaleString(),
+            current: currentCredits.toLocaleString()
+        }));
         return;
     }
     
@@ -294,7 +310,7 @@ function startTranscription() {
         formData.append(`durations[${index}]`, Math.round(fileObj.duration || 0));
     });
     
-    $('#btnSTT').prop('disabled', true).html(`<span class="spinner-border spinner-border-sm"></span> <span>Đang tải ${selectedFiles.length} file...</span>`);
+    $('#btnSTT').prop('disabled', true).html(`<span class="spinner-border spinner-border-sm"></span> <span>${tFormat('uploading_files', { count: selectedFiles.length })}</span>`);
     
     $.ajax({
         url: '/ajaxs/stt.php',
@@ -306,7 +322,7 @@ function startTranscription() {
         timeout: 180000,
         success: function(res) {
             if (res.status === 'success') {
-                showToast('success', res.message || 'Đã tạo task thành công!');
+                showToast('success', res.message || t('task_create_success'));
                 
                 // 🔥 XÓA FILE SAU KHI UPLOAD THÀNH CÔNG
                 selectedFiles = [];
@@ -342,9 +358,9 @@ function startTranscription() {
                 // 🔥 NẾU CÓ LỖI, HOÀN TRẢ LẠI CREDITS
                 $('#userCreditsDisplay').text(currentCredits.toLocaleString()).css('color', '#22c55e');
                 
-                let errorMsg = res.message || 'Có lỗi xảy ra!';
+                let errorMsg = res.message || t('upload_error_generic');
                 if (res.failed_files && res.failed_files.length > 0) {
-                    errorMsg += '\n\nFile thất bại:\n' + res.failed_files.join('\n');
+                    errorMsg += `\n\n${t('failed_files_header')}\n` + res.failed_files.join('\n');
                 }
                 showToast('error', errorMsg);
                 
@@ -356,12 +372,12 @@ function startTranscription() {
             $('#userCreditsDisplay').text(currentCredits.toLocaleString()).css('color', '#22c55e');
             
             console.error('AJAX Error:', {xhr, status, error});
-            showToast('error', 'Lỗi kết nối: ' + (error || 'Timeout hoặc server không phản hồi'));
+            showToast('error', `${t('error_prefix')} ${error || t('retry_timeout')}`);
             
             console.log('❌ Lỗi kết nối, đã hoàn trả credits:', currentCredits.toLocaleString());
         },
         complete: function() {
-            $('#btnSTT').prop('disabled', false).html(`<i class="bi bi-play-circle-fill"></i> <span>Bắt đầu chuyển đổi</span>`);
+            $('#btnSTT').prop('disabled', false).html(`<i class="bi bi-play-circle-fill"></i> <span>${t('start_transcription')}</span>`);
         }
     });
 }
@@ -385,7 +401,7 @@ function loadHistory() {
                 $('#btnCheckAll').removeClass('active').find('i').removeClass('bi-check-square-fill').addClass('bi-square');
                 updateBulkActions();
             } else {
-                $('#historyList').html(`<div class="history-empty"><i class="bi bi-exclamation-circle"></i><span>Không có dữ liệu</span></div>`);
+                $('#historyList').html(`<div class="history-empty"><i class="bi bi-exclamation-circle"></i><span>${t('history_empty')}</span></div>`);
             }
         },
         error: function(xhr, status, error) {
@@ -396,7 +412,7 @@ function loadHistory() {
                 error: error
             });
             
-            let errorMsg = 'Lỗi kết nối';
+            let errorMsg = t('toast_connection_error');
             if (xhr.responseText) {
                 try {
                     const errData = JSON.parse(xhr.responseText);
@@ -414,7 +430,7 @@ function loadHistory() {
 function renderHistory(data) {
     console.log("🔥 Dữ liệu lịch sử:", data);
     if (!data || data.length === 0) {
-        $('#historyList').html(`<div class="history-empty"><i class="bi bi-inbox"></i><span>Chưa có tác vụ nào</span></div>`);
+        $('#historyList').html(`<div class="history-empty"><i class="bi bi-inbox"></i><span>${t('no_tasks')}</span></div>`);
         return;
     }
     
@@ -442,7 +458,7 @@ function renderHistory(data) {
             actions = `
                 <div class="action-buttons">
                     ${linkSrt ? `
-                        <a href="javascript:void(0)" onclick="forceDownload('${linkSrt}', 'stt_${item.task_id}.srt')" class="btn-text-dl" title="Tải Subtitle">
+                        <a href="javascript:void(0)" onclick="forceDownload('${linkSrt}', 'stt_${item.task_id}.srt')" class="btn-text-dl" title="${t('download_subtitle')}">
                             <i class="bi bi-download"></i> SRT
                         </a>
                     ` : ''}
@@ -452,7 +468,7 @@ function renderHistory(data) {
             actions = `
                 <div class="failed-indicator" style="color: #ef4444; font-size: 13px;">
                     <i class="bi bi-x-circle-fill"></i>
-                    <span>Thất bại</span>
+                    <span>${t('status_failed')}</span>
                 </div>
             `;
         } else if (item.status === 'pending' || item.status === 'doing' || item.status === 'processing') {
@@ -460,7 +476,7 @@ function renderHistory(data) {
             actions = `
                 <div class="processing-indicator">
                     <span class="spinner-border spinner-border-sm" style="width:12px;height:12px;border-width:2px;"></span>
-                    <span>Đang xử lý ${progress > 0 ? `(${progress}%)` : ''}</span>
+                    <span>${progress > 0 ? tFormat('status_processing_with_progress', { progress }) : t('status_processing')}</span>
                 </div>
             `;
             checkTaskStatus(item.task_id);
@@ -489,7 +505,7 @@ function renderHistory(data) {
                 
                 <div class="item-credits">
                     <div class="credits-amount">${item.credit_cost || 0}</div>
-                    <div class="credits-status">Tín dụng sử dụng</div>
+                    <div class="credits-status">${t('credits_used')}</div>
                 </div>
             </div>
         `;
@@ -572,7 +588,7 @@ function updateBulkActions() {
 // ========== 5. BULK ACTIONS ==========
 function bulkDownloadJSON() {
     if (selectedItems.length === 0) {
-        showToast('warning', 'Vui lòng chọn ít nhất 1 item!');
+        showToast('warning', t('bulk_select_min_one'));
         return;
     }
     
@@ -588,15 +604,15 @@ function bulkDownloadJSON() {
     });
 
     if (count > 0) {
-        showToast('success', `Đang tải ${count} file JSON...`);
+        showToast('success', tFormat('bulk_download_json_start', { count }));
     } else {
-        showToast('warning', 'Không có file JSON nào để tải!');
+        showToast('warning', t('bulk_no_json'));
     }
 }
 
 function bulkDownloadSRT() {
     if (selectedItems.length === 0) {
-        showToast('warning', 'Vui lòng chọn ít nhất 1 item!');
+        showToast('warning', t('bulk_select_min_one'));
         return;
     }
 
@@ -612,16 +628,16 @@ function bulkDownloadSRT() {
     });
 
     if (count > 0) {
-        showToast('success', `Đang tải ${count} file SRT...`);
+        showToast('success', tFormat('bulk_download_srt_start', { count }));
     } else {
-        showToast('warning', 'Không có file SRT nào để tải!');
+        showToast('warning', t('bulk_no_srt'));
     }
 }
 
 // 🔥 HÀM NÀY PHẢI CÓ
 function bulkDelete() {
     if (selectedItems.length === 0) {
-        showToast('warning', 'Vui lòng chọn ít nhất 1 item để xóa!');
+        showToast('warning', t('bulk_select_delete'));
         return;
     }
     
@@ -644,7 +660,7 @@ function confirmDelete() {
     const historyIds = selectedItems.map(item => item.historyId).filter(id => id);
     
     if (historyIds.length === 0) {
-        showToast('error', 'Không có ID hợp lệ để xóa!');
+        showToast('error', t('delete_no_ids'));
         return;
     }
     
@@ -659,7 +675,7 @@ function confirmDelete() {
         dataType: 'json',
         success: function(res) {
             if (res.status === 'success') {
-                showToast('success', `✅ Đã xóa ${selectedItems.length} task!`);
+                showToast('success', tFormat('delete_success', { count: selectedItems.length }));
                 
                 // Reset selection
                 selectedItems = [];
@@ -674,12 +690,12 @@ function confirmDelete() {
                 // Reload history
                 loadHistory();
             } else {
-                showToast('error', res.message || 'Có lỗi xảy ra!');
+                showToast('error', res.message || t('delete_error_generic'));
             }
         },
         error: function(xhr, status, error) {
             console.error('Delete Error:', {xhr, status, error});
-            showToast('error', '❌ Lỗi kết nối!');
+            showToast('error', t('delete_connection_error'));
         }
     });
 }
@@ -706,12 +722,12 @@ function checkTaskStatus(taskId) {
             if (res.status === 'success') {
                 // Update progress text
                 if (res.progress > 0 && res.task_status !== 'done') {
-                    taskElement.find('.processing-indicator span:last').text(`Đang xử lý (${res.progress}%)`);
+                    taskElement.find('.processing-indicator span:last').text(tFormat('status_processing_with_progress', { progress: res.progress }));
                 }
 
                 if (res.task_status === 'done' || res.task_status === 'failed') {
                     loadHistory();
-                    if (res.task_status === 'done') showToast('success', '✅ Task hoàn thành!');
+                    if (res.task_status === 'done') showToast('success', t('task_completed'));
                     if (res.new_balance) $('#userCreditsDisplay').text(res.new_balance.toLocaleString());
                 } else {
                     checkTaskStatus(taskId);
