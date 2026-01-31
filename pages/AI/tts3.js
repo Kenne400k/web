@@ -81,6 +81,7 @@ const langStrings = {
 };
 
 const jsTranslations = langStrings[currentLang];
+const tText = (vi, en) => (currentLang === "vi" ? vi : en);
 
 // ========== HELPER: PARSE CUSTOM DATE FORMAT ==========
 function parseCustomDateTime(dateStr) {
@@ -172,7 +173,7 @@ function loadDetailedHistoryData(page = 1, append = false) {
     $listContainer.html(`
             <div class="dh-loading-container">
                 <div class="dh-loading-spinner"></div>
-                <div class="dh-loading-text">Đang tải dữ liệu...</div>
+                <div class="dh-loading-text">${tText("Đang tải dữ liệu...", "Loading data...")}</div>
             </div>
         `);
   } else {
@@ -180,7 +181,7 @@ function loadDetailedHistoryData(page = 1, append = false) {
     $listContainer.append(`
             <div class="dh-loading-more" id="loadMoreSpinner">
                 <div class="dh-loading-more-spinner"></div>
-                <div class="dh-loading-more-text">Đang tải thêm...</div>
+                <div class="dh-loading-more-text">${tText("Đang tải thêm...", "Loading more...")}</div>
             </div>
         `);
   }
@@ -243,8 +244,8 @@ function loadDetailedHistoryData(page = 1, append = false) {
           $listContainer.html(`
                         <div style="padding:80px 20px; text-align:center; color:#888;">
                             <i class="bi bi-inbox" style="font-size:64px; opacity:0.5; margin-bottom:16px; display:block;"></i>
-                            <div style="font-size:16px; font-weight:500; margin-bottom:8px;">Chưa có lịch sử nào</div>
-                            <div style="font-size:13px; color:#aaa;">Các tác vụ TTS của bạn sẽ hiển thị ở đây</div>
+                            <div style="font-size:16px; font-weight:500; margin-bottom:8px;">${tText("Chưa có lịch sử nào", "No history yet")}</div>
+                            <div style="font-size:13px; color:#aaa;">${tText("Các tác vụ TTS của bạn sẽ hiển thị ở đây", "Your TTS tasks will appear here")}</div>
                         </div>
                     `);
         }
@@ -253,8 +254,8 @@ function loadDetailedHistoryData(page = 1, append = false) {
         $listContainer.html(`
                     <div style="padding:60px 20px; text-align:center; color:#dc3545;">
                         <i class="fas fa-exclamation-circle" style="font-size:48px; margin-bottom:16px;"></i>
-                        <div style="font-size:16px; font-weight:500; margin-bottom:8px;">Lỗi tải dữ liệu</div>
-                        <div style="font-size:13px; color:#888;">${res.message || "Không thể kết nối đến server"}</div>
+                        <div style="font-size:16px; font-weight:500; margin-bottom:8px;">${tText("Lỗi tải dữ liệu", "Failed to load data")}</div>
+                        <div style="font-size:13px; color:#888;">${res.message || tText("Không thể kết nối đến server", "Unable to connect to server")}</div>
                     </div>
                 `);
       }
@@ -273,7 +274,7 @@ function loadDetailedHistoryData(page = 1, append = false) {
         $(this).remove();
       });
 
-      let errorMsg = "Không thể kết nối đến server";
+      let errorMsg = tText("Không thể kết nối đến server", "Unable to connect to server");
       try {
         let errJson = JSON.parse(xhr.responseText);
         if (errJson.message) {
@@ -289,7 +290,7 @@ function loadDetailedHistoryData(page = 1, append = false) {
                         <button onclick="loadDetailedHistoryData(${page})" 
                                 class="btn btn-sm btn-outline-secondary" 
                                 style="margin-top:16px;">
-                            <i class="fas fa-redo"></i> Thử lại
+                            <i class="fas fa-redo"></i> ${tText("Thử lại", "Retry")}
                         </button>
                     </div>
                 `);
@@ -472,7 +473,7 @@ function showAutoDeletePopup(taskId, refundAmount) {
                 font-size: 22px;
                 font-weight: 700;
                 color: #fff;
-            ">Tác vụ đã bị xóa tự động</h3>
+            ">${tText("Tác vụ đã bị xóa tự động", "Task was automatically deleted")}</h3>
             
             <!-- Message -->
             <p style="
@@ -481,13 +482,22 @@ function showAutoDeletePopup(taskId, refundAmount) {
                 line-height: 1.6;
                 margin-bottom: 24px;
             ">
-                Task <code style="
+                ${tText(
+                  `Task <code style="
                     background: #222;
                     padding: 2px 8px;
                     border-radius: 4px;
                     color: #667eea;
                     font-size: 13px;
-                ">${taskId.substring(0, 12)}...</code> đã treo ở 0% quá 2 giờ 5 phút và được hệ thống tự động xóa.
+                  ">${taskId.substring(0, 12)}...</code> đã treo ở 0% quá 2 giờ 5 phút và được hệ thống tự động xóa.`,
+                  `Task <code style="
+                    background: #222;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    color: #667eea;
+                    font-size: 13px;
+                  ">${taskId.substring(0, 12)}...</code> was stuck at 0% for over 2 hours 5 minutes and was automatically deleted.`,
+                )}
             </p>
             
             <!-- Refund Info -->
@@ -499,7 +509,7 @@ function showAutoDeletePopup(taskId, refundAmount) {
                 margin-bottom: 24px;
             ">
                 <div style="color: #4ade80; font-size: 14px; margin-bottom: 6px;">
-                    <i class="bi bi-check-circle-fill"></i> Đã hoàn tiền
+                    <i class="bi bi-check-circle-fill"></i> ${tText("Đã hoàn tiền", "Refunded")}
                 </div>
                 <div style="color: #fff; font-size: 24px; font-weight: 700;">
                     +${refundAmount.toLocaleString()} credits
@@ -520,7 +530,7 @@ function showAutoDeletePopup(taskId, refundAmount) {
                 transition: transform 0.2s;
             " onmouseover="this.style.transform='scale(1.02)'" 
                onmouseout="this.style.transform='scale(1)'">
-                Đã hiểu
+                ${tText("Đã hiểu", "Got it")}
             </button>
         </div>
     </div>
@@ -581,7 +591,7 @@ function renderDetailedPagination(currentPage, totalPages, totalItems) {
 
   // Previous button
   html += `<li class="page-item ${currentPage === 1 ? "disabled" : ""}">
-        <a class="page-link" href="#" data-page="${currentPage - 1}">Trước</a>
+        <a class="page-link" href="#" data-page="${currentPage - 1}">${tText("Trước", "Prev")}</a>
     </li>`;
 
   // Page numbers (show max 5 pages)
@@ -596,11 +606,11 @@ function renderDetailedPagination(currentPage, totalPages, totalItems) {
 
   // Next button
   html += `<li class="page-item ${currentPage === totalPages ? "disabled" : ""}">
-        <a class="page-link" href="#" data-page="${currentPage + 1}">Sau</a>
+        <a class="page-link" href="#" data-page="${currentPage + 1}">${tText("Sau", "Next")}</a>
     </li>`;
 
   html += `</ul></nav>`;
-  html += `<div class="text-center text-muted small">Tổng ${totalItems} tasks</div>`;
+  html += `<div class="text-center text-muted small">${tText("Tổng", "Total")} ${totalItems} tasks</div>`;
 
   $pagination.html(html);
 
@@ -645,7 +655,7 @@ function renderDetailedListAppend(newData) {
     // ═══════════════════════════════════════════════════════════
     let statusBadge = "";
     let contentArea = "";
-    let creditLabel = "Tín dụng sử dụng";
+    let creditLabel = tText("Tín dụng sử dụng", "Credits used");
 
     // Parse timestamp
     let createdTimeMs = parseCustomDateTime(item.created_at);
@@ -663,7 +673,7 @@ function renderDetailedListAppend(newData) {
     let displayText =
       item.text_input && item.text_input.trim()
         ? item.text_input
-        : "(Không có nội dung)";
+        : tText("(Không có nội dung)", "(No content)");
 
     let safeText = displayText
       .replace(/'/g, "\\'")
@@ -677,7 +687,7 @@ function renderDetailedListAppend(newData) {
     let deleteBtnHtml = `
             <button class="dh-delete-btn" 
                 onclick="deleteDetailedTask('${item.task_id}', '${safeText}', '${item.status}', ${item.credit_cost || 0})" 
-                title="Xóa task">
+                title="${tText("Xóa task", "Delete task")}">
                 <i class="bi bi-trash"></i>
             </button>`;
 
@@ -685,8 +695,8 @@ function renderDetailedListAppend(newData) {
     // ✅ TRẠNG THÁI: DONE
     // ───────────────────────────────────────────────────────
     if (item.status === "done") {
-      statusBadge = `<span class="dh-status-badge dh-badge-done">Xong</span>`;
-      creditLabel = "Tín dụng sử dụng";
+      statusBadge = `<span class="dh-status-badge dh-badge-done">${tText("Xong", "Done")}</span>`;
+      creditLabel = tText("Tín dụng sử dụng", "Credits used");
 
       // 🔥 [SỬA] LẤY DURATION TỪ NHIỀU NGUỒN
       let duration =
@@ -696,12 +706,12 @@ function renderDetailedListAppend(newData) {
       // 🔥 DROPDOWN DOWNLOAD
       let downloadDropdownHtml = `
         <div class="dh-download-wrapper" style="position: relative;">
-            <button class="dh-download-btn" onclick="toggleDownloadMenu(event, '${item.task_id}')" title="Tải xuống">
+            <button class="dh-download-btn" onclick="toggleDownloadMenu(event, '${item.task_id}')" title="${tText("Tải xuống", "Download")}">
                 <i class="bi bi-download"></i>
             </button>
             
             <div class="dh-download-menu" id="download-menu-${item.task_id}" style="display: none;">
-                <div class="dh-download-header">Tải xuống (hết hạn sau 72 giờ)</div>
+                <div class="dh-download-header">${tText("Tải xuống (hết hạn sau 72 giờ)", "Download (expires in 72 hours)")}</div>
                 
                 <!-- Audio -->
                 ${
@@ -724,12 +734,12 @@ function renderDetailedListAppend(newData) {
                     ? `
                 <a href="javascript:void(0)" onclick="forceDownload('${item.srt_url}', 'subtitle_${item.task_id}.srt')" class="dh-download-item">
                     <i class="bi bi-file-earmark-text"></i>
-                    <span>Phụ đề (SRT)</span>
+                    <span>${tText("Phụ đề (SRT)", "Subtitle (SRT)")}</span>
                 </a>`
                     : `
                 <div class="dh-download-item dh-download-disabled">
                     <i class="bi bi-file-earmark-text"></i>
-                    <span>Phụ đề (SRT)</span>
+                    <span>${tText("Phụ đề (SRT)", "Subtitle (SRT)")}</span>
                 </div>`
                 }
 
@@ -739,12 +749,12 @@ function renderDetailedListAppend(newData) {
                     ? `
                 <a href="javascript:void(0)" onclick="forceDownload('${item.json_url}', 'subtitle_${item.task_id}.json')" class="dh-download-item">
                     <i class="bi bi-file-earmark-code"></i>
-                    <span>Phụ đề (JSON)</span>
+                    <span>${tText("Phụ đề (JSON)", "Subtitle (JSON)")}</span>
                 </a>`
                     : `
                 <div class="dh-download-item dh-download-disabled">
                     <i class="bi bi-file-earmark-code"></i>
-                    <span>Phụ đề (JSON)</span>
+                    <span>${tText("Phụ đề (JSON)", "Subtitle (JSON)")}</span>
                 </div>`
                 }
             </div>
@@ -753,7 +763,7 @@ function renderDetailedListAppend(newData) {
 
       // 🔥 [THÊM NÚT REMAKE]
       let remakeBtn = `
-        <button class="dh-remake-btn" onclick="openRemakeModal('${item.task_id}')" title="Tạo lại">
+        <button class="dh-remake-btn" onclick="openRemakeModal('${item.task_id}')" title="${tText("Tạo lại", "Remake")}">
             <i class="bi bi-arrow-repeat"></i>
         </button>
     `;
@@ -794,10 +804,10 @@ function renderDetailedListAppend(newData) {
       // ───────────────────────────────────────────────────────
       // ❌ TRẠNG THÁI: FAILED
       // ───────────────────────────────────────────────────────
-      statusBadge = `<span class="dh-status-badge dh-badge-error">Lỗi</span>`;
-      creditLabel = "Đã hoàn trả";
+      statusBadge = `<span class="dh-status-badge dh-badge-error">${tText("Lỗi", "Error")}</span>`;
+      creditLabel = tText("Đã hoàn trả", "Refunded");
 
-      let errorMsg = item.error_message || "Lỗi không xác định";
+      let errorMsg = item.error_message || tText("Lỗi không xác định", "Unknown error");
 
       contentArea = `
                 <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
@@ -825,17 +835,17 @@ function renderDetailedListAppend(newData) {
         });
       }
 
-      statusBadge = `<span class="dh-status-badge dh-badge-processing">Đang xử lý</span>`;
-      creditLabel = "Tín dụng đóng băng";
+      statusBadge = `<span class="dh-status-badge dh-badge-processing">${tText("Đang xử lý", "Processing")}</span>`;
+      creditLabel = tText("Tín dụng đóng băng", "Credits frozen");
 
       // Text ban đầu
       let initialText = "";
       if (item.status === "queued") {
         initialText = item.queue_position
-          ? `Hàng đợi #${item.queue_position}`
-          : `Hàng đợi`;
+          ? `${tText("Hàng đợi #", "Queue #")}${item.queue_position}`
+          : tText("Hàng đợi", "Queue");
       } else {
-        initialText = `Xử lý ${currentProgress}%`;
+        initialText = `${tText("Xử lý", "Processing")} ${currentProgress}%`;
       }
 
       contentArea = `
@@ -952,7 +962,7 @@ function renderDetailedList(data) {
 
   if (!data || data.length === 0) {
     $("#detailedHistoryList").html(
-      '<div style="padding:20px; text-align:center; color:#666;">Chưa có dữ liệu</div>',
+      `<div style="padding:20px; text-align:center; color:#666;">${tText("Chưa có dữ liệu", "No data")}</div>`,
     );
     return;
   }
@@ -973,7 +983,7 @@ function renderDetailedList(data) {
 
     let statusBadge = "";
     let contentArea = "";
-    let creditLabel = "Tín dụng sử dụng";
+    let creditLabel = tText("Tín dụng sử dụng", "Credits used");
 
     // 🔥 PARSE TIMESTAMP
     let createdTimeMs = parseCustomDateTime(item.created_at);
@@ -1000,7 +1010,7 @@ function renderDetailedList(data) {
       .substring(0, 500); // Cắt tối đa 500 ký tự để tránh quá dài
 
     // Text hiển thị
-    let displayText = rawText.trim() || "(Không có nội dung)";
+    let displayText = rawText.trim() || tText("(Không có nội dung)", "(No content)");
 
     // ═══════════════════════════════════════════════════════════
     // 🔥 NÚT XÓA (Dùng chung cho mọi trạng thái)
@@ -1008,7 +1018,7 @@ function renderDetailedList(data) {
     let deleteBtnHtml = `
             <button class="dh-delete-btn" 
                 onclick="deleteDetailedTask('${item.task_id}', '${safeText}', '${item.status}', ${item.credit_cost || 0})" 
-                title="Xóa task">
+                title="${tText("Xóa task", "Delete task")}">
                 <i class="bi bi-trash"></i>
             </button>`;
 
@@ -1016,8 +1026,8 @@ function renderDetailedList(data) {
     // ✅ TRẠNG THÁI: DONE
     // ───────────────────────────────────────────────────────
     if (item.status === "done") {
-      statusBadge = `<span class="dh-status-badge dh-badge-done">Xong</span>`;
-      creditLabel = "Tín dụng sử dụng";
+      statusBadge = `<span class="dh-status-badge dh-badge-done">${tText("Xong", "Done")}</span>`;
+      creditLabel = tText("Tín dụng sử dụng", "Credits used");
 
       // 🔥 [SỬA] LẤY DURATION TỪ NHIỀU NGUỒN
       let duration =
@@ -1027,12 +1037,12 @@ function renderDetailedList(data) {
       // 🔥 DROPDOWN DOWNLOAD
       let downloadDropdownHtml = `
         <div class="dh-download-wrapper" style="position: relative;">
-            <button class="dh-download-btn" onclick="toggleDownloadMenu(event, '${item.task_id}')" title="Tải xuống">
+            <button class="dh-download-btn" onclick="toggleDownloadMenu(event, '${item.task_id}')" title="${tText("Tải xuống", "Download")}">
                 <i class="bi bi-download"></i>
             </button>
             
             <div class="dh-download-menu" id="download-menu-${item.task_id}" style="display: none;">
-                <div class="dh-download-header">Tải xuống (hết hạn sau 72 giờ)</div>
+                <div class="dh-download-header">${tText("Tải xuống (hết hạn sau 72 giờ)", "Download (expires in 72 hours)")}</div>
                 
                 <!-- Audio -->
                 ${
@@ -1055,12 +1065,12 @@ function renderDetailedList(data) {
                     ? `
                 <a href="javascript:void(0)" onclick="forceDownload('${item.srt_url}', 'subtitle_${item.task_id}.srt')" class="dh-download-item">
                     <i class="bi bi-file-earmark-text"></i>
-                    <span>Phụ đề (SRT)</span>
+                    <span>${tText("Phụ đề (SRT)", "Subtitle (SRT)")}</span>
                 </a>`
                     : `
                 <div class="dh-download-item dh-download-disabled">
                     <i class="bi bi-file-earmark-text"></i>
-                    <span>Phụ đề (SRT)</span>
+                    <span>${tText("Phụ đề (SRT)", "Subtitle (SRT)")}</span>
                 </div>`
                 }
 
@@ -1070,12 +1080,12 @@ function renderDetailedList(data) {
                     ? `
                 <a href="javascript:void(0)" onclick="forceDownload('${item.json_url}', 'subtitle_${item.task_id}.json')" class="dh-download-item">
                     <i class="bi bi-file-earmark-code"></i>
-                    <span>Phụ đề (JSON)</span>
+                    <span>${tText("Phụ đề (JSON)", "Subtitle (JSON)")}</span>
                 </a>`
                     : `
                 <div class="dh-download-item dh-download-disabled">
                     <i class="bi bi-file-earmark-code"></i>
-                    <span>Phụ đề (JSON)</span>
+                    <span>${tText("Phụ đề (JSON)", "Subtitle (JSON)")}</span>
                 </div>`
                 }
             </div>
@@ -1084,7 +1094,7 @@ function renderDetailedList(data) {
 
       // 🔥 [THÊM NÚT REMAKE]
       let remakeBtn = `
-        <button class="dh-remake-btn" onclick="openRemakeModal('${item.task_id}')" title="Tạo lại">
+        <button class="dh-remake-btn" onclick="openRemakeModal('${item.task_id}')" title="${tText("Tạo lại", "Remake")}">
             <i class="bi bi-arrow-repeat"></i>
         </button>
     `;
@@ -1125,10 +1135,10 @@ function renderDetailedList(data) {
       // ───────────────────────────────────────────────────────
       // ❌ TRẠNG THÁI: FAILED
       // ───────────────────────────────────────────────────────
-      statusBadge = `<span class="dh-status-badge dh-badge-error">Lỗi</span>`;
-      creditLabel = "Đã hoàn trả";
+      statusBadge = `<span class="dh-status-badge dh-badge-error">${tText("Lỗi", "Error")}</span>`;
+      creditLabel = tText("Đã hoàn trả", "Refunded");
 
-      let errorMsg = item.error_message || "Lỗi không xác định";
+      let errorMsg = item.error_message || tText("Lỗi không xác định", "Unknown error");
 
       contentArea = `
                 <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
@@ -1154,17 +1164,17 @@ function renderDetailedList(data) {
         status: item.status,
       });
 
-      statusBadge = `<span class="dh-status-badge dh-badge-processing">Đang xử lý</span>`;
-      creditLabel = "Tín dụng đóng băng";
+      statusBadge = `<span class="dh-status-badge dh-badge-processing">${tText("Đang xử lý", "Processing")}</span>`;
+      creditLabel = tText("Tín dụng đóng băng", "Credits frozen");
 
       // Text ban đầu
       let initialText = "";
       if (item.status === "queued") {
         initialText = item.queue_position
-          ? `Hàng đợi #${item.queue_position}`
-          : `Hàng đợi`;
+          ? `${tText("Hàng đợi #", "Queue #")}${item.queue_position}`
+          : tText("Hàng đợi", "Queue");
       } else {
-        initialText = `Xử lý ${currentProgress}%`;
+        initialText = `${tText("Xử lý", "Processing")} ${currentProgress}%`;
       }
 
       contentArea = `
@@ -1411,16 +1421,19 @@ function requestCreateSrt(taskId, btnElement) {
         let downloadBtnHtml = `
                     <a href="${response.download_url}" download="${response.filename || "subtitle.srt"}"
                         class="dh-delete-btn" 
-                        title="Tải xuống SRT"
+                        title="${tText("Tải xuống SRT", "Download SRT")}"
                         style="color: #667eea; border-color: #667eea; display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">
                         <i class="bi bi-file-earmark-arrow-down-fill"></i>
                     </a>
                 `;
         $(btnElement).replaceWith(downloadBtnHtml);
         if (typeof toastr !== "undefined")
-          toastr.success("Đã tạo file SRT thành công!");
+          toastr.success(
+            tText("Đã tạo file SRT thành công!", "SRT file created successfully!"),
+          );
       } else {
-        let msg = response.message || "Không thể tạo SRT lúc này.";
+        let msg =
+          response.message || tText("Không thể tạo SRT lúc này.", "Unable to create SRT right now.");
         if (typeof toastr !== "undefined") toastr.warning(msg);
         $(btnElement).html(originalContent);
         $(btnElement).prop("disabled", false);
@@ -1430,7 +1443,8 @@ function requestCreateSrt(taskId, btnElement) {
       console.error("Lỗi:", error);
       $(btnElement).html(originalContent);
       $(btnElement).prop("disabled", false);
-      if (typeof toastr !== "undefined") toastr.error("Lỗi kết nối server");
+      if (typeof toastr !== "undefined")
+        toastr.error(tText("Lỗi kết nối server", "Server connection error"));
     },
   });
 }
@@ -1478,7 +1492,7 @@ function submitSrtExport() {
   });
 
   if (!taskId) {
-    alert("Lỗi: Không tìm thấy Task ID!");
+    alert(tText("Lỗi: Không tìm thấy Task ID!", "Error: Task ID not found!"));
     return;
   }
 
@@ -1488,7 +1502,7 @@ function submitSrtExport() {
   $btn
     .prop("disabled", true)
     .html(
-      '<span class="spinner-border spinner-border-sm"></span> Đang xử lý...',
+      `<span class="spinner-border spinner-border-sm"></span> ${tText("Đang xử lý...", "Processing...")}`,
     );
 
   // 3. Gửi Ajax
@@ -1552,7 +1566,7 @@ function submitSrtExport() {
             const blob = new Blob([byteArray], { type: "text/srt" });
             a.href = URL.createObjectURL(blob);
           } catch (e) {
-            alert("Lỗi tạo file tải xuống!");
+            alert(tText("Lỗi tạo file tải xuống!", "Error creating download file!"));
             return;
           }
         }
@@ -1569,7 +1583,7 @@ function submitSrtExport() {
         let newDownloadBtn = `
                     <a href="${res.download_url}" download="${res.filename || "subtitle.srt"}"
                         class="dh-delete-btn" 
-                        title="Tải xuống SRT"
+                        title="${tText("Tải xuống SRT", "Download SRT")}"
                         style="color: #667eea; border-color: #667eea; display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">
                         <i class="bi bi-file-earmark-arrow-down-fill"></i>
                     </a>
@@ -1591,17 +1605,21 @@ function submitSrtExport() {
         if (typeof showToast === "function") {
           showToast("✅ Tạo & Tải phụ đề thành công!");
         } else if (typeof toastr !== "undefined") {
-          toastr.success("Đã tạo file SRT thành công!");
+          toastr.success(
+            tText("Đã tạo file SRT thành công!", "SRT file created successfully!"),
+          );
         }
       } else {
-        alert("⚠️ " + (res.message || "Lỗi không xác định từ server"));
+        alert(
+          `⚠️ ${res.message || tText("Lỗi không xác định từ server", "Unknown error from server")}`,
+        );
       }
     },
     error: function (xhr, status, error) {
       $btn.prop("disabled", false).text(oldText);
       console.error("❌ AJAX Error Raw:", xhr.responseText);
 
-      let errorMsg = "Lỗi kết nối server";
+      let errorMsg = tText("Lỗi kết nối server", "Server connection error");
       try {
         let errJson = JSON.parse(xhr.responseText);
         if (errJson.message) errorMsg = errJson.message;
@@ -1639,14 +1657,17 @@ function showBulkDeleteConfirm(count, onConfirmCallback) {
                 <i class="bi bi-trash3-fill" style="font-size: 22px; color: #fff;"></i>
             </div>
 
-            <h3 style="margin: 0 0 10px 0; font-size: 18px; font-weight: 700; color: #fff;">Xác nhận xóa?</h3>
+            <h3 style="margin: 0 0 10px 0; font-size: 18px; font-weight: 700; color: #fff;">${tText("Xác nhận xóa?", "Confirm deletion?")}</h3>
             <p style="color: #999; font-size: 14px; margin-bottom: 24px; line-height: 1.5;">
-                Bạn có chắc chắn muốn xóa vĩnh viễn <b style="color:#fff">${count}</b> task này?<br>Hành động này không thể hoàn tác.
+                ${tText(
+                  `Bạn có chắc chắn muốn xóa vĩnh viễn <b style="color:#fff">${count}</b> task này?<br>Hành động này không thể hoàn tác.`,
+                  `Are you sure you want to permanently delete <b style="color:#fff">${count}</b> task(s)?<br>This action cannot be undone.`,
+                )}
             </p>
 
             <div style="display: flex; gap: 10px;">
-                <button id="bdCancelBtn" style="flex: 1; padding: 12px; border-radius: 10px; border: 1px solid #333; background: transparent; color: #ccc; font-weight: 500; cursor: pointer;">Hủy bỏ</button>
-                <button id="bdConfirmBtn" style="flex: 1; padding: 12px; border-radius: 10px; border: none; background: #fff; color: #000; font-weight: 700; cursor: pointer;">Xóa ngay</button>
+                <button id="bdCancelBtn" style="flex: 1; padding: 12px; border-radius: 10px; border: 1px solid #333; background: transparent; color: #ccc; font-weight: 500; cursor: pointer;">${tText("Hủy bỏ", "Cancel")}</button>
+                <button id="bdConfirmBtn" style="flex: 1; padding: 12px; border-radius: 10px; border: none; background: #fff; color: #000; font-weight: 700; cursor: pointer;">${tText("Xóa ngay", "Delete now")}</button>
             </div>
         </div>
         <style>
@@ -1670,7 +1691,10 @@ function showBulkDeleteConfirm(count, onConfirmCallback) {
   // Nút Xác nhận
   $("#bdConfirmBtn").on("click", function () {
     // Hiệu ứng loading nút
-    $(this).prop("disabled", true).css("opacity", "0.7").text("Đang xóa...");
+    $(this)
+      .prop("disabled", true)
+      .css("opacity", "0.7")
+      .text(tText("Đang xóa...", "Deleting..."));
     $("#bdCancelBtn").prop("disabled", true);
 
     // Gọi callback xóa
@@ -1736,7 +1760,7 @@ function showSrtProcessingPopup(taskId) {
                 font-weight: 600;
                 color: #fff;
                 letter-spacing: -0.5px;
-            ">Đang khởi tạo SRT</h3>
+            ">${tText("Đang khởi tạo SRT", "Initializing SRT")}</h3>
             
             <p style="
                 color: #888;
@@ -1745,8 +1769,10 @@ function showSrtProcessingPopup(taskId) {
                 margin-bottom: 30px;
                 font-weight: 400;
             ">
-                Hệ thống đang xử lý yêu cầu.<br>
-                Vui lòng đợi khoảng <b>30s - 1 phút</b>.
+                ${tText(
+                  "Hệ thống đang xử lý yêu cầu.<br>Vui lòng đợi khoảng <b>30s - 1 phút</b>.",
+                  "The system is processing your request.<br>Please wait about <b>30s - 1 minute</b>.",
+                )}
             </p>
 
             <div style="
@@ -1783,7 +1809,7 @@ function showSrtProcessingPopup(taskId) {
                 cursor: pointer;
                 transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s;
             ">
-                Đã hiểu
+                ${tText("Đã hiểu", "Got it")}
             </button>
         </div>
     </div>
@@ -1906,7 +1932,9 @@ function startDetailedPolling(taskId, historyId, startTime) {
         );
 
         // 🔥 [1] CẬP NHẬT MODAL
-        $elapsedSpan.attr("data-progress", progress).text(`Xử lý ${progress}%`);
+        $elapsedSpan
+          .attr("data-progress", progress)
+          .text(`${tText("Xử lý", "Processing")} ${progress}%`);
 
         $(`#dh-progress-${taskId}`).css("width", progress + "%");
 
@@ -2071,7 +2099,7 @@ async function bulkDelete() {
   let checkedBoxes = $(".dh-item-checkbox:checked");
   if (checkedBoxes.length === 0) {
     if (typeof showToast === "function") showToast("⚠️ Chưa chọn task nào!");
-    else alert("Chưa chọn task nào!");
+    else alert(tText("Chưa chọn task nào!", "No task selected!"));
     return;
   }
 
@@ -2109,7 +2137,7 @@ async function bulkDelete() {
 async function bulkDownload(type) {
   let checkedBoxes = $(".dh-item-checkbox:checked");
   if (checkedBoxes.length === 0) {
-    alert("Chưa chọn file nào!");
+    alert(tText("Chưa chọn file nào!", "No file selected!"));
     return;
   }
 
@@ -2119,7 +2147,9 @@ async function bulkDownload(type) {
   let oldHtml = $btn.html();
   $btn
     .prop("disabled", true)
-    .html('<span class="spinner-border spinner-border-sm"></span> Đang nén...');
+    .html(
+      `<span class="spinner-border spinner-border-sm"></span> ${tText("Đang nén...", "Compressing...")}`,
+    );
 
   try {
     let zip = new JSZip();
@@ -2168,7 +2198,10 @@ async function bulkDownload(type) {
 
     if (count === 0) {
       alert(
-        "Không có file nào sẵn sàng để tải (Các task có thể đang chạy hoặc lỗi).",
+        tText(
+          "Không có file nào sẵn sàng để tải (Các task có thể đang chạy hoặc lỗi).",
+          "No files are ready to download (tasks may be running or failed).",
+        ),
       );
       $btn.prop("disabled", false).html(oldHtml);
       return;
@@ -2176,7 +2209,7 @@ async function bulkDownload(type) {
 
     // 3. Nén và Tải
     $btn.html(
-      '<span class="spinner-border spinner-border-sm"></span> Đang lưu...',
+      `<span class="spinner-border spinner-border-sm"></span> ${tText("Đang lưu...", "Saving...")}`,
     );
     let content = await zip.generateAsync({ type: "blob" });
 
@@ -2191,7 +2224,7 @@ async function bulkDownload(type) {
       showToast(`✅ Đã tải ${count} file thành công!`);
   } catch (e) {
     console.error("Lỗi zip:", e);
-    alert("Có lỗi xảy ra.");
+    alert(tText("Có lỗi xảy ra.", "An error occurred."));
   } finally {
     $btn.prop("disabled", false).html(oldHtml);
   }
@@ -2202,7 +2235,9 @@ function openDeleteModal(taskId, textPreview, deleteType, cost = 0) {
   pendingDeleteCost = cost;
 
   // Cập nhật nội dung Modal
-  $("#dmTextPreview").text(textPreview || "Không có nội dung preview");
+  $("#dmTextPreview").text(
+    textPreview || tText("Không có nội dung preview", "No preview content"),
+  );
 
   // Nếu là xóa lịch sử (đã xong/lỗi) thì ẩn dòng thông báo hoàn tiền màu tím
   if (deleteType === "history") {
@@ -2305,7 +2340,9 @@ function deleteTaskWithRefund(taskId, originalCost) {
           setTimeout(() => silentRefreshHistory(), 500);
         }
       } else {
-        alert("❌ Lỗi: " + (res.message || "Không thể xóa task"));
+        alert(
+          `${tText("❌ Lỗi:", "❌ Error:")} ${res.message || tText("Không thể xóa task", "Unable to delete task")}`,
+        );
 
         // Re-enable nút
         $(`#btn-delete-${taskId}, .dh-delete-btn[onclick*="${taskId}"]`)
@@ -2321,7 +2358,7 @@ function deleteTaskWithRefund(taskId, originalCost) {
         error: error,
       });
 
-      let errorMsg = "Lỗi kết nối";
+      let errorMsg = tText("Lỗi kết nối", "Connection error");
 
       try {
         let errJson = JSON.parse(xhr.responseText);
@@ -2329,17 +2366,18 @@ function deleteTaskWithRefund(taskId, originalCost) {
           errorMsg = errJson.message;
         }
       } catch (e) {
-        errorMsg = xhr.responseText || "Lỗi không xác định";
+        errorMsg =
+          xhr.responseText || tText("Lỗi không xác định", "Unknown error");
       }
 
       if (xhr.status === 429) {
-        errorMsg = "Quá nhiều request, vui lòng đợi";
+        errorMsg = tText("Quá nhiều request, vui lòng đợi", "Too many requests, please wait");
       } else if (xhr.status === 403) {
-        errorMsg = "Không có quyền xóa task này";
+        errorMsg = tText("Không có quyền xóa task này", "No permission to delete this task");
       } else if (xhr.status === 404) {
-        errorMsg = "Task không tồn tại";
+        errorMsg = tText("Task không tồn tại", "Task does not exist");
       } else if (xhr.status === 500) {
-        errorMsg = "Lỗi server";
+        errorMsg = tText("Lỗi server", "Server error");
       }
 
       alert("❌ " + errorMsg);
@@ -2354,7 +2392,12 @@ function deleteTaskWithRefund(taskId, originalCost) {
 $(document).on("click", "#btnConfirmDelete", function () {
   // 1. Kiểm tra ID toàn cục
   if (!pendingDeleteId) {
-    alert("Lỗi: Không tìm thấy ID tác vụ để xóa!");
+    alert(
+      tText(
+        "Lỗi: Không tìm thấy ID tác vụ để xóa!",
+        "Error: Task ID to delete not found!",
+      ),
+    );
     return;
   }
 
@@ -2424,13 +2467,16 @@ $(document).ready(function () {
     }).html(`
             <div style="text-align: center; max-width: 500px; padding: 40px; border: 1px solid #333; border-radius: 20px; background: #111;">
                 <i class="bi bi-cone-striped" style="font-size: 60px; color: #f59e0b; display: block; margin-bottom: 20px;"></i>
-                <h1 style="font-size: 24px; margin-bottom: 10px; font-weight: 700;">Server KingCong Đang Bảo Trì</h1>
+                <h1 style="font-size: 24px; margin-bottom: 10px; font-weight: 700;">${tText("Server KingCong Đang Bảo Trì", "KingCong Server Under Maintenance")}</h1>
                 <p style="color: #888; font-size: 14px; margin-bottom: 30px;">
-                    Tất cả nhà cung cấp đang được nâng cấp.<br>Vui lòng quay lại sau hoặc sử dụng Server khác.
+                    ${tText(
+                      "Tất cả nhà cung cấp đang được nâng cấp.<br>Vui lòng quay lại sau hoặc sử dụng Server khác.",
+                      "All providers are being upgraded.<br>Please come back later or use another server.",
+                    )}
                 </p>
                 <div style="display:flex; gap:10px; justify-content:center;">
-                    <a href="/" style="padding: 10px 20px; background: #333; color: #fff; text-decoration: none; border-radius: 8px;">Trang Chủ</a>
-                    <a href="/ai/tts" style="padding: 10px 20px; background: #667eea; color: #fff; text-decoration: none; border-radius: 8px;">Sang Server 1</a>
+                    <a href="/" style="padding: 10px 20px; background: #333; color: #fff; text-decoration: none; border-radius: 8px;">${tText("Trang Chủ", "Home")}</a>
+                    <a href="/ai/tts" style="padding: 10px 20px; background: #667eea; color: #fff; text-decoration: none; border-radius: 8px;">${tText("Sang Server 1", "Go to Server 1")}</a>
                 </div>
             </div>
         `);
@@ -2455,7 +2501,7 @@ $(document).ready(function () {
       $btn
         .find(".provider-desc")
         .html(
-          '<span style="color:#ef4444; font-weight:bold">🔴 Đang bảo trì</span>',
+          `<span style="color:#ef4444; font-weight:bold">${tText("🔴 Đang bảo trì", "🔴 Under maintenance")}</span>`,
         );
 
       showToast("⚠️ ElevenLabs bảo trì. Đã chuyển sang Minimax.");
@@ -2480,7 +2526,7 @@ $(document).ready(function () {
       $btn
         .find(".provider-desc")
         .html(
-          '<span style="color:#ef4444; font-weight:bold">🔴 Đang bảo trì</span>',
+          `<span style="color:#ef4444; font-weight:bold">${tText("🔴 Đang bảo trì", "🔴 Under maintenance")}</span>`,
         );
 
       showToast("⚠️ Minimax bảo trì. Đã chuyển sang ElevenLabs.");
@@ -2505,7 +2551,7 @@ $(document).ready(function () {
       $btn11
         .find(".provider-desc")
         .html(
-          '<span style="color:#ef4444; font-weight:bold">🔴 Đang bảo trì</span>',
+          `<span style="color:#ef4444; font-weight:bold">${tText("🔴 Đang bảo trì", "🔴 Under maintenance")}</span>`,
         );
 
       // Disable nút Minimax
@@ -2518,7 +2564,7 @@ $(document).ready(function () {
       $btnMM
         .find(".provider-desc")
         .html(
-          '<span style="color:#ef4444; font-weight:bold">🔴 Đang bảo trì</span>',
+          `<span style="color:#ef4444; font-weight:bold">${tText("🔴 Đang bảo trì", "🔴 Under maintenance")}</span>`,
         );
 
       showToast("⚠️ ElevenLabs & Minimax bảo trì. Đã chuyển sang KingCong.");
@@ -2662,7 +2708,7 @@ $(document).ready(function () {
     $("body").empty().css("background", "#000").html(`
             <div style="height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff;">
                 <h1>🚧 Hệ thống đang bảo trì</h1>
-                <p>Đang chuyển hướng...</p>
+                <p>${tText("Đang chuyển hướng...", "Redirecting...")}</p>
             </div>
         `);
 
@@ -2682,7 +2728,10 @@ $(document).ready(function () {
       console.log("✅ User được dùng Backup. Giữ nguyên ElevenLabs.");
       setTimeout(() => {
         $('.provider-option[data-provider="elevenlabs"] .provider-desc').html(
-          'Đang dùng <strong style="color: #667eea;">Backup (Miễn phí)</strong>',
+          tText(
+            'Đang dùng <strong style="color: #667eea;">Backup (Miễn phí)</strong>',
+            'Using <strong style="color: #667eea;">Backup (Free)</strong>',
+          ),
         );
         showToast("ℹ️ ElevenLabs đang dùng Backup (miễn phí)", "info");
       }, 300);
@@ -2726,7 +2775,9 @@ $(document).ready(function () {
   if (isElevenLabsDown && isBackupEligible && !isGenaiBackupDown) {
     $('.provider-option[data-provider="elevenlabs"] .provider-desc')
       .css("color", "#888")
-      .text("Đang sử dụng Backup (Miễn phí).");
+      .text(
+        tText("Đang sử dụng Backup (Miễn phí).", "Using Backup (Free)."),
+      );
 
     // Cập nhật nút chọn hiện tại
     if (currentProvider === "elevenlabs") {
@@ -2881,7 +2932,7 @@ function updateEmptyStateTips(provider) {
     $("#emptyTips").html(`
             <div class="es-tip">
                 <i class="bi bi-lightbulb-fill" style="color: var(--warning);"></i>
-                <span>💡 Chèn <b>&lt;#0.5#&gt;</b> để ngừng 0.5 giây.</span>
+                <span>${tText("💡 Chèn <b>&lt;#0.5#&gt;</b> để ngừng 0.5 giây.", "💡 Insert <b>&lt;#0.5#&gt;</b> for a 0.5s pause.")}</span>
             </div>
             <div class="es-tip">
                 <i class="bi bi-folder-fill" style="color: #3b82f6;"></i>
@@ -2895,7 +2946,7 @@ function updateEmptyStateTips(provider) {
     $("#emptyTips").html(`
             <div class="es-tip">
                 <i class="bi bi-lightbulb-fill" style="color: var(--warning);"></i>
-                <span>Chèn <code class="es-code">[delay=0.5s]</code> để nghỉ 0.5 giây</span>
+                <span>${tText("Chèn <code class=\"es-code\">[delay=0.5s]</code> để nghỉ 0.5 giây", "Insert <code class=\"es-code\">[delay=0.5s]</code> for a 0.5s pause")}</span>
             </div>
             <div class="es-tip">
                 <i class="bi bi-folder-fill" style="color: #3b82f6;"></i>
@@ -2916,7 +2967,7 @@ function updateEmptyStateTips(provider) {
             </div>
             <div class="es-tip">
                 <i class="bi bi-lightbulb-fill" style="color: var(--warning);"></i>
-                <span>Chèn <code class="es-code">&lt;break time="0.5s" /&gt;</code> để nghỉ 0.5 giây</span>
+                <span>${tText("Chèn <code class=\"es-code\">&lt;break time=\"0.5s\" /&gt;</code> để nghỉ 0.5 giây", "Insert <code class=\"es-code\">&lt;break time=\"0.5s\" /&gt;</code> for a 0.5s pause")}</span>
             </div>
             <div class="es-tip">
                 <i class="bi bi-folder-fill" style="color: #3b82f6;"></i>
@@ -3236,7 +3287,7 @@ function selectProvider(provider) {
   $("#punctuationDelaySliders").hide();
 
   // Reset các lựa chọn cũ
-  $("#selectedVoiceName").text("Chọn giọng nói...");
+  $("#selectedVoiceName").text(tText("Chọn giọng nói...", "Select voice..."));
   $("#voiceIdVal").val("");
 
   // Đóng dropdown menu
@@ -3358,7 +3409,7 @@ function loadResources() {
             loadedModels.elevenlabs.push({
               id: "genai_backup",
               name: "GenAI Backup Mode",
-              description: "Chế độ dự phòng",
+              description: tText("Chế độ dự phòng", "Backup mode"),
               cost_factor: 1,
             });
           }
@@ -3513,7 +3564,7 @@ function renderMinimaxModels() {
   // 🔥 FIX: Kiểm tra rỗng
   if (models.length === 0) {
     $("#minimaxModelDropdown").html(
-      '<div style="padding:10px; color:#888;">Không có model khả dụng</div>',
+      `<div style="padding:10px; color:#888;">${tText("Không có model khả dụng", "No models available")}</div>`,
     );
     $("#selectedMinimaxModel").text("Default");
     return;
@@ -3524,9 +3575,9 @@ function renderMinimaxModels() {
   models.forEach((m, index) => {
     let badge = "";
     if (m.cost_factor < 1) {
-      badge = `<span style="color: #fbbf24; font-size: 11px; margin-left: 6px;">${Math.round((1 - m.cost_factor) * 100)}% rẻ hơn</span>`;
+      badge = `<span style="color: #fbbf24; font-size: 11px; margin-left: 6px;">${Math.round((1 - m.cost_factor) * 100)}% ${tText("rẻ hơn", "cheaper")}</span>`;
     } else if (m.cost_factor > 1) {
-      badge = `<span style="color: #4ade80; font-size: 11px; margin-left: 6px;">Chất lượng cao</span>`;
+      badge = `<span style="color: #4ade80; font-size: 11px; margin-left: 6px;">${tText("Chất lượng cao", "High quality")}</span>`;
     }
 
     let isActive = index === 0 ? "active" : "";
@@ -3541,7 +3592,7 @@ function renderMinimaxModels() {
                 <div style="font-weight: 600; color: #fff; margin-bottom: 3px;">
                     ${m.name}${badge}
                 </div>
-                <div style="font-size: 11px; color: #777;">${m.description || "Xử lý văn bản tự nhiên"}</div>
+                <div style="font-size: 11px; color: #777;">${m.description || tText("Xử lý văn bản tự nhiên", "Natural text processing")}</div>
             </div>
             <i class="bi bi-check-lg check-icon"></i>
         </div>`;
@@ -3642,7 +3693,7 @@ function renderElevenLabsModels() {
     let displayName = defaultModel.name;
 
     if (defaultModel.id === "eleven_multilingual_v2") {
-      displayName += " (Không dùng cho Tiếng Việt)";
+      displayName += tText(" (Không dùng cho Tiếng Việt)", " (Not for Vietnamese)");
     }
 
     $("#selectedModelName").text(displayName);
@@ -3796,7 +3847,7 @@ function updateElevenLabsUI(modelId) {
 const elevenLabsModelsData = {
   eleven_v3: {
     name: "Eleven v3 (Alpha)",
-    badge: "Mới nhất",
+    badge: tText("Mới nhất", "Newest"),
     badgeType: "new",
     description:
       "Mô hình biểu đạt tốt nhất. Hỗ trợ hơn 70 ngôn ngữ. Cần nhiều kỹ thuật prompt engineering hơn so với các mô hình trước đây. Hiện đang ở giai đoạn alpha và độ ổn định sẽ được cải thiện theo thời gian.",
@@ -4088,7 +4139,7 @@ function loadSharedVoices() {
         renderVoiceGridProgressive(sharedVoices);
       } else {
         console.error("❌ Invalid response");
-        showVoiceErrorState("Lỗi dữ liệu");
+        showVoiceErrorState(tText("Lỗi dữ liệu", "Data error"));
       }
       sharedVoicesLoading = false;
     },
@@ -4096,7 +4147,7 @@ function loadSharedVoices() {
     error: function (xhr, status, error) {
       console.error("❌ AJAX Error:", { status, error });
       console.error("Response:", xhr.responseText);
-      showVoiceErrorState("Lỗi kết nối", error);
+      showVoiceErrorState(tText("Lỗi kết nối", "Connection error"), error);
       sharedVoicesLoading = false;
     },
   });
@@ -4160,7 +4211,7 @@ function loadKingCongVoices() {
         renderVoiceGridProgressive(kingcongVoices);
       } else {
         console.error("❌ Invalid KingCong response");
-        showVoiceErrorState("Lỗi dữ liệu KingCong");
+        showVoiceErrorState(tText("Lỗi dữ liệu KingCong", "KingCong data error"));
       }
       kingcongVoicesLoading = false;
     },
@@ -4168,7 +4219,10 @@ function loadKingCongVoices() {
     error: function (xhr, status, error) {
       console.error("❌ KingCong AJAX Error:", { status, error });
       console.error("Response:", xhr.responseText);
-      showVoiceErrorState("Lỗi kết nối KingCong", error);
+      showVoiceErrorState(
+        tText("Lỗi kết nối KingCong", "KingCong connection error"),
+        error,
+      );
       kingcongVoicesLoading = false;
     },
   });
@@ -4228,14 +4282,14 @@ function loadKingCongClonedVoices() {
         console.log(`✅ SUCCESS: ${kingcongClonedVoices.length} KingCong cloned voices loaded!`);
         renderVoiceGridProgressive(kingcongClonedVoices);
       } else {
-        showVoiceErrorState("Không có giọng nhân bản");
+        showVoiceErrorState(tText("Không có giọng nhân bản", "No cloned voices"));
       }
       kingcongClonedVoicesLoading = false;
     },
 
     error: function (xhr, status, error) {
       console.error("❌ KingCong Cloned AJAX Error:", { status, error });
-      showVoiceErrorState("Lỗi kết nối", error);
+      showVoiceErrorState(tText("Lỗi kết nối", "Connection error"), error);
       kingcongClonedVoicesLoading = false;
     },
   });
@@ -5152,7 +5206,7 @@ function renderVoiceGrid(voices) {
     $("#voiceGrid").html(`
             <div style="grid-column: 1 / -1; text-align:center; padding:60px 20px;">
                 <i class="bi bi-inbox" style="font-size:48px; color:#555; display:block; margin-bottom:15px;"></i>
-                <p style="color:#888; font-size:14px;">Không tìm thấy giọng nói</p>
+                <p style="color:#888; font-size:14px;">${tText("Không tìm thấy giọng nói", "No voices found")}</p>
                 <button onclick="resetFilters()" style="
                     margin-top:15px;
                     background: transparent;
@@ -5314,7 +5368,9 @@ function switchVoiceTab(tab) {
     }
 
     if (sourceList.length === 0) {
-      showVoiceErrorState("Không tìm thấy giọng mặc định.");
+      showVoiceErrorState(
+        tText("Không tìm thấy giọng mặc định.", "Default voice not found."),
+      );
     } else {
       renderVoiceGridProgressive(sourceList);
     }
@@ -5328,7 +5384,12 @@ function switchVoiceTab(tab) {
       // API đã trả về theo thứ tự newest rồi
       renderVoiceGridProgressive(sharedVoices);
     } else {
-      showVoiceErrorState("Thư viện trống hoặc lỗi tải dữ liệu.");
+      showVoiceErrorState(
+        tText(
+          "Thư viện trống hoặc lỗi tải dữ liệu.",
+          "Library is empty or failed to load data.",
+        ),
+      );
     }
   } else if (tab === "favorites") {
     let allVoices = [...(loadedVoices[currentProvider] || [])];
@@ -5648,7 +5709,7 @@ function showVoiceLoadingSpinner() {
   $("#voiceGrid").html(`
         <div style="color:#888; text-align:center; padding:60px 20px; grid-column: 1 / -1;">
             <div class="spinner-border" style="width:40px; height:40px; color:#667eea;"></div>
-            <p style="margin-top:15px; font-size:14px;">Đang tải thư viện giọng nói...</p>
+            <p style="margin-top:15px; font-size:14px;">${tText("Đang tải thư viện giọng nói...", "Loading voice library...")}</p>
             <p style="font-size:12px; color:#666; margin-top:8px;">Vui lòng đợi trong giây lát</p>
         </div>
     `);
@@ -5699,7 +5760,7 @@ function waitForSharedVoicesLoad() {
     } else if (pollAttempts >= maxAttempts) {
       clearInterval(checkInterval);
       console.warn("⚠️ Polling timeout");
-      showVoiceErrorState("Timeout", "Vui lòng thử lại");
+      showVoiceErrorState("Timeout", tText("Vui lòng thử lại", "Please try again"));
     }
   }, 200);
 }
@@ -5883,11 +5944,11 @@ function deleteClone(voiceId) {
     },
     function (res) {
       if (res.status === "success") {
-        alert("Đã xóa thành công!");
+        alert(tText("Đã xóa thành công!", "Deleted successfully!"));
         // Reload lại list
         loadClonedVoicesAndMerge([]);
       } else {
-        alert("Lỗi: " + res.message);
+        alert(`${tText("Lỗi:", "Error:")} ${res.message}`);
       }
     },
     "json",
@@ -6027,7 +6088,7 @@ function filterVoices() {
       $("#voiceGrid").html(`
                 <div style="grid-column: 1 / -1; text-align:center; padding:60px 20px;">
                     <div class="spinner-border" style="width:30px; height:30px; color:#667eea;"></div>
-                    <p style="color:#888; margin-top:15px; font-size:14px;">Đang tìm ID trên server...</p>
+                    <p style="color:#888; margin-top:15px; font-size:14px;">${tText("Đang tìm ID trên server...", "Searching ID on server...")}</p>
                 </div>
             `);
 
@@ -6041,7 +6102,7 @@ function filterVoices() {
       $("#voiceGrid").html(`
                 <div style="grid-column: 1 / -1; text-align:center; padding:60px 20px;">
                     <i class="bi bi-search" style="font-size:48px; color:#333; display:block; margin-bottom:15px;"></i>
-                    <p style="color:#888; font-size:14px;">Không tìm thấy kết quả phù hợp</p>
+                    <p style="color:#888; font-size:14px;">${tText("Không tìm thấy kết quả phù hợp", "No matching results")}</p>
                     <button onclick="resetFilters()" class="filter-reset-btn" style="margin: 15px auto; width: auto; padding: 8px 16px;">
                         Xóa bộ lọc
                     </button>
@@ -7037,7 +7098,7 @@ function refreshHistory() {
   $("#historyListContainer").html(`
         <div style="text-align:center; padding:40px 0; color:#666;">
             <div class="spinner-border spinner-border-sm" role="status"></div>
-            <div style="margin-top:10px; font-size:12px;">Đang làm mới...</div>
+            <div style="margin-top:10px; font-size:12px;">${tText("Đang làm mới...", "Refreshing...")}</div>
         </div>
     `);
 
@@ -7383,7 +7444,7 @@ function proceedWithTTS() {
         switchTab("history");
         resetUI();
       } else {
-        alert("Lỗi: " + res.message);
+        alert(`${tText("Lỗi:", "Error:")} ${res.message}`);
         resetUI();
       }
     },
@@ -7426,7 +7487,7 @@ function proceedWithTTS() {
         resetUI();
         showToast("⏳ Yêu cầu đang xử lý ngầm, vui lòng chờ...");
       } else {
-        let errorMsg = "Lỗi kết nối";
+        let errorMsg = tText("Lỗi kết nối", "Connection error");
         try {
           let errRes = JSON.parse(xhr.responseText);
           if (errRes.message) errorMsg = errRes.message;
@@ -7524,8 +7585,7 @@ function updateEstimatedCost() {
       badgeHtml =
         '<i class="bi bi-stars" style="margin-right: 4px;"></i>+15% (Model HD)';
     } else if (isClone) {
-      badgeHtml =
-        '<i class="bi bi-exclamation-triangle-fill" style="margin-right: 4px;"></i>+30% (Giọng Clone)';
+      badgeHtml = `<i class="bi bi-exclamation-triangle-fill" style="margin-right: 4px;"></i>+30% ${tText("(Giọng Clone)", "(Voice Clone)")}`;
     }
 
     if (badgeHtml) {
@@ -7557,7 +7617,9 @@ function updateEstimatedCost() {
     $("#elevenlabs-buttons-container").hide();
 
     // Badge mặc định +15% (SRT)
-    $("#elevenlabs-badge").html('+15% phí').show();
+    $("#elevenlabs-badge")
+      .html(`+15% ${tText("phí", "fee")}`)
+      .show();
 
     // Hiển thị cost cho KingCong
     $("#estimatedCostDisplay").html(
@@ -7574,7 +7636,7 @@ function updateEstimatedCost() {
 
     if (isGenAIBackup) {
       $("#estimatedCostDisplay").html(
-        '<span class="badge bg-success">Miễn phí (Backup)</span>',
+        `<span class="badge bg-success">${tText("Miễn phí (Backup)", "Free (Backup)")}</span>`,
       );
       $("#subtitleCheck").prop("checked", false).prop("disabled", true);
       $("#elevenlabs-cost-ui .toggle-switch").css({
@@ -7708,7 +7770,113 @@ function pollForNewTask(tempTaskId, originalText) {
 }
 
 // 🔥 TOAST HELPER
-function showToast(msg) {
+function translateToastMessage(msg) {
+  if (currentLang === "vi" || !msg) return msg;
+
+  const translations = {
+    "⚠️ Vui lòng nhập văn bản trước!": "⚠️ Please enter text first!",
+    "✅ Đã chuẩn hóa để AI đọc chuẩn!": "✅ Text normalized for accurate TTS!",
+    "✅ Tạo & Tải phụ đề thành công!": "✅ Subtitle created and downloaded!",
+    "⚠️ Chưa chọn task nào!": "⚠️ No task selected!",
+    "✅ Đã xóa xong!": "✅ Deleted!",
+    "✅ Đã xóa task (Không hoàn tiền do đã xử lý)":
+      "✅ Task deleted (no refund because it was processed)",
+    "⚠️ ElevenLabs bảo trì. Đã chuyển sang Minimax.":
+      "⚠️ ElevenLabs under maintenance. Switched to Minimax.",
+    "⚠️ Minimax bảo trì. Đã chuyển sang ElevenLabs.":
+      "⚠️ Minimax under maintenance. Switched to ElevenLabs.",
+    "⚠️ ElevenLabs & Minimax bảo trì. Đã chuyển sang KingCong.":
+      "⚠️ ElevenLabs & Minimax under maintenance. Switched to KingCong.",
+    "ℹ️ ElevenLabs đang dùng Backup (miễn phí)":
+      "ℹ️ ElevenLabs is using Backup (free)",
+    "⚠️ ElevenLabs và hệ thống Backup đều đang bảo trì.":
+      "⚠️ ElevenLabs and Backup system are under maintenance.",
+    "⚠️ ElevenLabs đang bảo trì. Đã chuyển sang Minimax.":
+      "⚠️ ElevenLabs under maintenance. Switched to Minimax.",
+    "⚠️ Minimax đang bảo trì.": "⚠️ Minimax under maintenance.",
+    "❌ ElevenLabs (KingCong) đang bảo trì!":
+      "❌ ElevenLabs (KingCong) is under maintenance!",
+    "❌ Minimax (KingCong) đang bảo trì!":
+      "❌ Minimax (KingCong) is under maintenance!",
+    "❌ KingCong AI đang bảo trì!": "❌ KingCong AI is under maintenance!",
+    "❌ ElevenLabs đang bảo trì và không có Backup!":
+      "❌ ElevenLabs is under maintenance and no Backup is available!",
+    "❌ Minimax đang bảo trì!": "❌ Minimax is under maintenance!",
+    "💔 Đã xóa khỏi yêu thích": "💔 Removed from favorites",
+    "❤️ Đã thêm vào yêu thích": "❤️ Added to favorites",
+    "⚠️ Không có audio preview": "⚠️ No audio preview available",
+    "⚠️ Không thể phát audio": "⚠️ Unable to play audio",
+    "Không tìm thấy ô nhập văn bản!": "Text input not found!",
+    "Vui lòng nhập từ 0.1 đến 10 giây!":
+      "Please enter between 0.1 and 10 seconds!",
+    "Vui lòng nhập từ gốc!": "Please enter the original word!",
+    "Vui lòng nhập cách phát âm!": "Please enter the pronunciation!",
+    "Từ này đã tồn tại!": "This word already exists!",
+    "Đã xóa!": "Deleted!",
+    "⚠️ Vui lòng chọn giọng nói!": "⚠️ Please select a voice!",
+    "⚠️ Vui lòng nhập nội dung!": "⚠️ Please enter content!",
+    "⚠️ Vui lòng nhập trên 100 ký tự để tạo giọng nói!":
+      "⚠️ Please enter more than 100 characters to generate voice!",
+    "✅ Đã thêm vào hàng đợi (Miễn phí)":
+      "✅ Added to queue (Free)",
+    "✅ Đang xử lý...": "✅ Processing...",
+    "⏳ Yêu cầu đang xử lý ngầm, vui lòng chờ...":
+      "⏳ Request is processing in the background, please wait...",
+    "✅ Đã xóa task": "✅ Task deleted",
+    "❌ Lỗi: Task ID không hợp lệ": "❌ Error: Invalid Task ID",
+    "✅ Đã xóa task thành công": "✅ Task deleted successfully",
+    "❌ Không tìm thấy thông tin task": "❌ Task info not found",
+    "❌ Lỗi: Không tìm thấy task ID": "❌ Error: Task ID not found",
+    "✅ Đã tạo lại tác vụ thành công!": "✅ Task remade successfully!",
+    "✅ Đã tải file vào ô nhập liệu": "✅ File loaded into input",
+    "⚠️ Vui lòng chọn giọng nói trước!":
+      "⚠️ Please select a voice first!",
+    "⚠️ Chưa có file nào để xử lý": "⚠️ No files to process",
+    "⚠️ Không có văn bản để xóa": "⚠️ No text to delete",
+    "✅ Đã xóa toàn bộ văn bản": "✅ All text cleared",
+    "Đã đặt lại cài đặt Minimax": "Minimax settings reset",
+    "Đã đặt lại cài đặt KingCong": "KingCong settings reset",
+    "Đã đặt lại cài đặt ElevenLabs": "ElevenLabs settings reset",
+    "❌ Không có link tải xuống": "❌ No download link",
+    "⏳ Đang làm mới link tải...": "⏳ Refreshing download link...",
+    "✅ Đã làm mới link tải": "✅ Download link refreshed",
+    "📥 Đang tải xuống...": "📥 Downloading...",
+  };
+
+  if (translations[msg]) return translations[msg];
+
+  const delayMatch = msg.match(/^Đã chèn khoảng dừng\s+(\d+(?:\.\d+)?)s$/);
+  if (delayMatch) return `Inserted delay ${delayMatch[1]}s`;
+
+  const selectMatch = msg.match(/^✅ Đã chọn:\s*(.+)$/);
+  if (selectMatch) return `✅ Selected: ${selectMatch[1]}`;
+
+  const uploadMatch = msg.match(/^✅ Đã tải\s+(\d+)\s+file thành công!$/);
+  if (uploadMatch) {
+    return `✅ Uploaded ${uploadMatch[1]} file(s) successfully!`;
+  }
+
+  const addWordMatch = msg.match(/^Đã thêm:\s*(.+)\s+→\s+(.+)$/);
+  if (addWordMatch) {
+    return `Added: ${addWordMatch[1]} → ${addWordMatch[2]}`;
+  }
+
+  const refundMatch = msg.match(/^✅ Đã xóa task và hoàn\s+(.+)\s+credits$/);
+  if (refundMatch) {
+    return `✅ Deleted task and refunded ${refundMatch[1]} credits`;
+  }
+
+  const directDownloadMatch = msg.match(
+    /^⚠️\s*(.+)\.\s*Đang thử tải trực tiếp\.\.\.$/,
+  );
+  if (directDownloadMatch) {
+    return `⚠️ ${directDownloadMatch[1]}. Trying direct download...`;
+  }
+
+  return msg;
+}
+
+function showToast(msg, type) {
   // Remove existing toast
   $(".custom-toast").remove();
 
@@ -7728,7 +7896,7 @@ function showToast(msg) {
       boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
       border: "1px solid #333",
     })
-    .text(msg);
+    .text(translateToastMessage(msg));
 
   $("body").append(toast);
   setTimeout(() => toast.fadeOut(300, () => toast.remove()), 2500);
@@ -7792,7 +7960,10 @@ function startPolling(taskId) {
 
         // 🎯 Nếu progress = 0 và đang xử lý → giữ "Xử lý..." (KingCong API không có % chi tiết)
         let isProcessing = ["pending", "processing", "doing", "queued"].includes(taskStatus);
-        let displayText = (percent === 0 && isProcessing) ? "Xử lý..." : percent + "%";
+        let displayText =
+          percent === 0 && isProcessing
+            ? tText("Xử lý...", "Processing...")
+            : percent + "%";
 
         // 🔥 [1] CẬP NHẬT SIDEBAR (Thanh progress + Text %)
         $(`#progress-${taskId}`)
@@ -7807,7 +7978,11 @@ function startPolling(taskId) {
           if ($modalRow.length > 0) {
             // Update text trong modal
             $(`#dh-time-elapsed-${taskId}`)
-              .text(isProcessing && percent === 0 ? `Xử lý...` : `${percent}%`)
+              .text(
+                isProcessing && percent === 0
+                  ? tText("Xử lý...", "Processing...")
+                  : `${percent}%`,
+              )
               .attr("data-progress", percent);
 
             // Update progress bar trong modal (nếu có)
@@ -7827,7 +8002,7 @@ function startPolling(taskId) {
         // TRƯỜNG HỢP: ĐANG CHỜ HÀNG ĐỢI
         else if (res.status === "queued") {
           let queueText = res.queue_position
-            ? `Hàng đợi #${res.queue_position}`
+            ? `${tText("Hàng đợi #", "Queue #")}${res.queue_position}`
             : "Đang chờ...";
           console.log("  → In queue:", queueText);
           $(`#time-elapsed-${taskId}`).text(queueText);
@@ -7907,22 +8082,22 @@ function submitCloneVoice() {
   let gender = $("#cloneGender").val();
 
   if (!name) {
-    alert("Vui lòng nhập tên giọng!");
+    alert(tText("Vui lòng nhập tên giọng!", "Please enter voice name!"));
     return;
   }
 
   if (!fileInput) {
-    alert("Vui lòng chọn file MP3!");
+    alert(tText("Vui lòng chọn file MP3!", "Please select an MP3 file!"));
     return;
   }
 
   if (fileInput.type !== "audio/mpeg" && !fileInput.name.endsWith(".mp3")) {
-    alert("Chỉ hỗ trợ file .mp3");
+    alert(tText("Chỉ hỗ trợ file .mp3", "Only .mp3 files are supported"));
     return;
   }
 
   if (fileInput.size > 20 * 1024 * 1024) {
-    alert("File quá lớn! Tối đa 20MB");
+    alert(tText("File quá lớn! Tối đa 20MB", "File too large! Max 20MB"));
     return;
   }
 
@@ -7947,7 +8122,12 @@ function submitCloneVoice() {
     dataType: "json",
     success: function (res) {
       if (res.status === "success") {
-        alert("✅ Clone thành công! Giọng mới đã được thêm vào thư viện.");
+        alert(
+          tText(
+            "✅ Clone thành công! Giọng mới đã được thêm vào thư viện.",
+            "✅ Clone successful! New voice added to library.",
+          ),
+        );
         $("#cloneModal").fadeOut();
         loadResources();
 
@@ -7955,14 +8135,14 @@ function submitCloneVoice() {
         $("#cloneName").val("");
         $("#cloneFile").val("");
       } else {
-        alert("❌ Lỗi: " + res.message);
+        alert(`${tText("❌ Lỗi:", "❌ Error:")} ${res.message}`);
       }
       $("#btnSubmitClone")
         .prop("disabled", false)
         .html('<i class="bi bi-mic"></i> <span>Bắt đầu Clone</span>');
     },
     error: function () {
-      alert("❌ Lỗi kết nối server");
+      alert(tText("❌ Lỗi kết nối server", "❌ Server connection error"));
       $("#btnSubmitClone")
         .prop("disabled", false)
         .html('<i class="bi bi-mic"></i> <span>Bắt đầu Clone</span>');
@@ -8250,7 +8430,7 @@ function deleteTask(taskId, originalCost) {
           }
         });
       } else {
-        alert("❌ Lỗi: " + res.message);
+        alert(`${tText("❌ Lỗi:", "❌ Error:")} ${res.message}`);
         $(`#btn-delete-${taskId}, .dh-delete-btn[onclick*="${taskId}"]`)
           .prop("disabled", false)
           .html('<i class="bi bi-trash"></i>');
@@ -8258,7 +8438,7 @@ function deleteTask(taskId, originalCost) {
     },
     error: function (xhr) {
       console.error("❌ DELETE ERROR:", xhr.responseText);
-      alert("❌ Lỗi kết nối server");
+      alert(tText("❌ Lỗi kết nối server", "❌ Server connection error"));
       $(`#btn-delete-${taskId}, .dh-delete-btn[onclick*="${taskId}"]`)
         .prop("disabled", false)
         .html('<i class="bi bi-trash"></i>');
@@ -8302,7 +8482,7 @@ function addPendingCard(taskId, textPreview, cost, provider, charCount) {
             <div style="display: flex; gap: 8px; align-items: center;">
                 ${costBadge}
                 <span class="hc-status status-pending" id="status-${taskId}" style="${badgeStyle}">
-                    <span id="time-elapsed-${taskId}" style="font-size: 10px;">Xử lý...</span>
+                    <span id="time-elapsed-${taskId}" style="font-size: 10px;">${tText("Xử lý...", "Processing...")}</span>
                 </span>
                 
                 <button onclick="openDeleteModal('${taskId}', '${textPreview.replace(/'/g, "\\'")}', 'refund', ${cost})" 
@@ -8319,7 +8499,7 @@ function addPendingCard(taskId, textPreview, cost, provider, charCount) {
                     "
                     onmouseover="this.style.borderColor='#ef4444'; this.style.color='#ef4444'"
                     onmouseout="this.style.borderColor='#333'; this.style.color='#888'"
-                    title="Xóa task">
+                    title="${tText("Xóa task", "Delete task")}">
                     <i class="bi bi-trash"></i>
                 </button>
             </div>
@@ -8388,7 +8568,7 @@ function addHistoryCard(
         <button onclick="openDeleteModal('${taskId}', '${safeText}', 'refund', ${cost})" 
             id="btn-delete-${taskId}"
             style="background: transparent; border: 1px solid #333; color: #888; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 11px; transition: all 0.2s;"
-            title="Xóa task"><i class="bi bi-trash"></i></button>`;
+            title="${tText("Xóa task", "Delete task")}"><i class="bi bi-trash"></i></button>`;
   } else if (status === "done") {
     iconClass = "bi-check-circle-fill";
     statusTextContent = "Hoàn thành";
@@ -8563,7 +8743,7 @@ function deleteHistoryTask(taskId) {
         error: error,
       });
 
-      let errorMsg = "Lỗi kết nối";
+      let errorMsg = tText("Lỗi kết nối", "Connection error");
 
       // Parse error message từ backend
       try {
@@ -8572,18 +8752,19 @@ function deleteHistoryTask(taskId) {
           errorMsg = errJson.message;
         }
       } catch (e) {
-        errorMsg = xhr.responseText || "Lỗi không xác định";
+        errorMsg =
+          xhr.responseText || tText("Lỗi không xác định", "Unknown error");
       }
 
       // Xử lý các mã lỗi cụ thể
       if (xhr.status === 429) {
         errorMsg = "Quá nhiều request, vui lòng đợi";
       } else if (xhr.status === 403) {
-        errorMsg = "Không có quyền xóa task này";
+        errorMsg = tText("Không có quyền xóa task này", "No permission to delete this task");
       } else if (xhr.status === 404) {
         errorMsg = "Task không tồn tại";
       } else if (xhr.status === 500) {
-        errorMsg = "Lỗi server";
+        errorMsg = tText("Lỗi server", "Server error");
       }
 
       showToast("❌ " + errorMsg);
@@ -8636,7 +8817,7 @@ function updateCardToDone(taskId, audioUrl, srtUrl, jsonUrl, duration) {
   // 🔥 3. NÚT REMAKE
   let remakeBtn = `
         <button class="hc-download-btn" onclick="openRemakeModal('${taskId}')" 
-                title="Tạo lại tác vụ này"
+                title="${tText("Tạo lại tác vụ này", "Remake this task")}"
                 style="
                     background: transparent;
                     border: 1px solid #333;
@@ -8669,12 +8850,12 @@ function updateCardToDone(taskId, audioUrl, srtUrl, jsonUrl, duration) {
 
   let downloadDropdownHtml = `
     <div class="hc-download-wrapper" style="position: relative;">
-        <button class="hc-download-btn" onclick="toggleSidebarDownloadMenu(event, '${taskId}')" title="Tải xuống">
+        <button class="hc-download-btn" onclick="toggleSidebarDownloadMenu(event, '${taskId}')" title="${tText("Tải xuống", "Download")}">
             <i class="bi bi-download"></i>
         </button>
         
         <div class="hc-download-menu" id="sidebar-download-menu-${taskId}" style="display: none;">
-            <div class="hc-download-header">Tải xuống (hết hạn sau 72 giờ)</div>
+            <div class="hc-download-header">${tText("Tải xuống (hết hạn sau 72 giờ)", "Download (expires in 72 hours)")}</div>
             
             <!-- Audio -->
             ${
@@ -8701,12 +8882,12 @@ function updateCardToDone(taskId, audioUrl, srtUrl, jsonUrl, duration) {
                onclick="downloadViaProxy('${srtUrl}', 'subtitle_${taskId}.srt', '${safeText}')" 
                class="hc-download-item">
                 <i class="bi bi-file-earmark-text"></i>
-                <span>Phụ đề (SRT)</span>
+                <span>${tText("Phụ đề (SRT)", "Subtitle (SRT)")}</span>
             </a>`
                 : `
             <div class="hc-download-item hc-download-disabled">
                 <i class="bi bi-file-earmark-text"></i>
-                <span>Phụ đề (SRT)</span>
+                <span>${tText("Phụ đề (SRT)", "Subtitle (SRT)")}</span>
             </div>`
             }
             
@@ -8718,12 +8899,12 @@ function updateCardToDone(taskId, audioUrl, srtUrl, jsonUrl, duration) {
                onclick="downloadViaProxy('${jsonUrl}', 'subtitle_${taskId}.json', '${safeText}')" 
                class="hc-download-item">
                 <i class="bi bi-file-earmark-code"></i>
-                <span>Phụ đề (JSON)</span>
+                <span>${tText("Phụ đề (JSON)", "Subtitle (JSON)")}</span>
             </a>`
                 : `
             <div class="hc-download-item hc-download-disabled">
                 <i class="bi bi-file-earmark-code"></i>
-                <span>Phụ đề (JSON)</span>
+                <span>${tText("Phụ đề (JSON)", "Subtitle (JSON)")}</span>
             </div>`
             }
         </div>
@@ -8826,7 +9007,7 @@ function openRemakeModal(taskId) {
   pendingRemakeTaskId = taskId;
 
   // Text preview
-  let textPreview = taskData.text_input || "Không có nội dung";
+  let textPreview = taskData.text_input || tText("Không có nội dung", "No content");
   if (textPreview.length > 300) {
     textPreview = textPreview.substring(0, 300) + "...";
   }
@@ -9058,7 +9239,7 @@ async function confirmRemakeTask() {
   } catch (error) {
     console.error("❌ Remake error:", error);
 
-    let errorMsg = "Không thể tạo lại task";
+    let errorMsg = tText("Không thể tạo lại task", "Unable to remake task");
     if (error.responseJSON) {
       errorMsg =
         error.responseJSON.message || error.responseJSON.error || errorMsg;
@@ -9072,7 +9253,7 @@ async function confirmRemakeTask() {
     // Reset button
     $btnRemake.removeClass("loading").prop("disabled", false);
     $btnRemake.find("i").removeClass("bi-arrow-repeat").addClass("bi-magic");
-    $btnRemake.find("span").text("Tạo lại ngay");
+    $btnRemake.find("span").text(tText("Tạo lại ngay", "Remake now"));
   }
 }
 
@@ -9294,7 +9475,12 @@ function handleGlobalDrop(files) {
   });
 
   if (validFiles.length === 0) {
-    alert("Không có file hợp lệ! Chỉ chấp nhận .txt, .zip < 5MB");
+    alert(
+      tText(
+        "Không có file hợp lệ! Chỉ chấp nhận .txt, .zip < 5MB",
+        "No valid files! Only .txt, .zip < 5MB accepted",
+      ),
+    );
     return;
   }
 
@@ -9305,15 +9491,18 @@ function handleGlobalDrop(files) {
 
     // Hiện popup yêu cầu chọn giọng
     showModernConfirm(
-      "Chưa chọn giọng nói",
-      "Vui lòng chọn giọng nói trước khi tải file lên.",
+      tText("Chưa chọn giọng nói", "No voice selected"),
+      tText(
+        "Vui lòng chọn giọng nói trước khi tải file lên.",
+        "Please select a voice before uploading files.",
+      ),
       function () {
         openVoiceModal();
       },
       {
         type: "warning",
-        confirmText: "Chọn giọng",
-        cancelText: "Hủy",
+        confirmText: tText("Chọn giọng", "Choose voice"),
+        cancelText: tText("Hủy", "Cancel"),
       },
     );
     return;
@@ -9327,8 +9516,8 @@ function showModernConfirm(title, message, onConfirm, options = {}) {
   $("#modernConfirmPopup").remove();
 
   let type = options.type || "info"; // info, warning, error
-  let confirmText = options.confirmText || "Xác nhận";
-  let cancelText = options.cancelText || "Hủy";
+  let confirmText = options.confirmText || tText("Xác nhận", "Confirm");
+  let cancelText = options.cancelText || tText("Hủy", "Cancel");
   let showCancel = options.showCancel !== false;
 
   let iconHtml = "";
@@ -9446,7 +9635,7 @@ function processUploadFiles(validFiles) {
 
     reader.onerror = function () {
       $("#inputLoader").hide();
-      alert("Lỗi đọc file!");
+      alert(tText("Lỗi đọc file!", "File read error!"));
     };
 
     reader.readAsText(file);
@@ -9478,7 +9667,12 @@ $("#fileInput").on("change", function (e) {
   });
 
   if (validFiles.length === 0) {
-    alert("Không có file hợp lệ! Chỉ chấp nhận .txt, .zip < 5MB");
+    alert(
+      tText(
+        "Không có file hợp lệ! Chỉ chấp nhận .txt, .zip < 5MB",
+        "No valid files! Only .txt, .zip < 5MB accepted",
+      ),
+    );
     $(this).val("");
     return;
   }
@@ -9493,15 +9687,18 @@ $("#fileInput").on("change", function (e) {
 
     // Hiện popup
     showModernConfirm(
-      "Chưa chọn giọng nói",
-      "Vui lòng chọn giọng nói trước khi tải file lên.",
+      tText("Chưa chọn giọng nói", "No voice selected"),
+      tText(
+        "Vui lòng chọn giọng nói trước khi tải file lên.",
+        "Please select a voice before uploading files.",
+      ),
       function () {
         openVoiceModal();
       },
       {
         type: "warning",
-        confirmText: "Chọn giọng",
-        cancelText: "Hủy",
+        confirmText: tText("Chọn giọng", "Choose voice"),
+        cancelText: tText("Hủy", "Cancel"),
       },
     );
     return;
@@ -9530,7 +9727,12 @@ $("#folderInput").on("change", function (e) {
   });
 
   if (validFiles.length === 0) {
-    alert("Không có file hợp lệ! Chỉ chấp nhận .txt, .zip < 5MB");
+    alert(
+      tText(
+        "Không có file hợp lệ! Chỉ chấp nhận .txt, .zip < 5MB",
+        "No valid files! Only .txt, .zip < 5MB accepted",
+      ),
+    );
     $(this).val("");
     return;
   }
@@ -9541,12 +9743,19 @@ $("#folderInput").on("change", function (e) {
     $(this).val("");
 
     showModernConfirm(
-      "Chưa chọn giọng nói",
-      "Vui lòng chọn giọng nói trước khi tải folder lên.",
+      tText("Chưa chọn giọng nói", "No voice selected"),
+      tText(
+        "Vui lòng chọn giọng nói trước khi tải folder lên.",
+        "Please select a voice before uploading a folder.",
+      ),
       function () {
         openVoiceModal();
       },
-      { type: "warning", confirmText: "Chọn giọng", cancelText: "Hủy" },
+      {
+        type: "warning",
+        confirmText: tText("Chọn giọng", "Choose voice"),
+        cancelText: tText("Hủy", "Cancel"),
+      },
     );
     return;
   }
@@ -9711,15 +9920,18 @@ $("#dropZone").on("drop", function (e) {
 
     // Hiện popup
     showModernConfirm(
-      "Chưa chọn giọng nói",
-      "Vui lòng chọn giọng nói trước khi tải file lên.",
+      tText("Chưa chọn giọng nói", "No voice selected"),
+      tText(
+        "Vui lòng chọn giọng nói trước khi tải file lên.",
+        "Please select a voice before uploading files.",
+      ),
       function () {
         openVoiceModal();
       },
       {
         type: "warning",
-        confirmText: "Chọn giọng",
-        cancelText: "Hủy",
+        confirmText: tText("Chọn giọng", "Choose voice"),
+        cancelText: tText("Hủy", "Cancel"),
       },
     );
     return;
@@ -9731,7 +9943,7 @@ $("#dropZone").on("drop", function (e) {
   let file = files[0];
 
   if (!file.name.endsWith(".txt")) {
-    alert("Chỉ hỗ trợ file .txt");
+    alert(tText("Chỉ hỗ trợ file .txt", "Only .txt files are supported"));
     $("#inputLoader").hide();
     return;
   }
@@ -9779,7 +9991,12 @@ let bulkDropZone = document.getElementById("bulkDropZone");
 
 $("#bulkDropZone").on("click", function () {
   if (!$("#voiceIdVal").val()) {
-    alert("⚠️ Vui lòng chọn giọng nói trước!");
+    alert(
+      tText(
+        "⚠️ Vui lòng chọn giọng nói trước!",
+        "⚠️ Please select a voice first!",
+      ),
+    );
     closeBulkModal();
     openVoiceModal();
     return;
@@ -9847,12 +10064,17 @@ async function handleBulkFiles(files) {
   console.log("✅ Valid files after filter:", validFiles.length);
 
   if (validFiles.length === 0) {
-    alert("Không có file hợp lệ! Chỉ chấp nhận .txt, .zip < 5MB");
+    alert(
+      tText(
+        "Không có file hợp lệ! Chỉ chấp nhận .txt, .zip < 5MB",
+        "No valid files! Only .txt, .zip < 5MB accepted",
+      ),
+    );
     return;
   }
 
   if (bulkFiles.length + validFiles.length > 20) {
-    alert("Tối đa 20 file!");
+    alert(tText("Tối đa 20 file!", "Maximum 20 files!"));
     return;
   }
 
@@ -9913,7 +10135,7 @@ async function extractZipFile(zipFile) {
         resolve();
       } catch (err) {
         console.error("ZIP extract error:", err);
-        alert("Lỗi khi giải nén file ZIP!");
+        alert(tText("Lỗi khi giải nén file ZIP!", "Error extracting ZIP file!"));
         reject(err);
       }
     };
@@ -10650,7 +10872,7 @@ function searchVoiceOnServer(voiceId) {
   $("#voiceGrid").html(`
         <div style="grid-column: 1 / -1; text-align:center; padding:60px 20px;">
             <div class="spinner-border" style="width:30px; height:30px; color:#667eea;"></div>
-            <p style="color:#888; margin-top:15px; font-size:14px;">Đang tìm kiếm ID trên server...</p>
+            <p style="color:#888; margin-top:15px; font-size:14px;">${tText("Đang tìm kiếm ID trên server...", "Searching ID on server...")}</p>
         </div>
     `);
 
@@ -10728,10 +10950,10 @@ function searchVoiceOnServer(voiceId) {
         $("#voiceGrid").html(`
                 <div style="grid-column: 1 / -1; text-align:center; padding:60px 20px;">
                     <i class="bi bi-emoji-frown" style="font-size:48px; color:#555; display:block; margin-bottom:15px;"></i>
-                    <p style="color:#ef4444; font-size:14px; font-weight:600;">Không tìm thấy giọng nói</p>
+                    <p style="color:#ef4444; font-size:14px; font-weight:600;">${tText("Không tìm thấy giọng nói", "No voices found")}</p>
                     <p style="color:#666; font-size:12px; margin-top:5px;">ID "${voiceId}" không tồn tại hoặc sai định dạng.</p>
                     <button onclick="resetFilters()" class="btn-generate" style="margin:20px auto; width:auto; padding:8px 20px; font-size:13px;">
-                        <i class="bi bi-arrow-left"></i> Quay lại thư viện
+                        <i class="bi bi-arrow-left"></i> ${tText("Quay lại thư viện", "Back to library")}
                     </button>
                 </div>
             `);
@@ -10746,7 +10968,7 @@ function searchVoiceOnServer(voiceId) {
     $("#voiceGrid").html(`
             <div style="padding:40px; text-align:center; color:#ef4444;">
                 <i class="bi bi-wifi-off" style="font-size:32px; display:block; margin-bottom:10px;"></i>
-                Lỗi kết nối server! Vui lòng thử lại.
+                ${tText("Lỗi kết nối server! Vui lòng thử lại.", "Server connection error! Please try again.")}
             </div>
         `);
     isSearchingServer = false;
@@ -10760,8 +10982,8 @@ function disableProviderOption(provider) {
     $option.addClass("provider-disabled");
 
     if (!$option.find(".maintenance-badge").length) {
-      $option.find(".provider-desc").html(`
-                <span class="maintenance-badge">🔴 Đang bảo trì</span>
+            $option.find(".provider-desc").html(`
+                <span class="maintenance-badge">${tText("🔴 Đang bảo trì", "🔴 Under maintenance")}</span>
             `);
     }
 
@@ -10778,7 +11000,7 @@ function showMetadata(taskId) {
   if (!item) return;
 
   // 1. Điền text
-  $("#dtText").text(item.text_input || "(Không có nội dung)");
+  $("#dtText").text(item.text_input || tText("(Không có nội dung)", "(No content)"));
 
   // 2. Điền thông tin kỹ thuật
   $("#dtTaskId").text(taskId);
@@ -10800,7 +11022,9 @@ function showMetadata(taskId) {
 
   // 4. Xử lý Lỗi
   if (item.status === "failed") {
-    $("#dtErrorMsg").text(item.error_message || "Lỗi không xác định");
+    $("#dtErrorMsg").text(
+      item.error_message || tText("Lỗi không xác định", "Unknown error"),
+    );
     $("#dtErrorBox").show();
   } else {
     $("#dtErrorBox").hide();
@@ -10911,7 +11135,7 @@ function syncDetailedHistoryCard(
     $row.find(".dh-credits-label").text("Đã hoàn trả");
 
     // Hiển thị lỗi
-    let errorHtml = `<div class="dh-status-text dh-text-error"><i class="bi bi-exclamation-circle"></i> Lỗi không xác định</div>`;
+    let errorHtml = `<div class="dh-status-text dh-text-error"><i class="bi bi-exclamation-circle"></i> ${tText("Lỗi không xác định", "Unknown error")}</div>`;
     $row.find(".dh-content-area").html(errorHtml);
   }
 }
@@ -10988,7 +11212,7 @@ async function downloadViaProxy(url, filename, textContent) {
       console.error("❌ Failed to refresh URL:", error);
 
       // Parse error message
-      let errorMsg = "Không thể làm mới link";
+      let errorMsg = tText("Không thể làm mới link", "Unable to refresh link");
       if (error.responseJSON) {
         errorMsg =
           error.responseJSON.message || error.responseJSON.error || errorMsg;
