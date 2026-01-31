@@ -1,0 +1,777 @@
+/* ==========================================
+   🎨 API DOCS CSS - DARK THEME
+   Theo đúng cấu trúc từ F12
+   ========================================== */
+/* External Links */
+.link-external {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.link-external:hover {
+    color: #7c8ef5;
+    text-decoration: underline;
+}
+
+.link-external i {
+    font-size: 12px;
+}
+
+/* Info Note Styling */
+.info-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+    background: rgba(102, 126, 234, 0.05);
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-top: 16px;
+}
+
+.info-note i.bi-info-circle {
+    color: var(--accent-blue);
+    font-size: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+/* --- VARIABLES --- */
+:root {
+    --bg-main: #0b0b0b;
+    --bg-card: #1c1c1c;
+    --border-color: #333;
+    --text-primary: #fff;
+    --text-secondary: #aaa;
+    --accent-pink: #ff0066;
+    --accent-blue: #667eea;
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --error: #ef4444;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: "Inter", sans-serif;
+}
+
+/* ==========================================
+   MAIN CONTAINER - VERTICAL LAYOUT
+   ========================================== */
+.apidocs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ==========================================
+   API KEY SECTION
+   ========================================== */
+.apikey-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.apikey-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: block;
+}
+
+.apikey-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.apikey-input {
+    flex: 1;
+    height: 36px;
+    padding: 0 12px;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-size: 13px;
+    font-family: 'Courier New', monospace;
+    outline: none;
+    transition: border-color 0.2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.apikey-input[type="password"] {
+    letter-spacing: 3px;
+}
+
+.apikey-input:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.apikey-input::placeholder {
+    color: var(--text-secondary);
+    letter-spacing: normal;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+}
+
+.apikey-input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ==========================================
+   MINIMALIST BUTTON STYLES
+   ========================================== */
+
+/* API Key Control Buttons */
+.btn-icon-action {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-icon-action:hover:not(:disabled) {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+}
+
+.btn-icon-action:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+.btn-icon-action:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.btn-icon-action i {
+    font-size: 14px;
+}
+
+/* Refresh Button */
+.btn-refresh {
+    padding: 0 20px;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-refresh:hover:not(:disabled) {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-refresh:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.refresh-warning {
+    font-size: 11px;
+    color: var(--error);
+    font-style: italic;
+    margin-top: 4px;
+}
+
+/* ==========================================
+   TABS NAVIGATION
+   ========================================== */
+.tabs-wrapper {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 12px 16px;
+}
+
+.tabs-nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* Tab Buttons - Ultra Minimal */
+.tab-btn {
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover:not(:disabled):not(.active) {
+    border-color: rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.tab-btn.active {
+    background: rgba(102, 126, 234, 0.15);
+    border-color: rgba(102, 126, 234, 0.3);
+    color: var(--accent-blue);
+}
+
+.tab-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* ==========================================
+   TAB CONTENT
+   ========================================== */
+.tab-content {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tab-content.active {
+    display: flex;
+}
+
+/* ==========================================
+   ENDPOINT CARD WITH GRADIENT BORDER
+   ========================================== */
+.endpoint-card {
+    /* 1. Layout nội dung */
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    
+    /* 2. Cấu hình khung */
+    position: relative;
+    background: transparent; /* 🔥 QUAN TRỌNG: Để trong suốt để thấy gradient bên dưới */
+    border-radius: 12px; 
+    border: none; /* Bỏ viền cũ */
+    
+    /* 3. Đảm bảo hiển thị */
+    z-index: 0; /* Tạo tầng xếp lớp */
+    overflow: hidden; /* Bo tròn góc gradient */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5); /* Đổ bóng cho đẹp */
+    margin-bottom: 20px;
+}
+
+/* LỚP 1: Gradient 7 màu (Nằm dưới cùng - Full kích thước) */
+.endpoint-card::before {
+    content: '';
+    position: absolute;
+    inset: -150%; /* Phủ rộng ra ngoài để khi xoay không bị hở góc */
+    background: conic-gradient(
+        from 0deg,
+        #1a1a2e 0deg,
+        oklch(54.6% .245 262.881) 45deg,
+        oklch(62.3% .214 259.815) 90deg,
+        oklch(70.7% .165 254.624) 135deg,
+        oklch(29.1% .149 302.717) 180deg,
+        oklch(48.8% .243 264.376) 225deg,
+        oklch(54.6% .245 262.881) 270deg,
+        oklch(42.4% .199 265.638) 315deg,
+        #1a1a2e 360deg
+    );
+    animation: spin 8s linear infinite, colorChange 16s ease-in-out infinite;
+    z-index: -2;
+}
+
+/* LỚP 2: Nền đen (Nằm đè lên Gradient, nhưng thụt vào 1.5px) */
+.endpoint-card::after {
+    content: '';
+    position: absolute;
+    /* 🔥 inset: 1.5px chính là độ dày của viền */
+    inset: 1.3px; 
+    
+    background: var(--bg-card); /* 🔥 MÀU NỀN CỦA KHUNG */
+    border-radius: 10.5px; /* 12px - 1.5px */
+    z-index: -1;
+}
+
+/* Đảm bảo nội dung (chữ, nút) nổi lên trên cùng */
+.endpoint-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Animation Keyframes */
+@keyframes spin { 
+    100% { transform: rotate(360deg); } 
+}
+
+@keyframes colorChange {
+    0% { filter: hue-rotate(0deg) saturate(1); }
+    50% { filter: hue-rotate(80deg) saturate(1.2); }
+    100% { filter: hue-rotate(0deg) saturate(1); }
+}
+
+.endpoint-header {
+    padding: 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.endpoint-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 8px 0;
+}
+
+.endpoint-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.endpoint-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section-heading {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* ==========================================
+   CODE BLOCK
+   ========================================== */
+.code-block {
+    position: relative;
+    background: #1e1e1e;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.btn-copy-code {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #aaa;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.btn-copy-code:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.btn-copy-code:active {
+    transform: scale(0.95);
+}
+
+.btn-copy-code i {
+    font-size: 14px;
+}
+
+.code-block pre {
+    margin: 0;
+    padding: 16px;
+    padding-right: 50px;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.code-block code {
+    font-family: 'Courier New', Consolas, Monaco, monospace;
+    color: #d4d4d4;
+}
+
+/* Scrollbar cho code block */
+.code-block pre::-webkit-scrollbar {
+    height: 8px;
+}
+
+.code-block pre::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.code-block pre::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.code-block pre::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================
+   INFO NOTE & BADGES
+   ========================================== */
+.info-note {
+    font-size: 13px;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.badge-method {
+    display: inline-flex;
+    padding: 2px 8px;
+    background: rgba(102, 126, 234, 0.2);
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-primary);
+    vertical-align: middle;
+}
+
+.badge-link {
+    display: inline-flex;
+    padding: 2px 8px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+}
+
+.badge-link:hover {
+    background: rgba(102, 126, 234, 0.1);
+    border-color: var(--accent-blue);
+}
+
+/* ==========================================
+   PARAMETERS LIST
+   ========================================== */
+.params-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 13px;
+}
+
+.param-item {
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.badge-param {
+    display: inline-flex;
+    padding: 3px 8px;
+    background: rgba(200, 200, 200, 0.2);
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.help-icon {
+    color: var(--text-secondary);
+    cursor: help;
+    margin-left: 4px;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.help-icon:hover {
+    color: var(--accent-blue);
+}
+
+/* ==========================================
+   EXTERNAL LINK
+   ========================================== */
+.link-external {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.link-external:hover {
+    text-decoration: underline;
+    color: #7c8ef5;
+}
+
+.link-external i {
+    font-size: 14px;
+}
+
+/* ==========================================
+   TOAST NOTIFICATION
+   ========================================== */
+.toast {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    transition: bottom 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.toast.show {
+    bottom: 30px;
+}
+
+.toast.success {
+    border-color: var(--success);
+}
+
+.toast.error {
+    border-color: var(--error);
+}
+
+.toast.warning {
+    border-color: var(--warning);
+}
+
+.toast i {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.toast.success i {
+    color: var(--success);
+}
+
+.toast.error i {
+    color: var(--error);
+}
+
+.toast.warning i {
+    color: var(--warning);
+}
+
+.toast-text {
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 500;
+    flex: 1;
+}
+
+/* ==========================================
+   UTILITIES
+   ========================================== */
+
+/* Skeleton loading (optional) */
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.05) 25%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0.05) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Focus visible styles */
+*:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+    background: rgba(102, 126, 234, 0.3);
+    color: var(--text-primary);
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+    .apidocs-container {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .apikey-controls {
+        flex-wrap: wrap;
+    }
+
+    .apikey-input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .tabs-nav {
+        gap: 6px;
+    }
+
+    .tab-btn {
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+
+    .endpoint-header,
+    .endpoint-body {
+        padding: 16px;
+    }
+
+    .endpoint-title {
+        font-size: 16px;
+    }
+
+    .code-block pre {
+        padding: 12px;
+        padding-right: 40px;
+        font-size: 12px;
+    }
+
+    .btn-copy-code {
+        top: 8px;
+        right: 8px;
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .apidocs-container {
+        padding: 12px;
+    }
+
+    .apikey-label {
+        font-size: 13px;
+    }
+
+    .apikey-input,
+    .btn-icon-action,
+    .btn-refresh {
+        height: 32px;
+    }
+
+    .btn-icon-action {
+        width: 32px;
+    }
+
+    .btn-refresh {
+        padding: 0 12px;
+        font-size: 12px;
+    }
+
+    .endpoint-title {
+        font-size: 15px;
+    }
+
+    .endpoint-desc,
+    .info-note,
+    .param-item {
+        font-size: 12px;
+    }
+}
+
+/* ==========================================
+   PRINT STYLES
+   ========================================== */
+@media print {
+    .apikey-controls,
+    .tabs-nav,
+    .btn-copy-code {
+        display: none !important;
+    }
+
+    .tab-content {
+        display: flex !important;
+    }
+
+    .endpoint-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+   ========================================== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

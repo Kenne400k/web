@@ -1,0 +1,534 @@
+/* Import Base Styles từ dubbing */
+@import url('dubbing.css');
+/* ==========================================
+   PROXY STATUS & ANIMATIONS COMPLETE
+   ========================================== */
+/* Ẩn nút tăng giảm mặc định của trình duyệt cho input number */
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Fix cho Firefox */
+.qty-input[type=number] {
+    -moz-appearance: textfield;
+}
+/* 1. Định nghĩa hiệu ứng "Thở" (Smooth Pulse) */
+@keyframes smooth-pulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    50% {
+        opacity: 0.5;           /* Mờ đi một chút */
+        transform: scale(0.9);  /* Thu nhỏ lại một chút */
+        filter: brightness(1.2); /* Sáng lên một chút */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1);
+    }
+}
+
+/* 2. Container trạng thái chung */
+.proxy-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;                  /* Khoảng cách giữa chấm và số */
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03); /* Nền tối mờ sang trọng */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    min-width: 95px;            /* Cố định chiều rộng để số không bị nhảy */
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* 3. Chấm tròn trạng thái (Chung) */
+.proxy-status i {
+    font-size: 8px;             /* Kích thước chấm vừa phải */
+    border-radius: 50%;         /* Tròn xoe */
+    flex-shrink: 0;
+}
+
+/* 4. Text hiển thị số/chữ */
+.timer-countdown, 
+.proxy-status span {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-variant-numeric: tabular-nums; /* QUAN TRỌNG: Giữ các số thẳng hàng không bị rung */
+    font-weight: 600;
+    font-size: 13px;
+    color: #e5e7eb;             /* Màu trắng xám mặc định */
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   CÁC TRẠNG THÁI MÀU (XANH - VÀNG - ĐỎ)
+   ========================================== */
+
+/* --- TRẠNG THÁI 1: ĐANG CHẠY (ACTIVE - XANH) --- */
+.proxy-status.active {
+    border-color: rgba(74, 222, 128, 0.2); /* Viền xanh nhẹ */
+}
+
+.proxy-status.active i {
+    color: #4ade80; /* Xanh lá neon */
+    box-shadow: 0 0 8px rgba(74, 222, 128, 0.5); /* Phát sáng (Glow) */
+    animation: smooth-pulse 2.5s infinite ease-in-out; /* Nháy chậm rãi, thư thái */
+}
+
+/* --- TRẠNG THÁI 2: SẮP HẾT GIỜ (WARNING - VÀNG) --- */
+/* Class .warning được JS thêm vào khi < 1 phút */
+.proxy-status.warning {
+    border-color: rgba(251, 191, 36, 0.3); /* Viền vàng cam */
+    background: rgba(251, 191, 36, 0.05);  /* Nền vàng rất nhạt */
+}
+
+.proxy-status.warning i {
+    color: #fbbf24; /* Vàng cam */
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+    animation: smooth-pulse 1s infinite ease-in-out; /* Nháy nhanh hơn (gấp gáp) */
+}
+
+.proxy-status.warning .timer-countdown {
+    color: #fbbf24; /* Số cũng chuyển sang màu vàng */
+}
+
+/* --- TRẠNG THÁI 3: HẾT HẠN (EXPIRED - ĐỎ) --- */
+.proxy-status.expired {
+    background: rgba(239, 68, 68, 0.08); /* Nền đỏ nhạt */
+    border-color: rgba(239, 68, 68, 0.2); /* Viền đỏ */
+}
+
+.proxy-status.expired i {
+    color: #ef4444; /* Đỏ tươi */
+    box-shadow: 0 0 6px rgba(239, 68, 68, 0.4);
+    animation: smooth-pulse 3s infinite ease-in-out; /* Nháy rất chậm (cảnh báo chết) */
+}
+
+.proxy-status.expired span {
+    color: #ef4444; /* Chữ "Hết hạn" màu đỏ */
+    font-weight: 700;
+}
+/* ==========================================
+   PROXY-SPECIFIC STYLES
+   ========================================== */
+
+/* Quantity Control */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.btn-qty {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: var(--bg-main);
+    color: var(--text-primary);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.btn-qty:hover {
+    border-color: #fff;
+    background: #333;
+}
+
+.btn-qty:active {
+    transform: scale(0.9);
+}
+
+.qty-input {
+    flex: 1;
+    padding: 10px 16px;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    outline: none;
+    transition: 0.2s;
+}
+
+.qty-input:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.qty-hint {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 6px;
+}
+
+/* Cost Display */
+.cost-display {
+    background: #131313;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.cost-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.cost-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.cost-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fbbf24;
+}
+
+.cost-unit {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.cost-breakdown {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-color);
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+}
+/* ==========================================
+   MODERN PROXY LIST STYLE
+   ========================================== */
+
+/* 1. Container cho từng dòng: Chia cột rõ ràng hơn */
+.proxy-item {
+    display: grid;
+    /* Chia cột: Checkbox | Thông tin (tự giãn) | Trạng thái | Hành động | Giá tiền */
+    grid-template-columns: 30px 1fr 120px 100px 80px; 
+    gap: 15px;
+    align-items: center;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.02); /* Nền mờ nhẹ */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Viền mỏng bao quanh */
+    border-radius: 10px; /* Bo góc từng dòng */
+    margin-bottom: 8px; /* Tạo khoảng cách giữa các dòng */
+    transition: all 0.2s ease;
+}
+
+/* Hiệu ứng khi di chuột: Sáng lên và nổi lên chút */
+.proxy-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+/* 2. Checkbox */
+.item-checkbox {
+    cursor: pointer;
+    /* Căn giữa checkbox */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 3. Phần thông tin Proxy (IP & Thời gian) */
+.proxy-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow: hidden;
+}
+
+/* IP:Port - Làm to và rõ hơn */
+.proxy-address {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.5px;
+    
+    /* QUAN TRỌNG: Căn trái & Cắt dòng */
+    display: block;
+    width: 100%;
+    text-align: left; /* Đẩy chữ qua trái */
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Meta data (Thời gian) */
+.proxy-meta {
+    font-size: 12px;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    
+    /* QUAN TRỌNG: Đẩy qua trái */
+    justify-content: flex-start;
+}
+
+/* 4. Cột trạng thái (Status) - Căn giữa */
+.proxy-status {
+    /* Đã được style ở phần trước (nhịp thở), chỉ cần căn chỉnh vị trí */
+    justify-self: center; 
+}
+
+/* 5. Cột hành động (Nút bấm) */
+.proxy-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end; /* Đẩy về bên phải */
+}
+.btn-view-proxy,
+.btn-copy-proxy {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.btn-view-proxy:hover,
+.btn-copy-proxy:hover {
+    border-color: #fff;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Modal Styles for Proxy Details */
+.custom-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+}
+
+.custom-modal.show {
+    display: flex;
+}
+
+.modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content.proxy-modal {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow: hidden;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.close-modal:hover {
+    color: #fff;
+}
+
+.modal-body {
+    padding: 24px;
+    overflow-y: auto;
+    max-height: calc(90vh - 80px);
+}
+
+.proxy-detail-section {
+    margin-bottom: 16px;
+}
+
+.proxy-detail-section label {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 6px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.proxy-value-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #131313;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+
+.proxy-value-box code {
+    flex: 1;
+    font-family: 'Monaco', 'Courier New', monospace;
+    font-size: 13px;
+    color: #4ade80;
+    word-break: break-all;
+}
+
+.btn-copy-inline {
+    background: transparent;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.btn-copy-inline:hover {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.meta-item i {
+    color: var(--accent-blue);
+}
+
+.meta-item strong {
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .proxy-item {
+        grid-template-columns: auto 1fr auto;
+    }
+    
+    .proxy-status {
+        display: none;
+    }
+}
+/* ==========================================
+   FIX DROPDOWN Z-INDEX
+   ========================================== */
+
+/* Form Group - Đảm bảo có z-index hierarchy */
+.form-group {
+    position: relative;
+    z-index: 10; /* Mặc định */
+    margin-bottom: 20px;
+}
+
+/* Khi dropdown TTL mở ra, tăng z-index lên cao */
+.form-group:has(#dropdownTTL.open) {
+    z-index: 100 !important;
+}
+
+/* Quantity Control - z-index thấp hơn */
+.quantity-control {
+    position: relative;
+    z-index: 5;
+}
+
+/* Dropdown Menu - Đảm bảo luôn ở trên */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    margin-top: 6px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 999 !important; /* Tăng cao */
+    display: none;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+/* Custom Dropdown Container */
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+    z-index: inherit; /* Kế thừa từ parent */
+}
+
+/* Khi dropdown đang mở */
+#dropdownTTL.open {
+    z-index: 999 !important;
+}
+
+/* Cost Display - z-index thấp */
+.cost-display {
+    position: relative;
+    z-index: 1;
+}

@@ -1,0 +1,2704 @@
+/* ==========================================
+   🎨 TTS LIGHT THEME - SOPHISTICATED BLACK & WHITE
+   Premium Design with White Background & Black Text
+   ========================================== */
+
+/* =================== ROOT VARIABLES =================== */
+html.light {
+    --primary: #1a1a1a;
+    --accent: #2d2d2d;
+    --bg-main: #ffffff;
+    --bg-secondary: #f8f8f8;
+    --bg-tertiary: #f0f0f0;
+    --border: #e5e5e5;
+    --border-medium: #d1d5db;
+    --border-dark: #9ca3af;
+    --text: #1a1a1a;
+    --text-secondary: #4b5563;
+    --text-dim: #6b7280;
+    --text-muted: #9ca3af;
+    --input-bg: #ffffff;
+    --hover-bg: #f9fafb;
+    --scrollbar: #d1d5db;
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* =================== BODY & SCROLLBAR =================== */
+html.light body {
+    background: var(--bg-main);
+    color: var(--text);
+}
+
+html.light ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+html.light ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar);
+    border-radius: 10px;
+    border: 2px solid var(--bg-main);
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+    background: var(--border-dark);
+}
+
+/* =================== SIDEBAR =================== */
+html.light #app-sidebar {
+    background: var(--bg-main);
+    border-right-color: var(--border);
+}
+
+html.light .avatar-wrapper {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.1) 0%, rgba(26, 26, 26, 0.05) 100%);
+}
+
+html.light .avatar-inner {
+    background: var(--bg-secondary);
+}
+
+html.light .avatar-inner span {
+    color: var(--text);
+}
+
+html.light .nav-link {
+    color: var(--text-dim);
+}
+
+html.light .nav-link:hover {
+    background: var(--hover-bg);
+    color: var(--text);
+}
+
+html.light .nav-link.active {
+    background: var(--bg-tertiary);
+    color: var(--primary);
+}
+
+html.light .nav-link.active::before {
+    background: var(--primary);
+}
+
+html.light .nav-link i,
+html.light .nav-link .material-symbols-outlined {
+    color: inherit;
+}
+
+/* =================== HEADER =================== */
+html.light #app-header {
+    background: var(--bg-main);
+    border-bottom-color: var(--border);
+}
+
+html.light #app-header h2 {
+    color: var(--text);
+}
+
+html.light #app-header .bg-secondary {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+}
+
+html.light #app-header .text-white {
+    color: var(--text) !important;
+}
+
+html.light #app-header .text-dim {
+    color: var(--text-dim) !important;
+}
+
+html.light #app-header .material-symbols-outlined {
+    color: var(--primary) !important;
+}
+
+html.light #langSwitchBtn {
+    background: var(--bg-secondary) !important;
+    border-color: var(--border) !important;
+    color: var(--text) !important;
+}
+
+html.light #langSwitchBtn:hover {
+    background: var(--bg-tertiary) !important;
+    border-color: var(--border-medium) !important;
+}
+
+/* =================== INPUT AREA =================== */
+html.light .input-area {
+    background: var(--bg-main);
+    border-color: var(--border);
+}
+
+html.light .textarea-wrapper {
+    background: var(--bg-main);
+    border-color: var(--border);
+}
+
+html.light .textarea-inner {
+    background: var(--bg-main);
+}
+
+html.light .tts-textarea {
+    background: transparent;
+    color: var(--text);
+}
+
+html.light .tts-textarea::placeholder {
+    color: var(--text-muted);
+}
+
+html.light .tts-textarea:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: -2px;
+}
+
+/* Empty State */
+html.light .empty-state {
+    color: var(--text-secondary);
+}
+
+html.light .es-title {
+    color: var(--text);
+}
+
+html.light .es-subtitle {
+    color: var(--text-dim);
+}
+
+html.light .es-tip {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+}
+
+html.light .es-code {
+    background: var(--bg-tertiary);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+/* =================== INPUT FOOTER =================== */
+html.light .input-footer {
+    background: var(--bg-secondary);
+    border-top-color: var(--border);
+}
+
+html.light .upload-btn {
+    background: var(--bg-main);
+    border-color: var(--border-medium);
+    color: var(--text);
+}
+
+html.light .upload-btn:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--border-dark);
+    color: var(--primary);
+    box-shadow: var(--shadow-sm);
+}
+
+html.light #btnClearText {
+    background: transparent !important;
+    border-color: var(--border-medium) !important;
+    color: var(--text-dim) !important;
+}
+
+html.light #btnClearText:hover {
+    background: var(--hover-bg) !important;
+    border-color: #ef4444 !important;
+    color: #ef4444 !important;
+}
+
+/* Upload Dropdown */
+html.light #uploadDropdown {
+    background: var(--bg-main);
+    border-color: var(--border);
+    box-shadow: var(--shadow-lg);
+}
+
+html.light .upload-option {
+    color: var(--text);
+    border-bottom-color: var(--border);
+}
+
+html.light .upload-option:hover {
+    background: var(--hover-bg);
+    color: var(--primary);
+}
+
+/* Stats Display */
+html.light .stats-display {
+    color: var(--text);
+}
+
+html.light .stats-display i {
+    color: var(--text-dim);
+}
+
+html.light .stats-display span {
+    color: var(--text);
+}
+
+html.light #charCount {
+    color: var(--text) !important;
+}
+
+html.light #estimatedCost {
+    color: #d97706 !important;
+}
+
+html.light .credits-display {
+    color: var(--text) !important;
+}
+
+html.light .credits-display i {
+    color: var(--text-dim) !important;
+}
+
+/* Tooltip */
+html.light #creditsTooltip {
+    background: var(--bg-main);
+    border-color: var(--border-dark);
+    color: var(--text);
+    box-shadow: var(--shadow-xl);
+}
+
+/* =================== SIDEBAR PANEL =================== */
+html.light .sidebar-panel {
+    background: var(--bg-secondary);
+    border-left-color: var(--border);
+}
+
+/* Top Tabs */
+html.light .top-tabs {
+    background: var(--bg-main);
+    border-bottom-color: var(--border);
+}
+
+html.light .tab-btn {
+    background: transparent;
+    color: var(--text-dim);
+    border-color: transparent;
+}
+
+html.light .tab-btn:hover {
+    background: var(--hover-bg);
+    color: var(--text);
+}
+
+html.light .tab-btn.active {
+    background: var(--bg-tertiary);
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+/* Provider Dropdown */
+html.light .provider-dropdown-btn {
+    background: var(--bg-main);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html.light .provider-dropdown-btn:hover {
+    background: var(--hover-bg);
+    border-color: var(--border-medium);
+}
+
+html.light .provider-dropdown-menu {
+    background: var(--bg-main);
+    border-color: var(--border);
+    box-shadow: var(--shadow-lg);
+}
+
+html.light .provider-option {
+    color: var(--text);
+    border-bottom-color: var(--border);
+}
+
+html.light .provider-option:hover {
+    background: var(--hover-bg);
+}
+
+html.light .provider-option.active {
+    background: var(--bg-tertiary);
+}
+
+html.light .provider-name {
+    color: var(--text);
+}
+
+html.light .provider-desc {
+    color: var(--text-dim);
+}
+
+html.light .check-icon {
+    color: #10b981 !important;
+}
+
+/* =================== SETTINGS =================== */
+html.light .sidebar-content {
+    background: var(--bg-secondary);
+}
+
+html.light .setting-group label {
+    color: var(--text-secondary);
+}
+
+html.light #voiceSelectorBtn {
+    background: var(--bg-main) !important;
+    border-color: var(--border) !important;
+}
+
+html.light #voiceSelectorBtn:hover {
+    background: var(--hover-bg) !important;
+    border-color: var(--border-medium) !important;
+}
+
+html.light #selectedVoiceName {
+    color: var(--text) !important;
+}
+
+html.light #voiceSelectorBtn i {
+    color: var(--text-dim) !important;
+}
+
+/* Custom Select */
+html.light .custom-select {
+    background: var(--bg-main);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html.light .custom-select:hover {
+    background: var(--hover-bg);
+    border-color: var(--border-medium);
+}
+
+html.light .custom-select i {
+    color: var(--text-dim);
+}
+
+/* Language Selector */
+html.light .lang-selector-dropdown {
+    background: var(--bg-main);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html.light .lang-selector-dropdown:hover {
+    background: var(--hover-bg);
+    border-color: var(--border-medium);
+}
+
+html.light .lang-dropdown-menu {
+    background: var(--bg-main);
+    border-color: var(--border);
+    box-shadow: var(--shadow-lg);
+}
+
+html.light .lang-option {
+    color: var(--text);
+    border-bottom-color: var(--border);
+}
+
+html.light .lang-option:hover {
+    background: var(--hover-bg);
+}
+
+html.light .lang-option.active {
+    background: var(--bg-tertiary);
+    color: var(--primary);
+}
+
+/* Sliders */
+html.light .slider-container {
+    background: transparent;
+}
+
+html.light .slider-header span {
+    color: var(--text-secondary);
+}
+
+html.light .slider-header span:last-child {
+    color: var(--text);
+    font-weight: 600;
+}
+
+html.light input[type="range"] {
+    background: linear-gradient(to right, #1a1a1a 0%, #1a1a1a 50%, #ffffff 50%, #ffffff 100%);
+    background-size: 200% 100%;
+    background-position: right;
+}
+
+html.light input[type="range"]::-webkit-slider-track {
+    background: transparent;
+    border: 1px solid var(--border);
+}
+
+html.light input[type="range"]::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #2a2a2a 0%, #2a2a2a var(--value, 50%), #f0f0f0 var(--value, 50%), #f0f0f0 100%);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    height: 6px;
+}
+
+html.light input[type="range"]::-webkit-slider-thumb {
+    background: #ffffff;
+    border: 2px solid #1a1a1a;
+    box-shadow: var(--shadow-md);
+}
+
+html.light input[type="range"]:hover::-webkit-slider-thumb {
+    background: #f5f5f5;
+    box-shadow: var(--shadow-lg);
+}
+
+html.light input[type="range"]::-moz-range-track {
+    background: linear-gradient(to right, #2a2a2a 0%, #2a2a2a var(--value, 50%), #f0f0f0 var(--value, 50%), #f0f0f0 100%);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    height: 6px;
+}
+
+html.light input[type="range"]::-moz-range-thumb {
+    background: #ffffff;
+    border: 2px solid #1a1a1a;
+}
+
+
+/* Toggle Switch */
+html.light .toggle-row {
+    color: #1a1a1a !important;
+    border-top-color: var(--border);
+}
+
+html.light .toggle-row span,
+html.light .toggle-row div,
+html.light .toggle-row label {
+    color: #1a1a1a !important;
+}
+
+html.light .toggle-switch input:checked + .toggle-slider {
+    background: var(--primary);
+}
+
+html.light .toggle-switch .toggle-slider {
+    background: var(--border-dark);
+}
+
+html.light .toggle-switch .toggle-slider::before {
+    background: var(--bg-main);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Badge Cost */
+html.light .badge-cost {
+    background: rgba(217, 119, 6, 0.1);
+    color: #d97706;
+    border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+/* Reset Button */
+html.light .reset-btn {
+    background: var(--bg-main) !important;
+    border-color: var(--border) !important;
+    color: var(--text) !important;
+}
+
+html.light .reset-btn:hover {
+    background: var(--hover-bg) !important;
+    border-color: var(--border-medium) !important;
+}
+
+/* Generate Button */
+html.light .btn-generate {
+    background: var(--primary);
+    color: var(--bg-main);
+    border: none;
+    box-shadow: var(--shadow-md);
+}
+
+html.light .btn-generate:hover {
+    background: var(--accent);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-1px);
+}
+
+html.light .btn-generate:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+html.light .btn-generate:disabled {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    box-shadow: none;
+}
+
+/* =================== VOICE MODAL =================== */
+html.light .voice-modal {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+html.light .voice-modal-content {
+    background: var(--bg-main);
+    border-color: var(--border);
+    box-shadow: var(--shadow-xl);
+}
+
+html.light .vm-header {
+    background: var(--bg-secondary);
+    border-bottom-color: var(--border);
+}
+
+html.light .vm-tab {
+    color: var(--text-dim);
+    border-bottom-color: transparent;
+}
+
+html.light .vm-tab:hover {
+    color: var(--text);
+    background: var(--hover-bg);
+}
+
+html.light .vm-tab.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+    background: var(--bg-main);
+}
+
+html.light .vm-close {
+    color: var(--text-dim);
+}
+
+html.light .vm-close:hover {
+    color: var(--text);
+    background: var(--hover-bg);
+}
+
+/* Voice Search */
+html.light .vm-search-wrapper input {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html.light .vm-search-wrapper input::placeholder {
+    color: var(--text-muted);
+}
+
+html.light .vm-search-wrapper input:focus {
+    border-color: var(--primary);
+    background: var(--bg-main);
+}
+
+html.light .vm-search-wrapper i {
+    color: var(--text-dim);
+}
+
+/* Voice Cards */
+html.light .voice-card {
+    background: #ffffff !important;
+    border-color: var(--border) !important;
+}
+
+html.light .voice-card:hover {
+    background: #f9fafb !important;
+    border-color: var(--border-medium) !important;
+    box-shadow: var(--shadow-md);
+}
+
+html.light .voice-card.selected {
+    background: #ffffff !important;
+    border-color: #1a1a1a !important;
+    box-shadow: var(--shadow-md);
+}
+
+html.light .voice-name {
+    color: #1a1a1a !important;
+}
+
+html.light .voice-labels {
+    color: #4b5563 !important;
+}
+
+html.light .voice-badge {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+    border: 1px solid var(--border) !important;
+}
+
+/* Voice Modal Body and Grid */
+html.light .vm-body {
+    background: var(--bg-main);
+}
+
+html.light .vm-grid {
+    background: var(--bg-main);
+}
+
+html.light .voice-card-description,
+html.light .vc-description {
+    color: #4b5563 !important;
+}
+
+html.light .vc-preview,
+html.light .vc-sample {
+    background: var(--bg-secondary) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html.light .vc-play-btn {
+    background: var(--primary) !important;
+    color: var(--bg-main) !important;
+}
+
+html.light .vc-labels span,
+html.light .voice-language,
+html.light .voice-gender,
+html.light .voice-age {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+    border: 1px solid var(--border) !important;
+}
+
+
+/* =================== HISTORY =================== */
+html.light .history-card {
+    background: var(--bg-main);
+    border-color: var(--border);
+}
+
+html.light .history-card:hover {
+    background: var(--hover-bg);
+    border-color: var(--border-medium);
+    box-shadow: var(--shadow-sm);
+}
+
+html.light .hc-text {
+    color: var(--text);
+}
+
+html.light .hc-time {
+    color: var(--text-dim);
+}
+
+html.light .hc-meta {
+    color: var(--text-dim);
+}
+
+html.light .hc-download-btn {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    color: var(--text-dim);
+}
+
+html.light .hc-download-btn:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--border-medium);
+    color: var(--text);
+}
+
+html.light .hc-delete-btn {
+    color: var(--text-dim);
+}
+
+html.light .hc-delete-btn:hover {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.05);
+}
+
+/* =================== MODEL DETAILS SIDEBAR =================== */
+html.light .model-details-sidebar {
+    background: var(--bg-main);
+    border-left-color: var(--border);
+    box-shadow: var(--shadow-xl);
+}
+
+html.light .md-header {
+    background: var(--bg-secondary);
+    border-bottom-color: var(--border);
+}
+
+html.light .md-title {
+    color: var(--text);
+}
+
+html.light .md-close {
+    color: var(--text-dim);
+}
+
+html.light .md-close:hover {
+    color: var(--text);
+    background: var(--hover-bg);
+}
+
+html.light .md-content {
+    color: var(--text);
+}
+
+html.light .model-card {
+    background: #ffffff !important;
+    border-color: var(--border) !important;
+}
+
+html.light .model-card:hover {
+    background: #f9fafb !important;
+    border-color: var(--border-medium) !important;
+}
+
+html.light .model-card.active {
+    background: #ffffff !important;
+    border-color: #1a1a1a !important;
+    border-width: 2px !important;
+}
+
+html.light .model-name {
+    color: #1a1a1a !important;
+}
+
+html.light .model-desc {
+    color: #4b5563 !important;
+}
+
+/* =================== LOADING STATES =================== */
+html.light #pageLoader {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+}
+
+html.light #pageLoader .spinner-border {
+    color: var(--primary) !important;
+}
+
+html.light #pageLoader div {
+    color: var(--text) !important;
+}
+
+html.light .loading-overlay {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+html.light .loading-more {
+    color: var(--text-dim);
+}
+
+html.light .no-more-data {
+    color: var(--text-dim);
+}
+
+/* =================== MODALS & POPUPS =================== */
+html.light .modern-popup-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+html.light .modern-popup-container {
+    background: var(--bg-main);
+    border-color: var(--border);
+    box-shadow: var(--shadow-xl);
+}
+
+html.light .modern-popup-title {
+    color: var(--text);
+}
+
+html.light .modern-popup-message {
+    color: var(--text-secondary);
+}
+
+html.light .modern-btn {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html.light .modern-btn:hover {
+    background: var(--hover-bg);
+    border-color: var(--border-medium);
+}
+
+html.light .modern-btn-primary {
+    background: var(--primary);
+    color: var(--bg-main);
+    border-color: var(--primary);
+}
+
+html.light .modern-btn-primary:hover {
+    background: var(--accent);
+}
+
+html.light .modern-btn-danger {
+    background: #ef4444;
+    color: white;
+    border-color: #ef4444;
+}
+
+html.light .modern-btn-danger:hover {
+    background: #dc2626;
+}
+
+/* =================== REMAKE MODAL =================== */
+html.light #remakeTaskModal {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+html.light .remake-modal-box {
+    background: var(--bg-main);
+    border-color: var(--border);
+    box-shadow: var(--shadow-xl);
+}
+
+html.light .remake-header {
+    border-bottom-color: var(--border);
+}
+
+html.light .remake-header h3 {
+    color: var(--text);
+}
+
+html.light .remake-close-btn {
+    color: var(--text-dim);
+}
+
+html.light .remake-close-btn:hover {
+    background: var(--hover-bg);
+    color: var(--text);
+}
+
+html.light .remake-warning {
+    color: var(--text-secondary);
+}
+
+html.light .remake-preview {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html.light .remake-settings {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+}
+
+html.light .remake-settings-header {
+    color: var(--text);
+}
+
+html.light .remake-settings-content {
+    color: var(--text-secondary);
+}
+
+html.light .remake-cost {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+}
+
+html.light .remake-cost span:first-child {
+    color: var(--text-secondary);
+}
+
+html.light #remakeCostDisplay {
+    color: var(--text);
+}
+
+html.light .remake-btn-cancel {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html.light .remake-btn-cancel:hover {
+    background: var(--hover-bg);
+    border-color: var(--border-medium);
+}
+
+html.light .remake-btn-confirm {
+    background: var(--primary);
+    color: var(--bg-main);
+}
+
+html.light .remake-btn-confirm:hover {
+    background: var(--accent);
+    box-shadow: var(--shadow-lg);
+}
+
+/* =================== DOWNLOAD DROPDOWN for HISTORY =================== */
+html.light .download-dropdown {
+    background: var(--bg-main);
+    border-color: var(--border);
+    box-shadow: var(--shadow-lg);
+}
+
+html.light .dd-header {
+    background: var(--bg-secondary);
+    border-bottom-color: var(--border);
+    color: var(--text-dim);
+}
+
+html.light .dd-item {
+    color: var(--text);
+    border-bottom-color: var(--border);
+}
+
+html.light .dd-item:hover {
+    background: var(--hover-bg);
+}
+
+html.light .dd-item.disabled {
+    color: var(--text-muted);
+}
+
+/* =================== ADDITIONAL ELEMENTS =================== */
+html.light #minimax-badge,
+html.light #minimax-model-badge {
+    background: var(--primary);
+    color: var(--bg-main);
+    border-color: var(--primary);
+}
+
+html.light .voice-cloned-badge {
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* File Name Display */
+html.light #fileNameDisplay {
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+}
+
+/* =================== ANIMATIONS =================== */
+@keyframes fadeInLight {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+html.light .history-card {
+    animation: fadeInLight 0.3s ease-out;
+}
+
+/* =================== RESPONSIVE REFINEMENTS =================== */
+@media (max-width: 768px) {
+    html.light .sidebar-panel {
+        border-left-color: transparent;
+        box-shadow: var(--shadow-xl);
+    }
+}
+
+/* =================== FOCUS STATES =================== */
+html.light button:focus,
+html.light input:focus,
+html.light select:focus,
+html.light textarea:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+html.light button:focus:not(:focus-visible),
+html.light input:focus:not(:focus-visible),
+html.light select:focus:not(:focus-visible),
+html.light textarea:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* =================== SELECTION =================== */
+html.light ::selection {
+    background: rgba(26, 26, 26, 0.15);
+    color: var(--text);
+}
+
+/* =================== PRINT STYLES =================== */
+@media print {
+    html.light {
+        background: white;
+        color: black;
+    }
+}
+
+/* =================== TEXT INPUT AREA - WHITE BACKGROUND BLACK TEXT =================== */
+/* =================== WITH ANIMATED GRADIENT BORDER =================== */
+
+/* Main Input Area Container */
+html.light .input-area {
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: 0.2s;
+}
+
+html.light .input-area.drag-over {
+    border-color: #1a1a1a;
+    background: rgba(26, 26, 26, 0.02) !important;
+}
+
+/* Textarea Wrapper - GRADIENT BORDER EFFECT */
+html.light .textarea-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    position: relative !important;
+    border-radius: 16px !important;
+    padding: 1.5px !important; /* Viền dày hơn */
+    background: #ffffff !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+/* ANIMATED GRADIENT BORDER - Adapted for Light Theme */
+html.light .textarea-wrapper::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: -150% !important;
+    background: conic-gradient(
+        from 0deg,
+        #e5e5e5 0deg,
+        oklch(44.6% .285 262.881) 45deg,
+        oklch(52.3% .254 259.815) 90deg,
+        oklch(60.7% .205 254.624) 135deg,
+        oklch(39.1% .189 302.717) 180deg,
+        oklch(48.8% .283 264.376) 225deg,
+        oklch(44.6% .285 262.881) 270deg,
+        oklch(42.4% .239 265.638) 315deg,
+        #e5e5e5 360deg
+    ) !important;
+    animation: spinLight 8s linear infinite, colorChangeLight 16s ease-in-out infinite !important;
+    z-index: 0 !important;
+}
+
+@keyframes spinLight {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes colorChangeLight {
+    0% {
+        filter: hue-rotate(0deg) saturate(1);
+    }
+    50% {
+        filter: hue-rotate(80deg) saturate(1.2);
+    }
+    100% {
+        filter: hue-rotate(0deg) saturate(1);
+    }
+}
+
+/* Textarea Inner - WHITE BACKGROUND */
+html.light .textarea-inner {
+    width: 100%;
+    height: 100%;
+    background: #ffffff !important;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Đẩy nội dung lên trên gradient */
+}
+
+/* Textarea Element - WHITE BACKGROUND, BLACK TEXT */
+html.light #txtInput,
+html.light .tts-textarea,
+html.light textarea.tts-textarea {
+    width: 100%;
+    height: 100%;
+    background: transparent !important;
+    border: none !important;
+    color: #000000 !important;
+    font-size: 16px;
+    line-height: 1.7;
+    resize: none;
+    outline: none;
+    font-weight: 400;
+    font-family: inherit;
+    z-index: 2;
+    position: relative;
+    padding: 20px;
+    caret-color: #000000 !important;
+}
+
+html.light #txtInput::placeholder,
+html.light .tts-textarea::placeholder,
+html.light textarea::placeholder {
+    color: #9ca3af !important;
+    opacity: 0.6;
+}
+
+html.light #txtInput:focus,
+html.light .tts-textarea:focus,
+html.light textarea:focus {
+    background: transparent !important;
+    color: #000000 !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* Empty State */
+html.light .empty-state {
+    background: transparent !important;
+    color: #6b7280 !important;
+}
+
+html.light .es-title {
+    color: #1a1a1a !important;
+}
+
+html.light .es-subtitle {
+    color: #6b7280 !important;
+}
+
+html.light .es-tip {
+    background: #f9fafb !important;
+    color: #4b5563 !important;
+    border: 1px solid #e5e5e5 !important;
+}
+
+html.light .es-code {
+    background: #f0f0f0 !important;
+    color: #1a1a1a !important;
+    border: 1px solid #d1d5db !important;
+}
+
+/* =================== VOICE MODAL FILTERS =================== */
+html.light .vm-search-bar {
+    background: var(--bg-secondary);
+    border-bottom-color: var(--border);
+}
+
+html.light .vm-filters-bar {
+    background: var(--bg-main);
+    border-bottom-color: var(--border);
+}
+
+html.light .filter-label {
+    color: var(--text-dim);
+}
+
+html.light .filter-btn-wrapper::before {
+    background: conic-gradient(
+        from 0deg,
+        rgba(26, 26, 26, 0.12) 0deg,
+        rgba(26, 26, 26, 0.25) 90deg,
+        rgba(26, 26, 26, 0.12) 180deg,
+        rgba(26, 26, 26, 0.25) 270deg,
+        rgba(26, 26, 26, 0.12) 360deg
+    );
+    opacity: 0;
+}
+
+html.light .filter-btn-wrapper::after {
+    background: var(--bg-main);
+    box-shadow: var(--shadow-sm);
+}
+
+html.light .filter-dropdown-enhanced.has-value .filter-btn-wrapper::before {
+    opacity: 0.25;
+}
+
+html.light .filter-btn-wrapper .dropdown-btn {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--text-dim);
+}
+
+html.light .filter-btn-wrapper .dropdown-btn:hover {
+    background: var(--hover-bg);
+    border-color: var(--border-medium);
+    color: var(--text);
+}
+
+html.light .filter-dropdown-enhanced.has-value .filter-btn-wrapper .dropdown-btn {
+    border-color: var(--primary);
+    color: var(--text);
+    font-weight: 600;
+}
+
+html.light .filter-dropdown-enhanced.has-value .filter-label {
+    color: var(--text);
+}
+
+html.light .filter-btn-wrapper .dropdown-arrow {
+    color: var(--text-muted);
+}
+
+html.light .filter-btn-wrapper .dropdown-btn:hover .dropdown-arrow {
+    color: var(--text);
+}
+
+html.light .filter-reset-btn {
+    background: var(--bg-main);
+    border-color: var(--border);
+    color: var(--text-dim);
+}
+
+html.light .filter-reset-btn:hover {
+    background: rgba(239, 68, 68, 0.08);
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+html.light .custom-dropdown .dropdown-btn,
+html.light #sortDropdown .dropdown-btn {
+    background: var(--bg-main) !important;
+    border-color: var(--border) !important;
+    color: var(--text) !important;
+}
+
+html.light #sortDropdown .dropdown-btn i {
+    color: var(--text-dim) !important;
+}
+
+html.light .dropdown-menu,
+html.light #sortMenu,
+html.light .filter-dropdown-menu,
+html.light .universal-dropdown-menu {
+    background-color: var(--bg-main) !important;
+    border-color: var(--border) !important;
+    color: var(--text) !important;
+    box-shadow: var(--shadow-lg);
+}
+
+html.light .dropdown-item {
+    color: var(--text) !important;
+    border-bottom-color: var(--border) !important;
+}
+
+html.light .dropdown-item:hover {
+    background-color: var(--hover-bg) !important;
+    color: var(--text) !important;
+}
+
+html.light .dropdown-item.active {
+    background-color: var(--bg-tertiary) !important;
+    color: var(--text) !important;
+}
+
+html.light .filter-dropdown-menu::-webkit-scrollbar-thumb,
+html.light .universal-dropdown-menu::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+}
+
+html.light .filter-dropdown-menu::-webkit-scrollbar-thumb:hover,
+html.light .universal-dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: var(--border-dark);
+}
+
+html.light .vm-grid::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+
+html.light .vm-grid::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+}
+
+html.light .vm-grid::-webkit-scrollbar-thumb:hover {
+    background: var(--border-dark);
+}
+
+html.light .vc-avatar {
+    background: var(--bg-tertiary);
+}
+
+html.light .vc-name {
+    color: #1a1a1a !important;
+}
+
+html.light .vc-tag {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+    border: 1px solid var(--border) !important;
+}
+
+html.light .vc-desc {
+    color: #4b5563 !important;
+}
+
+html.light .vc-footer {
+    border-top-color: var(--border);
+}
+
+html.light .vc-actions {
+    color: var(--text-dim);
+}
+
+html.light .vc-actions i {
+    color: var(--text-dim);
+}
+
+html.light .vc-actions i:hover {
+    color: var(--text);
+}
+
+html.light .vc-actions i.active {
+    color: #d97706;
+}
+
+html.light .vc-use-btn {
+    background: var(--bg-main);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html.light .vc-use-btn:hover {
+    background: var(--hover-bg);
+    border-color: var(--border-medium);
+    color: var(--text);
+}
+
+html.light .voice-card:hover .vc-use-btn {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--bg-main);
+}
+
+/* =================== HISTORY SIDEBAR DETAILS =================== */
+html.light .history-card.processing::after {
+    background: var(--bg-main) !important;
+}
+
+html.light .history-card.processing::before {
+    opacity: 0.18;
+}
+
+html.light .history-card .hc-header {
+    border-bottom-color: var(--border) !important;
+}
+
+html.light .history-card .hc-time,
+html.light .history-card .hc-time span {
+    color: var(--text-dim) !important;
+}
+
+html.light .history-card .hc-content {
+    color: var(--text) !important;
+}
+
+html.light .history-card .hc-status,
+html.light .history-card .status-pending,
+html.light .history-card .status-done,
+html.light .history-card .status-failed,
+html.light .history-card .status-queued,
+html.light .history-card .status-processing {
+    background: var(--bg-tertiary) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html.light .history-card .hc-cost {
+    background: rgba(217, 119, 6, 0.12) !important;
+    color: #b45309 !important;
+    border-color: rgba(217, 119, 6, 0.3) !important;
+}
+
+html.light .hc-progress-track {
+    background: var(--bg-tertiary);
+}
+
+html.light .hc-progress-fill {
+    background: var(--primary);
+    box-shadow: none;
+}
+
+html.light .hc-player {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+}
+
+html.light .hc-play-btn {
+    background: var(--bg-main);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html.light .hc-play-btn:hover {
+    background: var(--hover-bg);
+}
+
+html.light .hc-progress {
+    background: var(--border);
+}
+
+html.light .hc-progress-bar {
+    background: var(--primary);
+}
+
+html.light .hc-time-display {
+    color: var(--text-dim);
+}
+
+html.light .hc-download-btn,
+html.light .hc-action-btn {
+    background: var(--bg-main);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html.light .hc-download-btn:hover,
+html.light .hc-action-btn:hover {
+    background: var(--hover-bg);
+    border-color: var(--border-medium);
+    color: var(--text);
+}
+
+html.light .hc-download-menu {
+    background: var(--bg-main);
+    border-color: var(--border);
+    box-shadow: var(--shadow-lg);
+}
+
+html.light .hc-download-header {
+    background: var(--bg-tertiary);
+    border-bottom-color: var(--border);
+    color: var(--text-dim);
+}
+
+html.light .hc-download-item {
+    color: var(--text);
+}
+
+html.light .hc-download-item:hover {
+    background: var(--hover-bg);
+}
+
+html.light .hc-download-item.hc-download-disabled {
+    color: var(--text-muted);
+}
+
+html.light #historyListContainer button[id^="btn-delete-"],
+html.light #historyListContainer .btn-delete-history {
+    background: transparent !important;
+    border-color: var(--border-medium) !important;
+    color: var(--text-dim) !important;
+}
+
+html.light #historyListContainer button[id^="btn-delete-"]:hover,
+html.light #historyListContainer .btn-delete-history:hover {
+    border-color: #ef4444 !important;
+    color: #ef4444 !important;
+}
+
+/* =================== DETAILED HISTORY MODAL =================== */
+html.light .dh-modal-overlay {
+    background: rgba(0, 0, 0, 0.45);
+}
+
+html.light .dh-modal-content {
+    background: var(--bg-main);
+    border-color: var(--border);
+    box-shadow: var(--shadow-xl);
+}
+
+html.light .dh-header {
+    border-bottom-color: var(--border);
+}
+
+html.light .dh-header h3 {
+    color: var(--text);
+}
+
+html.light .dh-header-btn {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+html.light .dh-header-btn:hover {
+    background: var(--hover-bg);
+    border-color: var(--border-medium);
+}
+
+html.light .dh-toolbar {
+    background: var(--bg-secondary);
+    border-bottom-color: var(--border);
+}
+
+html.light .dh-btn-action {
+    background: var(--bg-main);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html.light .dh-btn-action:hover:not(:disabled) {
+    background: var(--hover-bg);
+    border-color: var(--border-medium);
+}
+
+html.light .dh-btn-action:disabled {
+    color: var(--text-muted);
+}
+
+html.light .dh-list-body {
+    background: var(--bg-main);
+}
+
+html.light .dh-row {
+    border-bottom-color: var(--border);
+}
+
+html.light .dh-row:hover {
+    background: var(--hover-bg);
+}
+
+html.light .dh-time {
+    color: var(--text);
+}
+
+html.light .dh-text-preview {
+    color: var(--text-dim);
+}
+
+html.light .dh-text-empty {
+    color: var(--text-muted);
+}
+
+html.light .dh-status-badge,
+html.light .dh-badge-done {
+    background: var(--bg-tertiary);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+html.light .dh-badge-processing {
+    background: var(--bg-secondary);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+html.light .dh-badge-error {
+    background: rgba(239, 68, 68, 0.08);
+    color: #b91c1c;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+html.light .dh-play-btn {
+    background: var(--bg-main);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html.light .dh-play-btn:disabled {
+    color: var(--text-muted);
+    border-color: var(--border);
+    cursor: not-allowed;
+}
+
+html.light .dh-progress-track {
+    background: var(--bg-tertiary);
+}
+
+html.light .dh-progress-bar {
+    background: var(--primary);
+}
+
+html.light .dh-timer {
+    color: var(--text-dim);
+}
+
+html.light .dh-text-processing {
+    color: var(--primary);
+}
+
+html.light .dh-link {
+    color: var(--text);
+}
+
+html.light .dh-delete-btn {
+    color: var(--text-dim);
+}
+
+html.light .dh-delete-btn:hover {
+    color: #ef4444;
+}
+
+html.light .dh-credits-val {
+    color: var(--text);
+}
+
+html.light .dh-credits-label {
+    color: var(--text-dim);
+}
+
+html.light .dh-checkbox-wrapper input {
+    accent-color: var(--primary);
+}
+
+html.light .dh-remake-btn {
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html.light .dh-remake-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--hover-bg);
+}
+
+html.light .dh-download-btn {
+    background: var(--bg-main);
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+html.light .dh-download-btn:hover {
+    background: var(--hover-bg);
+    border-color: var(--border-medium);
+}
+
+html.light .dh-download-menu {
+    background: var(--bg-main);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+}
+
+html.light .dh-download-header {
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border);
+    color: var(--text-dim);
+}
+
+html.light .dh-download-item {
+    color: var(--text);
+}
+
+html.light .dh-download-item:hover {
+    background: var(--hover-bg);
+}
+
+html.light .dh-download-item.dh-download-disabled {
+    color: var(--text-muted);
+}
+
+html.light .dh-loading-container,
+html.light .dh-loading-more {
+    color: var(--text-dim);
+}
+
+html.light .dh-loading-spinner,
+html.light .dh-loading-more-spinner {
+    border-color: var(--border);
+    border-top-color: var(--primary);
+}
+
+/* =================== INLINE LIGHT OVERRIDES =================== */
+html.light #uploadDropdown {
+    background: var(--bg-main) !important;
+    border-color: var(--border) !important;
+    box-shadow: var(--shadow-lg);
+}
+
+html.light #uploadDropdown .upload-option {
+    color: var(--text) !important;
+    border-bottom-color: var(--border) !important;
+}
+
+html.light #uploadDropdown .upload-option:hover {
+    background: var(--hover-bg) !important;
+    color: var(--text) !important;
+}
+
+html.light #creditsTooltip {
+    background: var(--bg-main) !important;
+    border-color: var(--border) !important;
+    color: var(--text) !important;
+}
+
+html.light #creditsTooltip div {
+    color: var(--text-dim) !important;
+}
+
+html.light #creditsTooltip span {
+    color: var(--text) !important;
+}
+
+html.light #charDisplay {
+    color: var(--text) !important;
+}
+
+html.light #charDisplay i,
+html.light #charDisplay span[data-i18n="vc_chars"] {
+    color: var(--text-dim) !important;
+}
+
+html.light #estimatedCostDisplay,
+html.light #estimatedCost {
+    color: #b45309 !important;
+}
+
+html.light .stats-display > span:not(.credits-display) {
+    color: var(--border-dark) !important;
+}
+
+html.light #historyActions .tab-btn {
+    background: var(--bg-main) !important;
+    border-color: var(--border) !important;
+    color: var(--text) !important;
+}
+
+html.light #historyActions .tab-btn:hover {
+    background: var(--hover-bg) !important;
+    border-color: var(--border-medium) !important;
+}
+
+html.light #inputLoader {
+    background: rgba(255, 255, 255, 0.85) !important;
+}
+
+html.light #inputLoader div {
+    color: var(--text) !important;
+}
+
+html.light #globalDropOverlay {
+    background: rgba(255, 255, 255, 0.92) !important;
+    color: var(--text) !important;
+}
+
+html.light #globalDropOverlay h2 {
+    color: var(--text) !important;
+}
+
+html.light #globalDropOverlay p {
+    color: var(--text-dim) !important;
+}
+
+html.light #globalDropOverlay i {
+    color: var(--primary) !important;
+}
+
+/* =================== PROVIDER & STATUS =================== */
+html.light .provider-option.provider-disabled {
+    background: var(--bg-tertiary) !important;
+    border-left-color: transparent !important;
+    opacity: 0.6 !important;
+}
+
+html.light .provider-option.provider-disabled .provider-name {
+    color: var(--text-muted) !important;
+}
+
+html.light .provider-option.provider-disabled .provider-desc {
+    color: var(--text-muted) !important;
+}
+
+html.light .maintenance-banner {
+    background: rgba(217, 119, 6, 0.08);
+    border-color: rgba(217, 119, 6, 0.25);
+}
+
+html.light .maintenance-banner-title {
+    color: #b45309;
+}
+
+html.light .maintenance-banner-content {
+    color: var(--text-secondary);
+}
+
+html.light .maintenance-banner-note {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    color: var(--text-dim);
+}
+
+html.light .maintenance-banner-error {
+    background: rgba(239, 68, 68, 0.08);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* =================== BULK UPLOAD MODAL =================== */
+html.light #bulkUploadModal {
+    background: rgba(15, 23, 42, 0.35);
+}
+
+html.light .bulk-modal-content {
+    background: var(--bg-main);
+    border-color: var(--border);
+    box-shadow: var(--shadow-xl);
+}
+
+html.light .bulk-modal-header {
+    background: var(--bg-secondary);
+    border-bottom-color: var(--border);
+}
+
+html.light .bulk-modal-header h3 {
+    color: var(--text);
+}
+
+html.light .bulk-modal-close {
+    border-color: var(--border);
+    color: var(--text-dim);
+}
+
+html.light .bulk-modal-close:hover {
+    background: var(--hover-bg);
+    border-color: var(--border-medium);
+    color: var(--text);
+}
+
+html.light .bulk-notice {
+    background: rgba(217, 119, 6, 0.08);
+    border-bottom-color: rgba(217, 119, 6, 0.2);
+}
+
+html.light .bulk-notice span {
+    color: var(--text-secondary);
+}
+
+html.light .bulk-notice strong {
+    color: #b45309;
+}
+
+html.light .bulk-drop-zone {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html.light .bulk-drop-zone:hover {
+    border-color: var(--primary);
+    background: rgba(26, 26, 26, 0.02);
+}
+
+html.light .bulk-drop-zone.dragover {
+    border-color: var(--primary);
+    background: rgba(26, 26, 26, 0.05);
+}
+
+html.light .bulk-drop-zone p {
+    color: var(--text-dim);
+}
+
+html.light .bulk-file-list-header h5 {
+    color: var(--text);
+}
+
+html.light .bulk-btn-clear {
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html.light .bulk-btn-clear:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.08);
+}
+
+html.light .bulk-file-item {
+    background: #ffffff !important;
+    border-bottom-color: var(--border) !important;
+}
+
+html.light .bulk-file-item:hover {
+    background: #f9fafb !important;
+}
+
+html.light .bulk-file-name {
+    color: #1a1a1a !important;
+}
+
+html.light .bulk-file-badge,
+html.light .bulk-file-chars {
+    color: #4b5563 !important;
+}
+
+html.light .bulk-btn-remove {
+    border-color: var(--border);
+    color: var(--text-dim);
+}
+
+html.light .bulk-btn-remove:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.08);
+}
+
+html.light .bulk-summary {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+}
+
+html.light .bulk-summary-label {
+    color: var(--text-dim);
+}
+
+html.light .bulk-summary-value {
+    color: var(--text);
+}
+
+html.light .bulk-summary-value.small {
+    color: var(--text-dim);
+}
+
+html.light .bulk-summary-total .bulk-summary-label {
+    color: var(--text);
+}
+
+html.light .bulk-summary-total .bulk-summary-value {
+    color: #b45309;
+}
+
+html.light .bulk-summary-balance .bulk-summary-value {
+    color: #15803d;
+}
+
+html.light .bulk-summary-divider,
+html.light .bulk-summary-total {
+    border-top-color: var(--border);
+}
+
+html.light .bulk-settings-info {
+    color: var(--text-dim);
+}
+
+html.light .bulk-settings-info {
+    border-top-color: var(--border);
+}
+
+html.light .bulk-settings-info span {
+    color: #15803d;
+}
+
+html.light .bulk-btn-process {
+    background: var(--primary);
+    color: var(--bg-main);
+    box-shadow: var(--shadow-md);
+}
+
+html.light .bulk-btn-process:hover:not(:disabled) {
+    box-shadow: var(--shadow-lg);
+}
+
+html.light .bulk-file-list-items::-webkit-scrollbar-track,
+html.light .bulk-modal-body::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+html.light .bulk-file-list-items::-webkit-scrollbar-thumb,
+html.light .bulk-modal-body::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+}
+
+html.light .bulk-file-list-items::-webkit-scrollbar-thumb:hover,
+html.light .bulk-modal-body::-webkit-scrollbar-thumb:hover {
+    background: var(--border-dark);
+}
+
+/* =================== BULK CONFIRM POPUP =================== */
+html.light .bulk-confirm-overlay {
+    background: rgba(15, 23, 42, 0.35);
+}
+
+html.light .bulk-confirm-box {
+    background: var(--bg-main);
+    border-color: var(--border);
+    box-shadow: var(--shadow-xl);
+}
+
+html.light .bulk-confirm-icon {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+}
+
+html.light .bulk-confirm-icon i {
+    color: var(--primary);
+}
+
+html.light .bulk-confirm-title {
+    color: var(--text);
+}
+
+html.light .bulk-confirm-message {
+    color: var(--text-secondary);
+}
+
+html.light .bulk-confirm-stats {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+}
+
+html.light .bulk-confirm-stat-row {
+    border-bottom-color: var(--border);
+}
+
+html.light .bulk-confirm-stat-label {
+    color: var(--text-dim);
+}
+
+html.light .bulk-confirm-stat-value {
+    color: var(--text);
+}
+
+html.light .bulk-confirm-stat-value.highlight {
+    color: #b45309;
+}
+
+html.light .bulk-confirm-stat-value.balance {
+    color: #15803d;
+}
+
+html.light .bulk-confirm-stat-value.danger {
+    color: #b91c1c;
+}
+
+html.light .bulk-confirm-warning {
+    background: rgba(217, 119, 6, 0.08);
+    border-color: rgba(217, 119, 6, 0.25);
+}
+
+html.light .bulk-confirm-warning-text {
+    color: var(--text-secondary);
+}
+
+html.light .bulk-confirm-btn-cancel {
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html.light .bulk-confirm-btn-cancel:hover {
+    background: var(--hover-bg);
+    border-color: var(--border-medium);
+}
+
+html.light .bulk-confirm-btn-confirm {
+    background: var(--primary);
+    color: var(--bg-main);
+}
+
+html.light .bulk-confirm-btn-confirm:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+/* =================== FOLDER CONFIRM POPUP =================== */
+html.light #folderConfirmPopup {
+    background: rgba(15, 23, 42, 0.35);
+}
+
+html.light .folder-confirm-box {
+    background: var(--bg-main);
+    border-color: var(--border);
+    box-shadow: var(--shadow-xl);
+}
+
+html.light .folder-confirm-icon {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+}
+
+html.light .folder-confirm-icon i {
+    color: var(--text);
+}
+
+html.light #folderConfirmPopup h3 {
+    color: var(--text);
+}
+
+html.light #folderConfirmPopup p {
+    color: var(--text-dim);
+}
+
+html.light #folderFileList {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html.light #folderCancelBtn {
+    border-color: var(--border);
+    color: var(--text);
+    background: var(--bg-main);
+}
+
+html.light #folderCancelBtn:hover {
+    background: var(--hover-bg);
+    border-color: var(--border-medium);
+}
+
+html.light #folderUploadBtn {
+    background: var(--primary);
+    color: var(--bg-main);
+}
+
+html.light #folderUploadBtn:hover {
+    background: var(--accent);
+}
+
+html.light #folderFileList::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+html.light #folderFileList::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+}
+
+html.light #folderFileList::-webkit-scrollbar-thumb:hover {
+    background: var(--border-dark);
+}
+
+/* =================== DELETE MODAL =================== */
+html.light .custom-modal-overlay {
+    background: rgba(15, 23, 42, 0.35);
+}
+
+html.light .delete-modal-box {
+    background: var(--bg-main);
+    border-color: var(--border);
+    box-shadow: var(--shadow-xl);
+}
+
+html.light .dm-header h3 {
+    color: var(--text);
+}
+
+html.light .dm-warning,
+html.light .dm-note {
+    color: var(--text-secondary);
+}
+
+html.light .dm-preview {
+    background: var(--bg-secondary);
+    border-left-color: var(--border-medium);
+    color: var(--text);
+}
+
+html.light .btn-cancel {
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html.light .btn-cancel:hover {
+    background: var(--hover-bg);
+    border-color: var(--border-medium);
+}
+
+/* =================== VC-TAG-PILL =================== */
+html.light .vc-tag-pill {
+    background: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    color: #1a1a1a !important;
+}
+
+html.light .vc-tag-icon {
+    color: #4b5563 !important;
+}
+
+/* =================== MODEL OPTION =================== */
+html.light .model-option {
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
+}
+
+html.light .model-option:hover {
+    background: #f9fafb !important;
+    border-color: #d1d5db !important;
+}
+
+html.light .model-option.selected {
+    background: #ffffff !important;
+    border: 2px solid #1a1a1a !important;
+    padding: 15px !important;
+}
+
+html.light .model-option.selected::before {
+    display: none !important;
+}
+
+html.light .model-option.selected::after {
+    display: none !important;
+}
+
+html.light .model-option.selected > * {
+    margin: 0 !important;
+}
+
+html.light .mo-header,
+html.light .mo-name,
+html.light .model-option h4,
+html.light .model-option .mo-title {
+    color: #1a1a1a !important;
+}
+
+html.light .mo-desc,
+html.light .model-option p,
+html.light .model-option .mo-description {
+    color: #4b5563 !important;
+}
+
+/* =================== LANG BADGE =================== */
+html.light .lang-badge {
+    background: #ffffff !important;
+    border: 1px solid #1a1a1a !important;
+    color: #1a1a1a !important;
+}
+
+html.light .lang-badge:hover {
+    background: #f9fafb !important;
+}
+
+html.light .lang-badge-wrapper .lang-tooltip {
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
+    color: #1a1a1a !important;
+}
+
+/* =================== KINGCONG VOICE CARD (CLONED) =================== */
+html.light .kingcong-card.voice-card,
+html.light .kingcong-card {
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
+}
+
+html.light .kingcong-card.voice-card:hover,
+html.light .kingcong-card:hover {
+    background: #f9fafb !important;
+    border-color: #d1d5db !important;
+}
+
+html.light .kingcong-card .vc-name,
+html.light .kingcong-card .voice-name {
+    color: #1a1a1a !important;
+}
+
+html.light .kingcong-card .vc-desc,
+html.light .kingcong-card .vc-description,
+html.light .kingcong-card .voice-description {
+    color: #4b5563 !important;
+}
+
+html.light .kingcong-card .vc-tag,
+html.light .kingcong-card .vc-tag-pill,
+html.light .kingcong-card .voice-badge {
+    background: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    color: #1a1a1a !important;
+}
+
+html.light .kingcong-card .vc-avatar {
+    background: #f3f4f6 !important;
+}
+
+/* =================== MINIMAX USE BUTTON =================== */
+html.light .minimax-use-btn {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+    border: 1px solid #d1d5db !important;
+}
+
+html.light .minimax-use-btn:hover {
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+    border-color: #1a1a1a !important;
+}
+
+/* =================== KC CLONE CARD =================== */
+html.light .kc-clone-card {
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
+}
+
+html.light .kc-clone-card:hover {
+    background: #f9fafb !important;
+    border-color: #d1d5db !important;
+}
+
+html.light .kc-clone-card.selected {
+    background: #ffffff !important;
+    border-color: #1a1a1a !important;
+}
+
+html.light .kc-clone-card .vc-title,
+html.light .kc-clone-card .vc-name {
+    color: #1a1a1a !important;
+}
+
+html.light .kc-clone-card .vc-tag {
+    background: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    color: #1a1a1a !important;
+}
+
+html.light .kc-clone-card .vc-tag.clone-tag {
+    background: #ffffff !important;
+    border: 1px solid #1a1a1a !important;
+    color: #1a1a1a !important;
+}
+
+html.light .kc-clone-card .vc-avatar {
+    background: #f3f4f6 !important;
+}
+
+html.light .kc-clone-card .btn-icon-action {
+    background: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    color: #4b5563 !important;
+}
+
+html.light .kc-clone-card .btn-icon-action:hover {
+    background: #f3f4f6 !important;
+    color: #1a1a1a !important;
+}
+
+html.light .kc-clone-card .btn-use {
+    background: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    color: #1a1a1a !important;
+}
+
+html.light .kc-clone-card .btn-use:hover {
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+    border-color: #1a1a1a !important;
+}
+
+html.light .kc-clone-card.add-clone-card {
+    background: #ffffff !important;
+    border: 2px dashed #1a1a1a !important;
+    color: #1a1a1a !important;
+}
+
+html.light .kc-clone-card.add-clone-card:hover {
+    background: #f9fafb !important;
+    border-color: #1a1a1a !important;
+}
+
+html.light .kc-clone-card.add-clone-card i,
+html.light .kc-clone-card.add-clone-card span,
+html.light .kc-clone-card.add-clone-card p,
+html.light .kc-clone-card.add-clone-card div {
+    color: #1a1a1a !important;
+}
+
+/* Add clone card - hide gradient in light mode */
+html.light .add-clone-card {
+    background: #ffffff !important;
+    border: 2px dashed #1a1a1a !important;
+}
+
+html.light .add-clone-card::before,
+html.light .add-clone-card::after {
+    display: none !important;
+}
+
+html.light .add-clone-card:hover {
+    background: #f9fafb !important;
+    border-color: #1a1a1a !important;
+}
+
+html.light .add-clone-card .add-avatar,
+html.light .add-clone-card .add-text,
+html.light .add-clone-card i,
+html.light .add-clone-card span,
+html.light .add-clone-card .bi-plus-lg {
+    color: #1a1a1a !important;
+}
+
+/* =================== PRONUNCIATION MODAL =================== */
+html.light .pronunciation-modal {
+    background: rgba(0, 0, 0, 0.5) !important;
+}
+
+html.light .pronunciation-modal-content {
+    background: #ffffff !important;
+    border-color: #e5e5e5 !important;
+}
+
+html.light .pronunciation-modal-header {
+    background: #ffffff !important;
+    border-bottom-color: #e5e5e5 !important;
+}
+
+html.light .pronunciation-modal-header h3 {
+    color: #1a1a1a !important;
+}
+
+html.light .pronunciation-close-btn {
+    color: #6b7280 !important;
+}
+
+html.light .pronunciation-close-btn:hover {
+    color: #1a1a1a !important;
+}
+
+html.light .pronunciation-modal-body {
+    background: #ffffff !important;
+}
+
+html.light .pronunciation-form label,
+html.light .pronunciation-modal label {
+    color: #1a1a1a !important;
+}
+
+html.light .pronunciation-form input,
+html.light .pronunciation-modal input {
+    background: #ffffff !important;
+    border-color: #d1d5db !important;
+    color: #1a1a1a !important;
+}
+
+html.light .pronunciation-form input::placeholder,
+html.light .pronunciation-modal input::placeholder {
+    color: #9ca3af !important;
+}
+
+html.light .pronunciation-modal .custom-dropdown-selected {
+    background: #ffffff !important;
+    border-color: #d1d5db !important;
+    color: #1a1a1a !important;
+}
+
+html.light .pronunciation-modal .custom-dropdown-options {
+    background: #ffffff !important;
+    border-color: #d1d5db !important;
+}
+
+html.light .pronunciation-modal .custom-dropdown-option {
+    color: #1a1a1a !important;
+}
+
+html.light .pronunciation-modal .custom-dropdown-option:hover {
+    background: #f3f4f6 !important;
+}
+
+html.light .pronunciation-modal button {
+    background: #ffffff !important;
+    border-color: #d1d5db !important;
+    color: #1a1a1a !important;
+}
+
+html.light .pronunciation-modal button:hover {
+    background: #f3f4f6 !important;
+}
+
+html.light .pronunciation-modal .btn-primary,
+html.light .pronunciation-modal button[type="submit"] {
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+    border-color: #1a1a1a !important;
+}
+
+html.light .pronunciation-list,
+html.light .pronunciation-item {
+    background: #ffffff !important;
+    border-color: #e5e5e5 !important;
+}
+
+html.light .pronunciation-item:hover {
+    background: #f9fafb !important;
+}
+
+html.light .pronunciation-item span,
+html.light .pronunciation-item div {
+    color: #1a1a1a !important;
+}
+
+/* =================== TEXT NORMALIZE SIDEBAR =================== */
+html.light .text-normalize-sidebar {
+    background: #ffffff !important;
+    border-left-color: #e5e5e5 !important;
+}
+
+html.light .tn-header {
+    background: #ffffff !important;
+    border-bottom-color: #e5e5e5 !important;
+}
+
+html.light .tn-header-title {
+    color: #1a1a1a !important;
+}
+
+html.light .tn-header-title i {
+    color: #6b7280 !important;
+}
+
+html.light .tn-cancel-btn {
+    background: #ffffff !important;
+    border-color: #d1d5db !important;
+    color: #1a1a1a !important;
+}
+
+html.light .tn-cancel-btn:hover {
+    background: #f3f4f6 !important;
+    border-color: #9ca3af !important;
+}
+
+html.light .tn-apply-btn {
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+}
+
+html.light .tn-apply-btn:hover {
+    background: #333333 !important;
+}
+
+html.light .tn-apply-btn:disabled {
+    background: #e5e5e5 !important;
+    color: #9ca3af !important;
+}
+
+html.light .tn-body {
+    background: #ffffff !important;
+}
+
+html.light .tn-panel {
+    background: #ffffff !important;
+    border-color: #e5e5e5 !important;
+}
+
+html.light .tn-panel-header {
+    background: #f9fafb !important;
+    border-bottom-color: #e5e5e5 !important;
+    color: #1a1a1a !important;
+}
+
+html.light .tn-panel-header h4,
+html.light .tn-panel-header span {
+    color: #1a1a1a !important;
+}
+
+html.light .tn-panel-content {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+}
+
+html.light .tn-preview-before,
+html.light .tn-preview-after,
+html.light #tnPreviewBefore,
+html.light #tnPreviewAfter {
+    background: #f9fafb !important;
+    border-color: #e5e5e5 !important;
+    color: #1a1a1a !important;
+}
+
+html.light .tn-empty-state {
+    color: #6b7280 !important;
+}
+
+html.light .tn-empty-state i {
+    color: #9ca3af !important;
+}
+
+html.light .tn-diff-add {
+    background: rgba(16, 185, 129, 0.15) !important;
+    color: #059669 !important;
+}
+
+html.light .tn-diff-remove {
+    background: rgba(239, 68, 68, 0.15) !important;
+    color: #dc2626 !important;
+}
+
+/* =================== TN SETTINGS =================== */
+html.light .tn-setting,
+html.light .tn-settings {
+    background: #ffffff !important;
+    border-color: #e5e5e5 !important;
+}
+
+html.light .tn-setting label,
+html.light .tn-setting span,
+html.light .tn-setting div,
+html.light .tn-settings label,
+html.light .tn-settings span,
+html.light .tn-settings div {
+    color: #1a1a1a !important;
+}
+
+html.light .tn-setting input,
+html.light .tn-setting select,
+html.light .tn-settings input,
+html.light .tn-settings select {
+    background: #ffffff !important;
+    border-color: #d1d5db !important;
+    color: #1a1a1a !important;
+}
+
+html.light .tn-setting-item,
+html.light .tn-setting-row {
+    background: #ffffff !important;
+    border-color: #e5e5e5 !important;
+    color: #1a1a1a !important;
+}
+
+/* =================== TN PREVIEW HEADER =================== */
+html.light .tn-preview-header {
+    background: #ffffff !important;
+    border-color: #e5e5e5 !important;
+}
+
+html.light .tn-preview-header h4,
+html.light .tn-preview-header span,
+html.light .tn-preview-header div,
+html.light .tn-preview-header label,
+html.light .tn-preview-header i {
+    color: #1a1a1a !important;
+}
+
+/* =================== TN OPTION =================== */
+html.light .tn-option {
+    background: #ffffff !important;
+    border-color: #e5e5e5 !important;
+}
+
+html.light .tn-option label,
+html.light .tn-option span,
+html.light .tn-option div,
+html.light .tn-option p,
+html.light .tn-option i {
+    color: #1a1a1a !important;
+}
+
+html.light .tn-option:hover {
+    background: #f9fafb !important;
+}
+
+html.light .tn-option.active,
+html.light .tn-option.selected {
+    background: #f3f4f6 !important;
+    border-color: #1a1a1a !important;
+}
+
+/* =================== PRONUNCIATION ADD BTN =================== */
+html.light .pronunciation-add-btn,
+html.light .pronunciation-modal .pronunciation-add-btn,
+html.light button.pronunciation-add-btn {
+    background: #1a1a1a !important;
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+    border: 1px solid #1a1a1a !important;
+}
+
+html.light .pronunciation-add-btn:hover,
+html.light .pronunciation-modal .pronunciation-add-btn:hover,
+html.light button.pronunciation-add-btn:hover {
+    background: #333333 !important;
+    background-color: #333333 !important;
+}
+
+html.light .pronunciation-add-btn i,
+html.light .pronunciation-add-btn span {
+    color: #ffffff !important;
+}
+
+/* =================== PRONUNCIATION ITEM LANG =================== */
+html.light .pronunciation-item-lang {
+    background: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    color: #1a1a1a !important;
+}
+
+html.light .pronunciation-item-lang:hover {
+    background: #f9fafb !important;
+}

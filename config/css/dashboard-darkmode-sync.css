@@ -1,0 +1,565 @@
+/* =====================================================
+   DASHBOARD DARKMODE SYNC WITH TTS INTERFACE
+   Đồng bộ giao diện Header, Sidebar, Footer với TTS
+   ===================================================== */
+
+:root {
+    /* TTS Color Palette - Áp dụng cho toàn dashboard */
+    --page-bg: #0a0a0a;           /* Nền chính - đen thuần */
+    --sidebar-bg: #0f0f0f;        /* Sidebar - đen nhạt hơn */
+    --content-bg: #0f0f0f;        /* Content area */
+    --text-color: #e5e5e5;        /* Text chính - trắng nhạt */
+    --text-secondary: #888;       /* Text phụ - xám */
+    --input-bg: #1a1a1a;          /* Input/Button background */
+    --input-border: #2a2a2a;      /* Border nhẹ */
+    --input-focus: #ffffff;       /* Focus state - trắng */
+    --primary-color: #ffffff;     /* Accent chính - trắng */
+    --primary-hover: #e5e5e5;     /* Hover state */
+    --shadow: rgba(0, 0, 0, 0.5); /* Shadow đậm */
+    --hover-bg: #1a1a1a;          /* Background khi hover */
+    --border-color: #2a2a2a;      /* Border color */
+}
+
+html.dark {
+    /* Giữ nguyên palette cho dark mode */
+    --page-bg: #0a0a0a;
+    --sidebar-bg: #0f0f0f;
+    --content-bg: #0f0f0f;
+    --text-color: #e5e5e5;
+    --text-secondary: #888;
+    --input-bg: #1a1a1a;
+    --input-border: #2a2a2a;
+    --input-focus: #ffffff;
+    --primary-color: #ffffff;
+    --primary-hover: #e5e5e5;
+    --shadow: rgba(0, 0, 0, 0.5);
+    --hover-bg: #1a1a1a;
+    --border-color: #2a2a2a;
+}
+
+/* Light Mode - Tone sáng tương tự nhưng đảo ngược */
+html:not(.dark) {
+    --page-bg: #ffffff;
+    --sidebar-bg: #f8f9fa;
+    --content-bg: #ffffff;
+    --text-color: #1a1a1a;
+    --text-secondary: #666;
+    --input-bg: #f1f3f5;
+    --input-border: #dee2e6;
+    --input-focus: #000000;
+    --primary-color: #000000;
+    --primary-hover: #333;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --hover-bg: #f1f3f5;
+    --border-color: #dee2e6;
+}
+
+/* =====================================================
+   BODY & LAYOUT
+   ===================================================== */
+body {
+    background-color: var(--page-bg) !important;
+    color: var(--text-color) !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dashboard-wrapper {
+    background-color: var(--page-bg);
+}
+
+/* =====================================================
+   SIDEBAR REDESIGN
+   ===================================================== */
+.sidebar {
+    background-color: var(--sidebar-bg) !important;
+    border-right: 1px solid var(--border-color) !important;
+    box-shadow: none !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    background-color: var(--sidebar-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px;
+}
+
+.logo-text {
+    color: var(--text-color) !important;
+    font-weight: 700;
+}
+
+/* Menu Section */
+.menu-title {
+    color: var(--text-secondary) !important;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Menu Items */
+.menu-item {
+    color: var(--text-color) !important;
+    background: transparent !important;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    margin: 2px 12px;
+    padding: 10px 12px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.menu-item:hover {
+    background: var(--hover-bg) !important;
+    color: var(--text-color) !important;
+    transform: translateX(2px);
+}
+
+.menu-item.active {
+    background: var(--input-bg) !important;
+    color: var(--primary-color) !important;
+    font-weight: 600;
+    border-left: 3px solid var(--primary-color);
+    margin-left: 12px;
+    padding-left: 9px;
+}
+
+.menu-item i {
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.menu-item:hover i,
+.menu-item.active i {
+    color: var(--primary-color);
+}
+
+/* Submenu Items */
+.submenu {
+    background: transparent;
+}
+
+.submenu-item {
+    color: var(--text-secondary) !important;
+    background: transparent !important;
+    padding: 8px 12px 8px 40px;
+    margin: 2px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+
+.submenu-item:hover {
+    background: var(--hover-bg) !important;
+    color: var(--text-color) !important;
+    transform: translateX(2px);
+}
+
+.submenu-item.active {
+    background: var(--input-bg) !important;
+    color: var(--primary-color) !important;
+    font-weight: 600;
+    border-left: 2px solid var(--primary-color);
+    padding-left: 38px;
+}
+
+.submenu-item i {
+    color: var(--text-secondary);
+}
+
+.submenu-item:hover i,
+.submenu-item.active i {
+    color: var(--primary-color);
+}
+
+/* Dropdown Arrow */
+.dropdown-arrow {
+    color: var(--text-secondary) !important;
+}
+
+.menu-item:hover .dropdown-arrow,
+.menu-item.active .dropdown-arrow {
+    color: var(--primary-color) !important;
+}
+
+/* Nested Submenu */
+.nested-submenu .submenu-item {
+    padding-left: 56px;
+    font-size: 11px;
+}
+
+/* Scrollbar cho Sidebar */
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: var(--sidebar-bg);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* =====================================================
+   TOP HEADER
+   ===================================================== */
+.top-header {
+    background-color: var(--content-bg) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    box-shadow: none !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Search Box */
+.search-box input {
+    background-color: var(--input-bg) !important;
+    border: 1px solid var(--input-border) !important;
+    color: var(--text-color) !important;
+    transition: all 0.2s ease;
+}
+
+.search-box input:focus {
+    border-color: var(--primary-color) !important;
+    background-color: var(--sidebar-bg) !important;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1) !important;
+}
+
+.search-box input::placeholder {
+    color: var(--text-secondary) !important;
+}
+
+.search-box i {
+    color: var(--text-secondary) !important;
+}
+
+/* Header Buttons */
+.header-btn {
+    background-color: var(--input-bg) !important;
+    border: 1px solid var(--input-border) !important;
+    color: var(--text-color) !important;
+    transition: all 0.2s ease;
+}
+
+.header-btn:hover {
+    background-color: var(--hover-bg) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+    transform: scale(1.05);
+}
+
+/* Theme Toggle Button - Đặc biệt */
+.theme-toggle:hover {
+    transform: rotate(180deg) scale(1.1) !important;
+}
+
+/* Notification Badge */
+.notification-badge {
+    background: var(--primary-color) !important;
+    color: var(--page-bg) !important;
+    font-weight: 700;
+}
+
+/* User Menu */
+.user-menu {
+    background-color: var(--input-bg) !important;
+    border: 1px solid var(--input-border) !important;
+    transition: all 0.2s ease;
+}
+
+.user-menu:hover {
+    border-color: var(--primary-color) !important;
+    background-color: var(--hover-bg) !important;
+}
+
+.user-name {
+    color: var(--text-color) !important;
+}
+
+.user-role-badge {
+    color: var(--text-secondary) !important;
+}
+
+.dropdown-icon {
+    color: var(--text-secondary) !important;
+}
+
+/* User Avatar Placeholder */
+.user-avatar-placeholder {
+    background: var(--primary-color) !important;
+    color: var(--page-bg) !important;
+    font-weight: 700;
+}
+
+/* Login Button for Guest */
+.login-btn {
+    background: var(--primary-color) !important;
+    color: var(--page-bg) !important;
+    font-weight: 700;
+    border: none !important;
+}
+
+.login-btn:hover {
+    background: var(--primary-hover) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Menu Toggle (Mobile) */
+.menu-toggle {
+    color: var(--text-color) !important;
+    background: transparent !important;
+}
+
+.menu-toggle:hover {
+    color: var(--primary-color) !important;
+}
+
+/* =====================================================
+   NOTIFICATION DROPDOWN
+   ===================================================== */
+.dropdown-menu {
+    background: var(--content-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dropdown-header {
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.dropdown-header h5 {
+    color: var(--text-color) !important;
+}
+
+.mark-all-read {
+    color: var(--primary-color) !important;
+}
+
+.mark-all-read:hover {
+    text-decoration: underline;
+}
+
+.notification-item {
+    border-bottom: 1px solid var(--border-color) !important;
+    transition: background 0.2s ease;
+}
+
+.notification-item:hover {
+    background: var(--hover-bg) !important;
+}
+
+.notification-item.unread {
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.notification-content p {
+    color: var(--text-color) !important;
+}
+
+.notification-content .time-ago {
+    color: var(--text-secondary) !important;
+}
+
+.notification-empty {
+    color: var(--text-secondary) !important;
+}
+
+.dropdown-footer {
+    border-top: 1px solid var(--border-color) !important;
+}
+
+.dropdown-footer a {
+    color: var(--primary-color) !important;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+.compact-dashboard-footer {
+    background-color: var(--content-bg) !important;
+    border-top: 1px solid var(--border-color) !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-left p {
+    color: var(--text-secondary) !important;
+}
+
+.footer-left strong {
+    color: var(--text-color) !important;
+}
+
+.footer-link {
+    color: var(--text-secondary) !important;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.footer-divider {
+    background-color: var(--border-color) !important;
+}
+
+.social-icon {
+    color: var(--text-secondary) !important;
+    transition: all 0.2s ease;
+}
+
+.social-icon:hover {
+    color: var(--primary-color) !important;
+    transform: scale(1.1);
+}
+
+/* =====================================================
+   CONTENT AREA
+   ===================================================== */
+.content-area {
+    background-color: var(--page-bg);
+}
+
+/* Main Content */
+.main-content {
+    background-color: var(--page-bg);
+}
+
+/* =====================================================
+   SIDEBAR OVERLAY (Mobile)
+   ===================================================== */
+.sidebar-overlay {
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(4px);
+}
+
+/* =====================================================
+   RESPONSIVE ADJUSTMENTS
+   ===================================================== */
+@media (max-width: 1024px) {
+    .sidebar {
+        box-shadow: 2px 0 20px rgba(0, 0, 0, 0.5) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-header {
+        padding: 12px 16px;
+    }
+    
+    .sidebar-header {
+        padding: 16px;
+    }
+    
+    .menu-item,
+    .submenu-item {
+        margin: 2px 8px;
+    }
+}
+
+/* =====================================================
+   SMOOTH TRANSITIONS
+   ===================================================== */
+* {
+    transition-property: background-color, border-color, color, box-shadow;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+/* Ngoại lệ cho transform và opacity */
+.menu-item,
+.submenu-item,
+.header-btn,
+.user-menu,
+.login-btn,
+.footer-link,
+.social-icon {
+    transition: all 0.2s ease !important;
+}
+
+/* =====================================================
+   MAINTENANCE BANNER (Nếu có)
+   ===================================================== */
+.maintenance-banner {
+    background: rgba(251, 191, 36, 0.1) !important;
+    border: 1px solid rgba(251, 191, 36, 0.3) !important;
+}
+
+.maintenance-banner-icon {
+    color: #fbbf24 !important;
+}
+
+.maintenance-banner-title {
+    color: #fbbf24 !important;
+}
+
+.maintenance-banner-content {
+    color: var(--text-color) !important;
+}
+
+/* =====================================================
+   UTILITY CLASSES
+   ===================================================== */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+    color: var(--page-bg) !important;
+}
+
+.border-primary {
+    border-color: var(--primary-color) !important;
+}
+
+/* =====================================================
+   DARK MODE SPECIFIC ENHANCEMENTS
+   ===================================================== */
+html.dark .logo-icon {
+    filter: brightness(1.1);
+}
+
+html.dark .user-avatar {
+    border-color: var(--primary-color) !important;
+}
+
+/* =====================================================
+   LIGHT MODE SPECIFIC ENHANCEMENTS
+   ===================================================== */
+html:not(.dark) .logo-icon {
+    filter: brightness(0.9);
+}
+
+html:not(.dark) .user-avatar {
+    border-color: var(--input-border) !important;
+}
+
+html:not(.dark) .sidebar {
+    box-shadow: 1px 0 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) .top-header {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* =====================================================
+   PRINT STYLES
+   ===================================================== */
+@media print {
+    .sidebar,
+    .top-header,
+    .compact-dashboard-footer {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin-left: 0 !important;
+    }
+}

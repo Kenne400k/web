@@ -1,0 +1,512 @@
+/* =============================================
+   SPEECH TO TEXT (STT) - LIGHT THEME
+   Selector: html.light
+   ============================================= */
+
+/* CSS Variables cho Light Mode */
+html.light {
+    --bg-main: #f5f5f5;
+    --bg-card: #ffffff;
+    --border-color: #e0e0e0;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --error: #ef4444;
+}
+
+/* Body Background */
+html.light body {
+    background-color: #f5f5f5 !important;
+    color: #1a1a1a;
+}
+
+/* ========== MAIN LAYOUT ========== */
+html.light .stt-container {
+    background: transparent;
+}
+
+/* ========== PANELS ========== */
+html.light .settings-panel {
+    background: #ffffff;
+    border-color: #e0e0e0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+html.light .settings-panel::after {
+    background: #ffffff;
+}
+
+html.light .history-panel {
+    background: #ffffff;
+    border-color: #e0e0e0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+/* ========== ALERT BOX ========== */
+html.light .alert-box {
+    background: rgba(251, 191, 36, 0.08);
+    border-color: rgba(251, 191, 36, 0.25);
+    color: #666;
+}
+
+html.light .alert-box strong {
+    color: #b45309;
+}
+
+html.light .alert-box ul li {
+    color: #555;
+}
+
+/* ========== UPLOAD ZONE ========== */
+html.light .upload-label {
+    color: #333;
+}
+
+html.light .upload-zone {
+    background: #fafafa;
+    border-color: #d0d0d0;
+}
+
+html.light .upload-zone:hover {
+    border-color: #fbbf24;
+    background: rgba(251, 191, 36, 0.05);
+}
+
+html.light .upload-zone.drag-over {
+    border-color: #fbbf24;
+    background: rgba(251, 191, 36, 0.1);
+}
+
+html.light .upload-icon {
+    color: #fbbf24;
+}
+
+html.light .upload-title {
+    color: #333;
+}
+
+html.light .upload-desc {
+    color: #888;
+}
+
+/* ========== FILE LIST CONTAINER ========== */
+html.light #fileListContainer {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: #e0e0e0;
+}
+
+html.light .file-list-header {
+    border-bottom-color: #e0e0e0;
+}
+
+html.light .file-count {
+    color: #333;
+}
+
+html.light .file-count span {
+    color: #d97706;
+}
+
+html.light .btn-add-more,
+html.light .btn-clear-all {
+    border-color: #d0d0d0;
+    color: #666;
+}
+
+html.light .btn-add-more:hover {
+    border-color: #22c55e;
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.08);
+}
+
+html.light .btn-clear-all:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.08);
+}
+
+/* ========== FILE LIST ========== */
+html.light .file-list::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+}
+
+html.light .file-list::-webkit-scrollbar-thumb:hover {
+    background: #bbb;
+}
+
+/* ========== FILE ITEM ========== */
+html.light .file-item {
+    background: #ffffff;
+    border-color: #e0e0e0;
+}
+
+html.light .file-item:hover {
+    border-color: #ccc;
+    background: #fafafa;
+}
+
+html.light .file-item-icon {
+    background: #f5f5f5;
+}
+
+html.light .file-item-icon i {
+    color: #d97706;
+}
+
+html.light .file-item-name {
+    color: #1a1a1a;
+}
+
+html.light .file-item-size {
+    color: #888;
+}
+
+html.light .file-item-duration {
+    color: #d97706;
+}
+
+html.light .file-item-meta .separator {
+    color: #d0d0d0;
+}
+
+html.light .btn-remove-file {
+    color: #999;
+}
+
+html.light .btn-remove-file:hover {
+    color: #ef4444;
+}
+
+/* ========== COST DISPLAY ========== */
+html.light .cost-label {
+    color: #666;
+}
+
+html.light .cost-amount {
+    color: #d97706;
+}
+
+/* ========== STT BUTTON ========== */
+html.light .btn-stt {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+html.light .btn-stt:hover:not(:disabled) {
+    background: #333;
+}
+
+html.light .btn-stt:disabled {
+    background: #e0e0e0;
+    color: #999;
+}
+
+/* ========== HISTORY PANEL ========== */
+html.light .history-header {
+    border-bottom-color: #e0e0e0;
+}
+
+html.light .history-title {
+    color: #1a1a1a;
+}
+
+html.light .btn-check-all {
+    background: #f5f5f5;
+    border-color: #d0d0d0;
+    color: #666;
+}
+
+html.light .btn-check-all:hover {
+    border-color: #aaa;
+    color: #333;
+}
+
+html.light .bulk-actions .separator {
+    background: #e0e0e0;
+}
+
+html.light .btn-bulk {
+    background: #f5f5f5;
+    border-color: #d0d0d0;
+    color: #666;
+}
+
+html.light .btn-bulk:hover {
+    border-color: #aaa;
+    color: #333;
+    background: #f0f0f0;
+}
+
+html.light .btn-bulk.delete:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.08);
+}
+
+html.light .btn-refresh {
+    border-color: #d0d0d0;
+    color: #888;
+}
+
+html.light .btn-refresh:hover {
+    border-color: #667eea;
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+}
+
+/* ========== HISTORY LIST ========== */
+html.light .history-list {
+    background: transparent;
+}
+
+html.light .history-empty {
+    color: #999;
+    background: #fafafa;
+    border-color: #e0e0e0;
+}
+
+html.light .history-empty i {
+    color: #ccc;
+}
+
+html.light .history-item {
+    background: #ffffff;
+    border-color: #e0e0e0;
+}
+
+html.light .history-item:hover {
+    border-color: #ccc;
+    background: #fafafa;
+}
+
+html.light .item-checkbox {
+    border-color: #d0d0d0;
+    background: #fff;
+}
+
+html.light .item-checkbox:checked {
+    background: #667eea;
+    border-color: #667eea;
+}
+
+html.light .item-title {
+    color: #1a1a1a;
+}
+
+html.light .item-meta {
+    color: #888;
+}
+
+html.light .item-credits {
+    color: #d97706;
+}
+
+html.light .status-indicator.pending {
+    background: rgba(251, 191, 36, 0.15);
+    color: #d97706;
+}
+
+html.light .status-indicator.done {
+    background: rgba(34, 197, 94, 0.15);
+    color: #16a34a;
+}
+
+html.light .status-indicator.failed {
+    background: rgba(239, 68, 68, 0.15);
+    color: #dc2626;
+}
+
+/* ========== ACTION BUTTONS ========== */
+html.light .action-buttons {
+    border-top-color: rgba(0, 0, 0, 0.05);
+}
+
+html.light .btn-text-dl {
+    color: #333;
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+html.light .btn-text-dl:hover {
+    background: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+html.light .btn-text-dl i {
+    color: #666;
+}
+
+html.light .btn-download {
+    border-color: #d0d0d0;
+    color: #666;
+}
+
+html.light .btn-download:hover {
+    border-color: #333;
+    color: #333;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* ========== MODAL ========== */
+html.light .modal-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+html.light .modal-content {
+    background: #ffffff;
+    border-color: #e0e0e0;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+html.light .modal-header {
+    border-bottom-color: #e0e0e0;
+}
+
+html.light .modal-header h3 {
+    color: #1a1a1a;
+}
+
+html.light .modal-body {
+    color: #555;
+}
+
+html.light .btn-cancel {
+    border-color: #d0d0d0;
+    color: #666;
+}
+
+html.light .btn-cancel:hover {
+    background: #f5f5f5;
+    border-color: #aaa;
+    color: #333;
+}
+
+/* ========== TOAST ========== */
+html.light .toast {
+    background: #ffffff;
+    border-color: #e0e0e0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+html.light .toast-text {
+    color: #1a1a1a;
+}
+
+/* ========== HISTORY PANEL (từ dubbing.css) ========== */
+html.light .history-panel {
+    background: #ffffff;
+    border-color: #e0e0e0;
+}
+
+html.light .history-header {
+    background: #ffffff;
+    border-bottom-color: #e0e0e0;
+}
+
+html.light .history-list {
+    background: #ffffff;
+}
+
+html.light .history-empty {
+    background: #fafafa;
+    border-color: #e0e0e0;
+    color: #888;
+}
+
+html.light .history-empty i {
+    color: #ccc;
+}
+
+html.light .history-item {
+    background: #ffffff;
+    border-color: #e0e0e0;
+}
+
+html.light .history-item:hover {
+    background: #fafafa;
+    border-color: #d0d0d0;
+}
+
+html.light .item-checkbox {
+    border-color: #d0d0d0;
+    background: #ffffff;
+}
+
+html.light .item-title {
+    color: #1a1a1a;
+}
+
+html.light .item-meta {
+    color: #888;
+}
+
+html.light .item-credits {
+    color: #d97706;
+}
+
+/* ========== DROPDOWN (từ dubbing.css) ========== */
+html.light .dropdown-trigger {
+    background: #f8f8f8;
+    border-color: #d0d0d0;
+    color: #333;
+}
+
+html.light .dropdown-trigger:hover {
+    border-color: #aaa;
+    background: #f0f0f0;
+}
+
+html.light .dropdown-menu {
+    background: #ffffff;
+    border-color: #e0e0e0;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+html.light .dropdown-item {
+    color: #555;
+    border-bottom-color: #f0f0f0;
+}
+
+html.light .dropdown-item:hover {
+    background: #f5f5f5;
+    color: #1a1a1a;
+}
+
+html.light .dropdown-item.selected {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+}
+
+html.light .dropdown-menu::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+html.light .dropdown-menu::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+}
+
+/* ========== TOOLTIP (từ dubbing.css) ========== */
+html.light .tooltip-popup {
+    background-color: #333;
+    color: #fff;
+    border-color: #555;
+}
+
+html.light .tooltip-popup::after {
+    border-color: #333 transparent transparent transparent;
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 900px) {
+    html.light .cost-display {
+        background: rgba(251, 191, 36, 0.08);
+        border-color: rgba(251, 191, 36, 0.15);
+    }
+
+    html.light .action-buttons {
+        border-top-color: rgba(0, 0, 0, 0.08);
+    }
+
+    html.light .btn-text-dl {
+        background: rgba(0, 0, 0, 0.05);
+    }
+}

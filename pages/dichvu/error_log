@@ -1,0 +1,933 @@
+[02-Oct-2025 06:01:48 UTC] PHP Warning:  require_once(config/header.php): Failed to open stream: No such file or directory in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/facebook.php on line 3
+[02-Oct-2025 06:01:48 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'config/header.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/facebook.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/facebook.php on line 3
+[02-Oct-2025 15:39:09 UTC] PHP Warning:  Undefined variable $platformOrder in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/oders.php on line 94
+[02-Oct-2025 15:39:09 UTC] PHP Fatal error:  Uncaught TypeError: array_search(): Argument #2 ($haystack) must be of type array, null given in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/oders.php:95
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/oders.php(95): array_search()
+#1 [internal function]: {closure}()
+#2 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/oders.php(94): uksort()
+#3 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/oders.php on line 95
+[02-Oct-2025 15:39:22 UTC] PHP Warning:  Undefined variable $platformOrder in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/oders.php on line 94
+[02-Oct-2025 15:39:22 UTC] PHP Fatal error:  Uncaught TypeError: ksort(): Argument #2 ($flags) must be of type int, Closure given in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/oders.php:94
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/oders.php(94): ksort()
+#1 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/oders.php on line 94
+[05-Oct-2025 13:20:09 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/spniovn1/kingcongstudio.spn.io.vn/config/header.php:65) in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 7
+[05-Oct-2025 13:26:11 UTC] PHP Warning:  require_once(../../database.php): Failed to open stream: No such file or directory in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:26:11 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../../database.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:18 UTC] PHP Warning:  require_once(../../database.php): Failed to open stream: No such file or directory in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:18 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../../database.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:19 UTC] PHP Warning:  require_once(../../database.php): Failed to open stream: No such file or directory in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:19 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../../database.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:29 UTC] PHP Warning:  require_once(../../database.php): Failed to open stream: No such file or directory in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:29 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../../database.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:30 UTC] PHP Warning:  require_once(../../database.php): Failed to open stream: No such file or directory in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:30 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../../database.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:31 UTC] PHP Warning:  require_once(../../database.php): Failed to open stream: No such file or directory in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:31 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../../database.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:31 UTC] PHP Warning:  require_once(../../database.php): Failed to open stream: No such file or directory in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:31 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../../database.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:31 UTC] PHP Warning:  require_once(../../database.php): Failed to open stream: No such file or directory in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:31 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../../database.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:31 UTC] PHP Warning:  require_once(../../database.php): Failed to open stream: No such file or directory in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:31 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../../database.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:31 UTC] PHP Warning:  require_once(../../database.php): Failed to open stream: No such file or directory in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:31 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../../database.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:32 UTC] PHP Warning:  require_once(../../database.php): Failed to open stream: No such file or directory in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:32 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../../database.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:32 UTC] PHP Warning:  require_once(../../database.php): Failed to open stream: No such file or directory in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:27:32 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../../database.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 100
+[05-Oct-2025 13:31:00 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Data truncated for column 'status' at row 1 in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:59
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(59): mysqli_stmt->execute()
+#1 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(80): updateOrderInDB()
+#2 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 59
+[05-Oct-2025 13:34:20 UTC] PHP Warning:  require_once(/home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/../../database.php): Failed to open stream: No such file or directory in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 9
+[05-Oct-2025 13:34:20 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/../../database.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 9
+[05-Oct-2025 13:35:37 UTC] PHP Warning:  require_once(/home/spniovn1/kingcongstudio.spn.io.vn): Failed to open stream: Success in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 114
+[05-Oct-2025 13:35:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/../../' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:114
+Stack trace:
+#0 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 114
+[07-Oct-2025 08:09:20 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/products_status.php on line 40
+[07-Oct-2025 08:09:22 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/products_status.php on line 40
+[07-Oct-2025 08:26:40 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of variables must match the number of parameters in the prepared statement in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/products_status.php:143
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/products_status.php(143): mysqli_stmt->bind_param()
+#1 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/products_status.php(286): updateProductOrderInDB()
+#2 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/products_status.php on line 143
+[07-Oct-2025 11:21:00 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 61
+[07-Oct-2025 11:21:14 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 61
+[07-Oct-2025 11:21:29 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 61
+[07-Oct-2025 11:21:44 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 61
+[07-Oct-2025 11:21:59 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 61
+[07-Oct-2025 11:22:14 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 61
+[07-Oct-2025 11:24:19 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 61
+[07-Oct-2025 11:24:34 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 61
+[07-Oct-2025 11:24:50 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 61
+[07-Oct-2025 11:25:05 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 61
+[07-Oct-2025 11:25:20 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 61
+[07-Oct-2025 11:25:35 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 61
+[07-Oct-2025 11:28:01 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 61
+[07-Oct-2025 11:31:54 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 61
+[07-Oct-2025 11:32:08 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/spniovn1/kingcongstudio.spn.io.vn/pages/dichvu/orderstatus.php on line 61
+[07-Oct-2025 16:19:39 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[07-Oct-2025 16:19:54 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 08:26:47 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kingcong/public_html/config/header.php:65) in /home/kingcong/public_html/pages/dichvu/products_status.php on line 35
+[08-Oct-2025 08:26:47 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kingcong/public_html/config/header.php:65) in /home/kingcong/public_html/pages/dichvu/products_status.php on line 36
+[08-Oct-2025 08:26:47 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kingcong/public_html/config/header.php:65) in /home/kingcong/public_html/pages/dichvu/products_status.php on line 37
+[08-Oct-2025 09:22:23 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 12:03:26 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 12:03:37 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 12:03:51 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 12:04:07 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 12:04:23 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:01:44 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:01:59 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:02:01 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:02:02 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:02:54 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:03:10 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:03:25 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:03:40 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:03:55 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:04:20 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:04:21 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:04:37 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:04:52 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:04:58 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:05:00 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:05:04 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:05:21 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:05:23 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:05:37 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:05:52 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:06:07 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:06:24 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:07:05 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:07:46 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:08:22 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:08:39 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:08:53 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:09:07 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:09:59 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:09:59 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 14:09:59 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 14:10:01 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:10:01 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 14:10:01 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 14:10:03 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:10:03 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 14:10:03 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 14:10:05 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:10:19 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:10:34 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:10:50 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:11:06 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:11:31 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:11:31 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 14:11:31 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 14:11:31 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:11:34 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 14:11:34 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 14:11:35 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 14:11:35 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 14:11:36 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:11:51 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:12:06 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:14:34 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 14:14:34 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 14:14:35 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 14:14:35 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 14:15:33 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:18:25 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 14:18:25 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 14:18:28 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[08-Oct-2025 14:27:39 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 14:27:39 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 14:51:14 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 14:51:14 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 14:51:17 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 14:51:17 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 14:52:12 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 14:52:12 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 14:52:23 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 14:52:23 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 14:52:26 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 14:52:26 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 14:52:31 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 14:52:31 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 14:52:52 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 14:52:52 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 14:58:56 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 14:58:56 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 15:16:46 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 15:16:46 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 15:41:56 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 15:41:56 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 15:42:53 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 15:42:53 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 15:43:07 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 15:43:07 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 15:44:26 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 15:44:26 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 15:53:57 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 15:53:57 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 15:54:25 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 15:54:25 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[08-Oct-2025 15:54:32 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[08-Oct-2025 15:54:32 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:23:00 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:23:00 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:23:27 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:23:27 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:23:31 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:23:31 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:23:38 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:23:38 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:24:05 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:24:05 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:24:47 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:24:47 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:24:50 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:24:50 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:24:55 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:24:55 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:25:15 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:25:15 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:33:32 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:33:32 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:33:33 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:33:33 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:33:35 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:33:35 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:33:46 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:33:46 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:35:47 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:35:47 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:35:49 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:35:49 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:35:52 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:35:52 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:36:47 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:36:47 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:37:02 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:37:02 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:47:34 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:47:34 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:47:35 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:47:35 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 00:47:38 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 00:47:38 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 01:43:05 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 01:43:05 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 01:43:09 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 01:43:09 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 01:43:12 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 01:43:12 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 01:43:19 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 01:43:19 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 02:16:27 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 02:16:27 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 02:16:37 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 02:16:37 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 02:17:32 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 02:17:32 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 03:41:11 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 03:41:11 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 03:41:14 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 03:41:14 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 03:41:17 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 03:41:17 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 03:41:28 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 03:41:28 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 04:12:44 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 04:12:44 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 04:14:16 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 04:14:16 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 09:20:31 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 09:20:31 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 09:20:31 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 09:20:31 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[09-Oct-2025 09:22:47 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[09-Oct-2025 09:22:47 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[10-Oct-2025 01:33:34 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[10-Oct-2025 01:33:34 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[10-Oct-2025 01:33:35 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[10-Oct-2025 01:33:35 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[10-Oct-2025 01:33:39 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[10-Oct-2025 01:33:39 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[10-Oct-2025 08:05:52 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[10-Oct-2025 08:05:52 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[10-Oct-2025 08:08:18 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[10-Oct-2025 08:08:18 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[10-Oct-2025 08:09:26 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[10-Oct-2025 08:09:26 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[10-Oct-2025 11:05:55 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[10-Oct-2025 11:05:55 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[10-Oct-2025 11:06:18 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[10-Oct-2025 11:06:18 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[10-Oct-2025 12:06:33 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[10-Oct-2025 12:06:33 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[10-Oct-2025 12:38:57 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 10
+[10-Oct-2025 12:38:57 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 14
+[10-Oct-2025 12:52:09 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/kingcong/public_html/config/sidebar.php on line 56
+[10-Oct-2025 12:52:09 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/kingcong/public_html/config/sidebar.php on line 117
+[10-Oct-2025 12:52:09 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/kingcong/public_html/config/sidebar.php on line 128
+[10-Oct-2025 13:08:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getContent() in /home/kingcong/public_html/config/header.php:84
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/oders.php(3): require_once()
+#1 {main}
+  thrown in /home/kingcong/public_html/config/header.php on line 84
+[10-Oct-2025 13:09:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getContent() in /home/kingcong/public_html/config/header.php:83
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/oders.php(3): require_once()
+#1 {main}
+  thrown in /home/kingcong/public_html/config/header.php on line 83
+[10-Oct-2025 13:09:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getContent() in /home/kingcong/public_html/config/header.php:83
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/oders.php(3): require_once()
+#1 {main}
+  thrown in /home/kingcong/public_html/config/header.php on line 83
+[10-Oct-2025 13:09:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getContent() in /home/kingcong/public_html/config/header.php:83
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/oders.php(3): require_once()
+#1 {main}
+  thrown in /home/kingcong/public_html/config/header.php on line 83
+[10-Oct-2025 13:09:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getContent() in /home/kingcong/public_html/config/header.php:83
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/oders.php(3): require_once()
+#1 {main}
+  thrown in /home/kingcong/public_html/config/header.php on line 83
+[10-Oct-2025 13:09:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getContent() in /home/kingcong/public_html/config/header.php:83
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/oders.php(3): require_once()
+#1 {main}
+  thrown in /home/kingcong/public_html/config/header.php on line 83
+[10-Oct-2025 13:09:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getContent() in /home/kingcong/public_html/config/header.php:83
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/oders.php(3): require_once()
+#1 {main}
+  thrown in /home/kingcong/public_html/config/header.php on line 83
+[10-Oct-2025 13:10:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getContent() in /home/kingcong/public_html/config/header.php:86
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/oders.php(3): require_once()
+#1 {main}
+  thrown in /home/kingcong/public_html/config/header.php on line 86
+[10-Oct-2025 13:11:32 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[10-Oct-2025 13:17:44 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[10-Oct-2025 13:19:16 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[10-Oct-2025 13:20:03 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[10-Oct-2025 13:31:08 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[10-Oct-2025 13:31:19 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[10-Oct-2025 13:31:24 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[10-Oct-2025 13:31:28 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[10-Oct-2025 13:32:11 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[10-Oct-2025 13:32:48 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[10-Oct-2025 13:41:20 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[10-Oct-2025 14:28:32 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[10-Oct-2025 14:28:32 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[10-Oct-2025 14:28:35 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[10-Oct-2025 14:28:35 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[10-Oct-2025 23:57:15 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[10-Oct-2025 23:57:53 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 00:33:19 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 00:33:43 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 00:33:43 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 00:33:46 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 00:33:46 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 00:33:48 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 00:33:48 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 00:35:22 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 00:35:47 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 00:35:47 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 00:35:58 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 00:35:58 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 00:36:01 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 00:36:01 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 00:36:03 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 00:36:03 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 00:37:53 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 00:37:53 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 00:37:58 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 00:37:58 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 00:38:00 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 00:38:00 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 01:27:39 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 01:27:39 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 02:18:48 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 02:19:09 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 02:19:45 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 02:19:45 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 02:20:58 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 02:20:58 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 04:57:09 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 05:25:00 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 05:25:00 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 05:25:02 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 05:25:02 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 06:06:12 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 06:06:12 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 06:07:05 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 06:07:05 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 06:09:15 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 06:09:43 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 06:09:43 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 06:10:05 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 06:10:05 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 06:10:14 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 06:10:14 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 06:10:23 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 06:10:23 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 06:10:28 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 06:10:28 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 06:10:29 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 06:10:29 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 06:10:33 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 06:10:33 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 06:10:38 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 06:10:38 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 06:10:44 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 06:10:44 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 06:46:07 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 06:46:07 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 06:46:15 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 06:46:15 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 06:46:22 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 07:17:06 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 07:17:06 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 07:17:10 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 07:17:10 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 07:17:22 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 07:17:22 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 07:27:21 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 07:27:21 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 07:27:25 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 07:27:25 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 07:27:56 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 07:27:56 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 08:23:47 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 08:23:47 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 08:23:53 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 08:23:53 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 08:23:56 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 08:23:56 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 08:23:57 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 08:23:57 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 08:35:02 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 08:35:02 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 08:35:14 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 08:35:14 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 08:35:21 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 08:35:21 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 09:56:20 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 10:23:27 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 11:21:31 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 11:34:52 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 13:05:52 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 13:05:52 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 13:05:55 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 13:05:55 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 13:05:56 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 13:05:56 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:05:51 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:05:51 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:05:54 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:05:54 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:05:55 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:05:55 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:05:58 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:05:58 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:06:23 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:06:23 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:06:25 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:06:25 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:06:32 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:06:32 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:06:37 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:06:37 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:06:39 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:06:39 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:06:44 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:06:44 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:06:48 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:06:48 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:06:52 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:06:52 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:07:00 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:07:00 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:07:03 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:07:03 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:07:04 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:07:04 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:07:07 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:07:07 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:07:11 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:07:11 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:07:17 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:07:17 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:07:18 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:07:18 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:08:06 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:08:06 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[11-Oct-2025 14:08:20 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[11-Oct-2025 14:08:20 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[12-Oct-2025 01:34:30 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[12-Oct-2025 03:15:22 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[12-Oct-2025 07:48:41 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[12-Oct-2025 13:20:36 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[12-Oct-2025 13:28:18 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[12-Oct-2025 13:28:18 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[12-Oct-2025 21:08:01 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[13-Oct-2025 01:45:40 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[13-Oct-2025 01:45:47 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[13-Oct-2025 01:46:57 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[13-Oct-2025 01:46:57 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[13-Oct-2025 01:47:03 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[13-Oct-2025 01:47:03 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[13-Oct-2025 01:50:33 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[13-Oct-2025 01:50:33 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[13-Oct-2025 02:26:14 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[13-Oct-2025 02:26:14 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[13-Oct-2025 02:26:28 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[13-Oct-2025 10:29:07 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[13-Oct-2025 13:10:00 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[13-Oct-2025 13:10:00 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[13-Oct-2025 13:10:13 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[13-Oct-2025 13:10:13 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[13-Oct-2025 13:29:29 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[13-Oct-2025 13:29:29 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[13-Oct-2025 13:29:34 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[13-Oct-2025 13:29:34 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[13-Oct-2025 13:29:36 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[13-Oct-2025 13:29:36 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[13-Oct-2025 13:29:37 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[13-Oct-2025 13:29:37 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[13-Oct-2025 14:44:03 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[13-Oct-2025 15:53:47 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[13-Oct-2025 23:32:10 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[13-Oct-2025 23:32:10 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[14-Oct-2025 03:50:08 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[14-Oct-2025 09:04:48 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[14-Oct-2025 09:04:48 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[14-Oct-2025 09:04:51 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[14-Oct-2025 09:04:51 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[14-Oct-2025 09:04:53 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[14-Oct-2025 09:04:53 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[14-Oct-2025 15:06:48 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[14-Oct-2025 15:06:58 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[14-Oct-2025 15:07:27 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[14-Oct-2025 15:07:37 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[14-Oct-2025 16:39:08 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[15-Oct-2025 04:44:38 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[15-Oct-2025 04:44:38 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[15-Oct-2025 04:44:41 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[15-Oct-2025 04:44:41 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[15-Oct-2025 04:46:46 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[15-Oct-2025 04:46:46 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[15-Oct-2025 04:46:47 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'refunded' in 'SELECT' in /home/kingcong/public_html/pages/dichvu/orderstatus.php:61
+Stack trace:
+#0 /home/kingcong/public_html/pages/dichvu/orderstatus.php(61): mysqli->prepare()
+#1 /home/kingcong/public_html/pages/dichvu/orderstatus.php(147): updateOrderInDB()
+#2 {main}
+  thrown in /home/kingcong/public_html/pages/dichvu/orderstatus.php on line 61
+[15-Oct-2025 10:04:47 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[15-Oct-2025 10:04:47 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[15-Oct-2025 10:05:32 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[15-Oct-2025 10:05:32 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[15-Oct-2025 10:05:38 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[15-Oct-2025 10:05:38 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[15-Oct-2025 10:05:59 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[15-Oct-2025 10:05:59 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[15-Oct-2025 10:09:28 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[15-Oct-2025 10:09:28 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[15-Oct-2025 10:09:29 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[15-Oct-2025 10:09:29 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[15-Oct-2025 10:09:31 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[15-Oct-2025 10:09:31 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[15-Oct-2025 10:09:33 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[15-Oct-2025 10:09:33 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[15-Oct-2025 10:09:47 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[15-Oct-2025 10:09:47 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[15-Oct-2025 10:09:48 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[15-Oct-2025 10:09:48 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[15-Oct-2025 10:09:50 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[15-Oct-2025 10:09:50 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 25
+[15-Oct-2025 10:40:01 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7
+[16-Oct-2025 07:14:03 UTC] PHP Warning:  Undefined variable $current_page in /home/kingcong/public_html/config/sidebar.php on line 7

@@ -1,0 +1,484 @@
+/* =============================================
+   VOICE CLONING - LIGHT THEME
+   Selector: html.light
+   ============================================= */
+
+/* CSS Variables cho Light Mode */
+html.light {
+    --el-bg: #f5f5f5;
+    --el-card: #ffffff;
+    --el-border: #e0e0e0;
+    --el-text-main: #1a1a1a;
+    --el-text-sub: #666666;
+    --el-accent: #667eea;
+    --el-hover: #f0f0f0;
+}
+
+/* Body Background */
+html.light body {
+    background-color: #f5f5f5 !important;
+    color: #1a1a1a;
+}
+
+/* ========== MAIN LAYOUT ========== */
+html.light .clone-container {
+    background: transparent;
+}
+
+html.light .library-area {
+    background: #ffffff;
+    border-color: #e0e0e0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* ========== FORM PANEL ========== */
+html.light .form-panel {
+    background: #e8e8e8;
+}
+
+html.light .form-content-inner {
+    background: #ffffff;
+}
+
+/* ========== SECTION HEADER ========== */
+html.light .section-header {
+    border-bottom-color: #e0e0e0;
+}
+
+html.light .section-title {
+    color: #1a1a1a;
+}
+
+html.light .voice-count {
+    color: #666;
+    background: rgba(0,0,0,0.05);
+}
+
+html.light .btn-refresh {
+    border-color: #d0d0d0;
+    color: #666;
+}
+
+html.light .btn-refresh:hover {
+    border-color: var(--el-accent);
+    color: var(--el-accent);
+    background: rgba(102, 126, 234, 0.1);
+}
+
+/* ========== INFO BANNER ========== */
+html.light .info-banner {
+    background: rgba(102, 126, 234, 0.08);
+    border-color: rgba(102, 126, 234, 0.2);
+    color: #555;
+}
+
+html.light .info-banner strong {
+    color: #5a6fd6;
+}
+
+/* ========== FORM ELEMENTS ========== */
+html.light .form-group label {
+    color: #333;
+}
+
+html.light .form-input {
+    background: #f8f8f8;
+    border-color: #d0d0d0;
+    color: #1a1a1a;
+}
+
+html.light .form-input:focus {
+    border-color: var(--el-accent);
+    background: #ffffff;
+}
+
+html.light .form-input::placeholder {
+    color: #999;
+}
+
+html.light .form-textarea {
+    background: #f8f8f8;
+    border-color: #d0d0d0;
+    color: #1a1a1a;
+}
+
+html.light .form-textarea:focus {
+    border-color: var(--el-accent);
+    background: #ffffff;
+}
+
+html.light .form-textarea::placeholder {
+    color: #999;
+}
+
+html.light .char-count {
+    color: #888;
+}
+
+/* ========== UPLOAD BOX ========== */
+html.light .upload-box {
+    border-color: #ccc;
+    background: rgba(0,0,0,0.02);
+}
+
+html.light .upload-box:hover {
+    border-color: var(--el-accent);
+    background: rgba(102, 126, 234, 0.05);
+}
+
+html.light .upload-box.drag-over {
+    border-color: var(--el-accent);
+    background: rgba(102, 126, 234, 0.1);
+}
+
+html.light .upload-icon {
+    background: rgba(102, 126, 234, 0.1);
+}
+
+html.light .upload-text {
+    color: #333;
+}
+
+html.light .upload-hint {
+    color: #888;
+}
+
+/* ========== FILE PREVIEW ========== */
+html.light .file-preview-card {
+    background: #f8f8f8;
+    border-color: #e0e0e0;
+}
+
+html.light .file-icon-wrapper {
+    background: rgba(102, 126, 234, 0.1);
+    color: var(--el-accent);
+}
+
+html.light .file-name {
+    color: #1a1a1a;
+}
+
+html.light .file-size {
+    color: #888;
+}
+
+html.light .btn-remove-file {
+    color: #999;
+}
+
+html.light .btn-remove-file:hover {
+    color: #ef4444;
+}
+
+/* ========== AUDIO PLAYER ========== */
+html.light .audio-player-wrapper audio,
+html.light #audioPreviewPlayer {
+    filter: none;
+    background: #f0f0f0;
+    border-radius: 8px;
+}
+
+/* ========== CUSTOM DROPDOWN ========== */
+html.light .dropdown-selected {
+    background: #f8f8f8;
+    border-color: #d0d0d0;
+    color: #1a1a1a;
+}
+
+html.light .dropdown-selected:hover {
+    border-color: #aaa;
+}
+
+html.light .dropdown-selected.active {
+    border-color: var(--el-accent);
+}
+
+html.light .dropdown-options {
+    background: #ffffff;
+    border-color: #e0e0e0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+html.light .dropdown-search {
+    background: #ffffff;
+    border-bottom-color: #e0e0e0;
+}
+
+html.light .dropdown-search input {
+    background: #f5f5f5;
+    border-color: #d0d0d0;
+    color: #1a1a1a;
+}
+
+html.light .dropdown-search input:focus {
+    border-color: var(--el-accent);
+}
+
+html.light .dropdown-item {
+    color: #666;
+}
+
+html.light .dropdown-item:hover {
+    background: #f5f5f5;
+    color: #1a1a1a;
+}
+
+html.light .dropdown-item.selected {
+    background: rgba(102, 126, 234, 0.1);
+    color: var(--el-accent);
+}
+
+html.light .dropdown-options::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+html.light .dropdown-options::-webkit-scrollbar-thumb {
+    background: #ccc;
+}
+
+/* ========== MODEL DROPDOWN ========== */
+html.light .model-dropdown-item .model-name {
+    color: #1a1a1a;
+}
+
+html.light .model-dropdown-item .model-desc {
+    color: #777;
+}
+
+/* ========== TOGGLE & ACTIONS ========== */
+html.light .form-actions-row {
+    border-top-color: #e0e0e0;
+}
+
+html.light .slider {
+    background-color: #ccc;
+}
+
+html.light input:checked + .slider {
+    background-color: #1a1a1a;
+}
+
+html.light input:checked + .slider:before {
+    background-color: #fff;
+}
+
+html.light .toggle-label,
+html.light .label-with-tooltip {
+    color: #333;
+}
+
+html.light .label-with-tooltip span {
+    border-bottom-color: #ccc;
+}
+
+html.light .tooltip-content {
+    background-color: #333;
+    color: #fff;
+}
+
+html.light .tooltip-content::after {
+    border-color: #333 transparent transparent transparent;
+}
+
+html.light .btn-submit-simple {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+html.light .btn-submit-simple:hover:not(:disabled) {
+    background: #333;
+}
+
+/* ========== VOICE GRID ========== */
+html.light .voice-card {
+    background: #ffffff;
+    border-color: #e0e0e0;
+}
+
+html.light .voice-card:hover {
+    border-color: #ccc;
+    background: #fafafa;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+html.light .vc-title {
+    color: #1a1a1a;
+}
+
+html.light .vc-tag {
+    color: #666;
+    background: #f0f0f0;
+    border-color: #e0e0e0;
+}
+
+html.light .vc-footer-row {
+    border-top-color: rgba(0,0,0,0.05);
+}
+
+html.light .vc-avatar {
+    background: #e0e0e0;
+}
+
+html.light .btn-icon-action {
+    color: #999;
+}
+
+html.light .btn-icon-action:hover {
+    color: #333;
+}
+
+html.light .btn-icon-action.play:hover:not(:disabled) {
+    color: #10b981;
+}
+
+html.light .btn-icon-action.delete:hover {
+    color: #ef4444;
+}
+
+/* ========== EMPTY STATE ========== */
+html.light .empty-state {
+    border-color: #e0e0e0;
+    background: rgba(0,0,0,0.02);
+    color: #888;
+}
+
+html.light .empty-state i {
+    color: #ccc;
+}
+
+html.light .empty-state .title {
+    color: #666;
+}
+
+html.light .empty-state .hint {
+    color: #999;
+}
+
+/* ========== LOADING OVERLAY ========== */
+html.light .loading-overlay {
+    background: rgba(255,255,255,0.9);
+}
+
+html.light .loading-spinner {
+    border-color: #e0e0e0;
+    border-top-color: var(--el-accent);
+}
+
+html.light .loading-text {
+    color: #1a1a1a;
+}
+
+html.light .loading-hint {
+    color: #666;
+}
+
+html.light .loading-progress {
+    background: #e0e0e0;
+}
+
+/* ========== TOAST ========== */
+html.light .toast-notification {
+    background: #ffffff;
+    border-color: #e0e0e0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+html.light .toast-text {
+    color: #1a1a1a;
+}
+
+/* ========== MODALS ========== */
+html.light .modal-overlay,
+html.light .trim-modal-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+html.light .modal-content,
+html.light .trim-modal-content {
+    background: #ffffff;
+    border-color: #e0e0e0;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+html.light .modal-header,
+html.light .trim-modal-header {
+    border-bottom-color: #e0e0e0;
+}
+
+html.light .modal-header h3,
+html.light .trim-modal-header h3 {
+    color: #1a1a1a;
+}
+
+html.light .modal-body {
+    color: #555;
+}
+
+html.light .trim-modal-close {
+    color: #999;
+}
+
+html.light .trim-modal-close:hover {
+    color: #333;
+}
+
+html.light .btn-cancel,
+html.light .btn-trim-cancel {
+    border-color: #d0d0d0;
+    color: #666;
+}
+
+html.light .btn-cancel:hover,
+html.light .btn-trim-cancel:hover {
+    background: #f5f5f5;
+    border-color: #aaa;
+    color: #333;
+}
+
+/* ========== TRIM MODAL SPECIFIC ========== */
+html.light .trim-audio-player {
+    background: #f5f5f5;
+}
+
+html.light .trim-waveform-container {
+    background: #f8f8f8;
+    border-color: #e0e0e0;
+}
+
+html.light .trim-time-markers {
+    background: #f0f0f0;
+    color: #888;
+}
+
+html.light .trim-range-label {
+    color: #666;
+}
+
+html.light .trim-range-label span {
+    color: #1a1a1a;
+}
+
+html.light .trim-input-group label {
+    color: #666;
+}
+
+html.light .trim-input-group input {
+    background: #f5f5f5;
+    border-color: #d0d0d0;
+    color: #1a1a1a;
+}
+
+html.light .trim-input-group input:focus {
+    border-color: #6366f1;
+}
+
+html.light .trim-duration-display {
+    background: rgba(99, 102, 241, 0.1);
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 900px) {
+    html.light .toggle-wrapper {
+        background: #f5f5f5;
+    }
+}

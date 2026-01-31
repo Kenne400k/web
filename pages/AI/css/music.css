@@ -1,0 +1,1105 @@
+/* ==========================================
+   🎨 MUSIC GENERATION CSS - ORGANIZED
+   ========================================== */
+
+/* Import Base Styles */
+@import url('dubbing.css');
+
+/* ==========================================
+   1. CONTAINER & LAYOUT
+   ========================================== */
+
+.music-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    min-height: 85vh;
+    padding: 24px;
+}
+
+
+/* ==========================================
+   2. FORM INPUTS
+   ========================================== */
+
+.form-group {
+    margin-bottom: 0 !important;
+}
+
+.form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.form-label .required {
+    color: var(--accent-pink);
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+    resize: vertical;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.char-count {
+    font-size: 11px;
+    color: var(--text-secondary);
+    text-align: right;
+    margin-top: 4px;
+}
+
+.char-count span {
+    color: #fbbf24;
+    font-weight: 600;
+}
+
+/* ==========================================
+   3. SWITCHES & SETTINGS
+   ========================================== */
+
+.switches-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    align-items: stretch;
+}
+
+.switch-item {
+    flex: 1;
+}
+
+.switch-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-main);
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    height: 100%;
+    transition: 0.2s;
+}
+
+.settings-trigger {
+    flex: 0 0 auto;
+}
+
+.btn-settings {
+    height: 36px;
+    width: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-settings:hover {
+    background: #333;
+    border-color: #666;
+    color: #fff;
+}
+
+/* ==========================================
+   4. MODAL SETTINGS
+   ========================================== */
+
+.custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.custom-modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+    z-index: 99998;
+}
+
+.modal-content {
+    position: relative;
+    background: #1a1a1a;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    border-radius: 16px;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: slideUp 0.3s ease-out;
+    z-index: 99999;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #333;
+    position: relative;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.modal-header p {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: #888;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.section-group {
+    margin-bottom: 24px;
+}
+
+.section-group label {
+    display: block;
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip-btn {
+    background: #111;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s;
+    user-select: none;
+}
+
+.chip-btn:hover {
+    border-color: #666;
+    color: #fff;
+}
+
+.chip-btn.active {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+    font-weight: 600;
+}
+
+.modal-footer {
+    padding: 16px 24px;
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn-reset {
+    background: transparent;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-confirm {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-confirm:hover {
+    background: #e0e0e0;
+}
+
+/* ==========================================
+   5. BOTTOM CONTROL BAR
+   ========================================== */
+
+.bottom-control-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.control-item.dropdown-wrapper {
+    flex: 0 0 140px;
+}
+
+.control-item.credit-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0 16px;
+    height: 42px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.control-item.button-wrapper {
+    flex: 0 0 auto;
+}
+
+.credit-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.c-value {
+    font-weight: 600;
+    color: #fff;
+}
+
+.c-value.highlight {
+    color: #fbbf24;
+}
+
+.credit-separator {
+    color: #555;
+    font-size: 14px;
+}
+
+.btn-generate {
+    height: 42px;
+    padding: 0 20px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-generate:hover:not(:disabled) {
+    background: #e0e0e0;
+    transform: translateY(-1px);
+}
+
+.btn-generate:disabled {
+    background: #444;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.btn-generate i {
+    font-size: 16px;
+}
+
+/* ==========================================
+   6. HISTORY PANEL - REDESIGNED (MINIMAL)
+   ========================================== */
+
+/* Music Group Wrapper */
+/* --- KHUNG BAO NGOÀI (GROUP) --- */
+.music-group {
+    background: #0a0a0a;
+    border: 1px solid #2a2a2a; /* Viền sáng hơn xíu cho nổi */
+    
+    /* 🔥 BO TRÒN KHUNG NGOÀI TẠI ĐÂY */
+    border-radius: 16px; 
+    
+    /* 🔥 QUAN TRỌNG: Cắt bỏ các góc nhọn của con bên trong */
+    overflow: hidden; 
+    
+    margin-bottom: 16px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.music-group:hover {
+    border-color: #2a2a2a;
+}
+
+/* Group Header */
+.group-header {
+    padding: 12px 16px;
+    background: #121212;
+    border-bottom: 1px solid #1f1f1f;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    
+    /* Không cần border-radius ở đây vì thằng cha .music-group đã cắt rồi */
+}
+
+.group-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.group-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.group-meta {
+    font-size: 11px;
+    color: #666;
+    
+    display: flex;
+    flex-wrap: wrap; /* 🔥 QUAN TRỌNG: Nhiều quá thì tự xuống dòng */
+    align-items: center;
+    gap: 8px 12px; /* Khoảng cách (dọc ngang) */
+    line-height: 1.4;
+}
+
+.group-meta i {
+    font-size: 9px;
+}
+
+.group-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.group-credits {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Group Tracks Container */
+.group-tracks {
+    background: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    padding-top: 12px; /* Đẩy các bài hát xuống một chút so với Header */
+}
+/* Music Item - SỬA LẠI GRID CHO ĐÚNG */
+.music-item.in-group {
+    /* 1. Layout Grid */
+    display: grid;
+    grid-template-columns: 24px 48px 1fr auto; 
+    gap: 12px;
+    align-items: center;
+    
+    /* 2. Kích thước & Khoảng cách */
+    padding: 10px 14px;
+    margin: 0 12px 10px 12px; /* Cách lề: Trên 0, Phải 12, Dưới 10, Trái 12 */
+    
+    /* 3. Màu sắc & Bo tròn (QUAN TRỌNG) */
+    background: #131313; /* Màu nền hơi sáng hơn nền Group (#0a0a0a) */
+    border: 1px solid #252525; /* Viền nhẹ bao quanh từng bài */
+    border-radius: 10px; /* 🔥 BO TRÒN GÓC TẠI ĐÂY */
+    
+    /* Hiệu ứng mượt */
+    transition: all 0.2s ease;
+}
+
+.music-item.in-group:last-child {
+    border-bottom: none;
+}
+
+.music-item.in-group:hover {
+    background: #1a1a1a;
+    border-color: #444;
+    transform: translateY(-1px); /* Nổi lên nhẹ 1 chút */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Checkbox */
+.item-checkbox {
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid #333;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.item-checkbox:hover {
+    border-color: #555;
+}
+
+.item-checkbox.checked {
+    background: #fff;
+    border-color: #fff;
+}
+
+.item-checkbox.checked::after {
+    content: '✓';
+    color: #000;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Music Cover */
+.music-cover {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.music-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.music-cover .placeholder-icon {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Play Overlay */
+.play-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+    cursor: pointer;
+}
+
+.music-cover:hover .play-overlay {
+    opacity: 1;
+}
+
+.play-overlay i {
+    font-size: 20px;
+    color: #fff;
+}
+
+/* Music Info & Controls */
+.music-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+}
+
+.music-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: #e0e0e0;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Audio Controls */
+.audio-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-play-audio {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1.5px solid #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.btn-play-audio:hover {
+    border-color: #fff;
+}
+
+.btn-play-audio i {
+    font-size: 10px;
+    color: #fff;
+    margin-left: 1px;
+}
+
+.btn-play-audio.playing {
+    background: #fff;
+    border-color: #fff;
+}
+
+.btn-play-audio.playing i {
+    color: #000;
+    margin-left: 0;
+}
+
+/* Progress Bar */
+.audio-progress {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+}
+
+.progress-time {
+    font-size: 9px;
+    color: #666;
+    font-variant-numeric: tabular-nums;
+    min-width: 32px;
+}
+
+.progress-bar-container {
+    flex: 1;
+    height: 3px;
+    background: #1a1a1a;
+    border-radius: 1.5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: #fff;
+    width: 0%;
+    border-radius: 1.5px;
+    transition: width 0.1s linear;
+}
+
+/* Action Buttons */
+.item-actions {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.btn-action {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    background: transparent;
+    border: 1px solid #1f1f1f;
+    color: #666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-size: 12px;
+}
+
+.btn-action:hover {
+    background: #1a1a1a;
+    border-color: #2a2a2a;
+    color: #fff;
+}
+
+.btn-action.delete:hover {
+    border-color: #333;
+    color: #999;
+}
+
+/* Credits - Ẩn trong group items */
+.music-item.in-group .item-credits {
+    display: none !important;
+}
+
+/* History Item (Standalone - Pending/Failed) */
+.history-item {
+    display: grid;
+    grid-template-columns: 32px 1fr auto auto;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 16px;
+    background: #0a0a0a;
+    border: 1px solid #1f1f1f;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    transition: all 0.2s;
+}
+
+.history-item:hover {
+    background: #0f0f0f;
+    border-color: #2a2a2a;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.item-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: #e0e0e0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-meta {
+    font-size: 10px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.item-meta i {
+    font-size: 9px;
+}
+
+/* Processing Indicator */
+.processing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    color: #888;
+    padding: 6px 10px;
+    background: #0f0f0f;
+    border-radius: 4px;
+}
+
+.processing-indicator .spinner-border {
+    width: 12px;
+    height: 12px;
+    border-width: 2px;
+    border-color: #888;
+    border-right-color: transparent;
+}
+
+/* Credits */
+.item-credits {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.credits-amount {
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.credits-status {
+    font-size: 9px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Failed State */
+.history-item.failed {
+    border-color: #2a1f1f;
+}
+
+.history-item.failed .item-meta.error {
+    color: #888;
+}
+
+/* Empty State */
+.history-empty {
+    flex: 1; /* Chiếm hết khoảng trống để căn giữa */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #444;
+    min-height: 200px;
+}
+
+.history-empty i {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.3;
+}
+
+.history-empty span {
+    font-size: 13px;
+    color: #666;
+}
+
+/* ==========================================
+   7. RESPONSIVE
+   ========================================== */
+
+@media (max-width: 1024px) {
+    .music-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .item-actions {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .music-cover {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .group-header {
+        padding: 12px 14px;
+    }
+    
+    .music-item.in-group {
+        padding: 10px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .music-item.in-group {
+        gap: 10px;
+    }
+    
+    .music-cover {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .audio-controls {
+        gap: 6px;
+    }
+    
+    .group-title {
+        font-size: 12px;
+    }
+    
+    .music-title {
+        font-size: 11px;
+    }
+}
+
+/* ==========================================
+   8. Z-INDEX HIERARCHY
+   ========================================== */
+
+.history-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    
+    /* 🔥 QUAN TRỌNG: Thiết lập Flex dọc để chia vùng Header và List */
+    display: flex;
+    flex-direction: column;
+    
+    /* Chiều cao cố định hoặc max theo màn hình để thanh cuộn hoạt động */
+    height: 85vh; /* Hoặc 100% tùy container cha */
+    max-height: 85vh; 
+    overflow: hidden; /* Ẩn cái gì tràn ra ngoài khung bo tròn */
+}
+.history-header {
+    flex-shrink: 0; /* Không bao giờ bị co lại */
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-card);
+    z-index: 10;
+}
+
+.history-list {
+    flex: 1; /* 🔥 Chiếm toàn bộ khoảng trống còn lại */
+    overflow-y: auto; /* 🔥 Tự động hiện thanh cuộn dọc khi dài */
+    padding: 20px; /* Cách lề cho đẹp */
+    
+    /* Xếp chồng từ trên xuống */
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Khoảng cách giữa các Group */
+}
+
+.history-list::-webkit-scrollbar {
+    width: 6px;
+}
+.history-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+.history-list::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+}
+.history-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.settings-panel {
+    position: relative;
+    z-index: 2;
+}
+
+.music-item,
+.history-item {
+    position: relative;
+    z-index: auto;
+}
+
+.custom-modal {
+    z-index: 99999 !important;
+}
+
+.modal-overlay {
+    z-index: 99998 !important;
+}
+
+.modal-content {
+    z-index: 99999 !important;
+}
+/* ==========================================
+   📱 MOBILE RESPONSIVE OVERRIDES
+   (Dán đoạn này vào cuối file music.css)
+   ========================================== */
+
+@media (max-width: 991px) {
+    /* 1. LAYOUT CHUNG: Chuyển từ 2 cột sang 1 cột dọc */
+    .music-container {
+        grid-template-columns: 1fr; /* Chỉ 1 cột */
+        gap: 16px;
+        padding: 16px;
+        height: auto;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* 2. HISTORY PANEL: Đẩy xuống dưới form */
+    .history-panel {
+        /* Trên mobile, cho panel một chiều cao cố định để scroll bên trong */
+        height: 600px; 
+        max-height: 70vh;
+        margin-top: 10px;
+        order: 2; /* Đảm bảo nó nằm dưới form */
+    }
+}
+
+@media (max-width: 600px) {
+    /* --- FORM & CONTROLS --- */
+    
+    /* Input padding nhỏ lại chút cho gọn */
+    .form-input, .form-textarea {
+        padding: 10px 12px;
+    }
+
+    /* Bottom Control Bar: Xếp dọc các nút */
+    .bottom-control-bar {
+        flex-direction: column; /* Xếp dọc */
+        align-items: stretch; /* Kéo full chiều ngang */
+        gap: 12px;
+        padding-top: 16px;
+    }
+
+    .control-item.dropdown-wrapper {
+        flex: 1;
+        width: 100%;
+    }
+
+    .control-item.credit-info {
+        order: -1; /* Đưa credit lên trên nút bấm */
+        width: 100%;
+        margin-bottom: 4px;
+        background: rgba(255, 255, 255, 0.05); /* Sáng hơn xíu để dễ nhìn */
+    }
+
+    .btn-generate {
+        width: 100%; /* Nút bấm full chiều ngang */
+        justify-content: center;
+        height: 48px; /* Cao hơn để dễ bấm ngón tay */
+        font-size: 15px;
+    }
+
+    /* --- HISTORY LIST ITEM (TINH CHỈNH CHO NHỎ GỌN) --- */
+
+    /* Group Header nhỏ lại */
+    .group-header {
+        padding: 10px 12px;
+    }
+    
+    .group-title {
+        font-size: 14px; /* Title to hơn xíu cho dễ đọc trên đt */
+    }
+
+    /* Item nhạc bên trong Group */
+    .music-item.in-group {
+        /* Grid: Checkbox | Cover | Info | (Bỏ Action) */
+        grid-template-columns: 20px 40px 1fr auto; 
+        gap: 10px;
+        padding: 10px;
+        margin: 0 8px 8px 8px; /* Margin lề nhỏ lại */
+    }
+
+    /* Checkbox to lên chút để dễ tick */
+    .item-checkbox {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Ảnh bìa nhỏ lại */
+    .music-cover {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Ẩn bớt nút Play dạng tròn (đã có click vào ảnh để play) nếu cần thiết, 
+       nhưng ở đây ta giữ lại và chỉ chỉnh layout */
+    
+    /* Thanh tiến trình (Progress Bar) */
+    .audio-controls {
+        flex-direction: row;
+        width: 100%;
+    }
+    
+    .progress-time {
+        font-size: 10px; /* Số phút nhỏ lại */
+        min-width: 28px;
+    }
+
+    /* Ẩn các nút hành động (Edit/Delete) trên list để đỡ rối, 
+       người dùng có thể click vào item để xem chi tiết hoặc giữ nguyên nếu muốn */
+    .item-actions {
+        display: none !important; /* Force ẩn trên mobile */
+    }
+
+    /* --- MODAL --- */
+    .modal-content {
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        max-width: 100%;
+        border-radius: 0; /* Vuông góc full màn hình */
+        border: none;
+    }
+
+    .modal-header {
+        padding: 16px;
+    }
+
+    .modal-body {
+        padding: 16px;
+    }
+
+    .chips-container {
+        gap: 6px;
+    }
+
+    .chip-btn {
+        padding: 8px 12px; /* Nút to ra dễ bấm */
+        font-size: 14px;
+    }
+
+    .modal-footer {
+        padding: 16px;
+        background: #111; /* Nền tối để tách biệt */
+    }
+
+    .btn-confirm {
+        flex: 1; /* Nút xác nhận full width */
+        text-align: center;
+        justify-content: center;
+        height: 44px;
+    }
+}
+
+/* Fix lỗi scroll trên iOS */
+.history-list {
+    -webkit-overflow-scrolling: touch;
+}

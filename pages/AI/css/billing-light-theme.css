@@ -1,0 +1,276 @@
+/* =============================================
+   BILLING / MUA CREDITS - LIGHT THEME
+   Selector: html.light
+   ============================================= */
+
+/* CSS Variables cho Light Mode */
+html.light {
+    --bg-main: #f5f5f5;
+    --bg-card: #ffffff;
+    --border-color: #e0e0e0;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --accent-purple: #a855f7;
+}
+
+/* Body Background */
+html.light body {
+    background: #f5f5f5 !important;
+    color: #1a1a1a;
+}
+
+/* ========== MAIN WRAPPER ========== */
+html.light .billing-wrap {
+    background: transparent;
+}
+
+/* ========== STATS GRID ========== */
+html.light .stat-card {
+    background: #ffffff;
+    border-color: #e0e0e0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+html.light .stat-card h3 {
+    color: #888;
+}
+
+html.light .stat-card .value {
+    color: #1a1a1a;
+}
+
+html.light .stat-icon {
+    opacity: 0.1;
+}
+
+/* ========== PRODUCT CARD ========== */
+html.light .product-card {
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+html.light .product-card::after {
+    background: #ffffff;
+}
+
+html.light .main-title {
+    color: #1a1a1a;
+}
+
+html.light .sub-desc {
+    color: #888;
+}
+
+/* ========== CALCULATOR BOX ========== */
+html.light .calc-box {
+    background: #f8f8f8;
+    border-color: #e0e0e0;
+}
+
+html.light .btn-calc {
+    border-color: #ccc;
+    color: #333;
+    background: #ffffff;
+}
+
+html.light .btn-calc:hover:not(:disabled) {
+    background: #f0f0f0;
+    border-color: #999;
+}
+
+html.light .btn-calc:disabled {
+    opacity: 0.3;
+    background: #f5f5f5;
+}
+
+html.light .qty-display {
+    color: #1a1a1a;
+}
+
+html.light .qty-label {
+    color: #888;
+}
+
+/* ========== USAGE GRID ========== */
+html.light .usage-grid {
+    border-top-color: #e0e0e0;
+}
+
+html.light .usage-item {
+    color: #666;
+}
+
+html.light .usage-item i {
+    color: #a855f7;
+}
+
+html.light .usage-val {
+    color: #1a1a1a;
+}
+
+html.light .usage-note {
+    color: #e57373;
+}
+
+/* ========== RESULT ROW ========== */
+html.light .result-row {
+    border-top-color: #e0e0e0;
+}
+
+html.light .res-label {
+    color: #888;
+}
+
+html.light .res-value {
+    color: #1a1a1a;
+}
+
+html.light .res-value.credits {
+    color: #16a34a;
+}
+
+html.light .res-value.price {
+    color: #ca8a04;
+}
+
+html.light .bonus-tag {
+    background: #22c55e;
+    color: #fff;
+}
+
+/* ========== FEATURES LIST ========== */
+html.light .features-list {
+    background: #f8f8f8;
+    border-color: #e0e0e0;
+}
+
+html.light .feature-item {
+    color: #444;
+}
+
+html.light .feature-item i {
+    color: #1a1a1a;
+    background: #ffffff;
+    border-color: #1a1a1a;
+}
+
+/* ========== CHECKOUT BUTTON ========== */
+html.light .btn-checkout {
+    background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+    color: white;
+    box-shadow: 0 10px 25px rgba(168, 85, 247, 0.3);
+}
+
+html.light .btn-checkout:hover:not(:disabled) {
+    box-shadow: 0 15px 35px rgba(168, 85, 247, 0.4);
+}
+
+html.light .checkout-hint {
+    color: #888;
+}
+
+/* ========== MODAL ========== */
+html.light .custom-modal {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+html.light .modal-box {
+    background: #ffffff;
+    border-color: #e0e0e0;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+html.light .modal-icon {
+    color: #a855f7;
+}
+
+html.light .modal-title {
+    color: #1a1a1a;
+}
+
+html.light .modal-text {
+    color: #555;
+}
+
+html.light .modal-text b {
+    color: #1a1a1a;
+}
+
+html.light .modal-text span {
+    color: #1a1a1a;
+}
+
+html.light .modal-actions .btn-confirm {
+    background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+    color: white;
+}
+
+html.light .modal-actions .btn-cancel {
+    background: #f5f5f5;
+    border-color: #d0d0d0;
+    color: #666;
+}
+
+html.light .modal-actions .btn-cancel:hover {
+    background: #e8e8e8;
+    color: #333;
+}
+
+html.light .btn-success-ok {
+    background: #22c55e;
+    color: white;
+}
+
+/* ========== DROPDOWN ========== */
+html.light .custom-dropdown .dropdown-btn {
+    background: #f8f8f8;
+    border-color: #d0d0d0;
+    color: #333;
+}
+
+html.light .custom-dropdown .dropdown-btn:hover {
+    border-color: #aaa;
+}
+
+html.light .custom-dropdown .dropdown-options {
+    background: #ffffff;
+    border-color: #e0e0e0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+html.light .custom-dropdown .dropdown-item {
+    color: #666;
+}
+
+html.light .custom-dropdown .dropdown-item:hover {
+    background: #f5f5f5;
+    color: #1a1a1a;
+}
+
+html.light .custom-dropdown .dropdown-item.selected {
+    background: rgba(168, 85, 247, 0.1);
+    color: #a855f7;
+}
+
+/* ========== SCROLLBAR ========== */
+html.light ::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+    background: #bbb;
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 768px) {
+    html.light .stat-card {
+        background: #ffffff;
+    }
+
+    html.light .calc-box {
+        background: #fafafa;
+    }
+}

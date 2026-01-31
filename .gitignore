@@ -1,0 +1,12 @@
+# Ignore everything
+/*
+
+# But not these folders
+!pages/
+!config/
+
+# Ignore database in config
+config/database.php
+
+# Ignore .gitignore itself
+!.gitignore

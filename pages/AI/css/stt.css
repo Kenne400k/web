@@ -1,0 +1,518 @@
+/* Import Dubbing CSS */
+@import url('dubbing.css');
+
+/* Override một số class cho STT */
+.stt-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    min-height: 85vh;
+    padding: 24px;
+}
+
+/* ========== FILE LIST CONTAINER ========== */
+#fileListContainer {
+    margin-top: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.file-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.file-count {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.file-count span {
+    color: #fbbf24;
+}
+
+.file-list-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-add-more,
+.btn-clear-all {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.2s;
+}
+
+.btn-add-more:hover {
+    border-color: #22c55e;
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.05);
+}
+
+.btn-clear-all:hover {
+    border-color: var(--error);
+    color: var(--error);
+    background: rgba(239, 68, 68, 0.05);
+}
+
+.btn-add-more i,
+.btn-clear-all i {
+    font-size: 14px;
+}
+
+/* ========== FILE LIST ========== */
+.file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.file-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.file-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.file-list::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 2px;
+}
+
+.file-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* ========== FILE ITEM ========== */
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.file-item:hover {
+    border-color: #555;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.file-item-icon {
+    width: 36px;
+    height: 36px;
+    background: #2a2a2a;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.file-item-icon i {
+    font-size: 18px;
+    color: #fbbf24;
+}
+
+.file-item-info {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.file-item-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-item-meta {
+    font-size: 11px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.file-item-size {
+    color: #888;
+}
+
+.file-item-duration {
+    color: #fbbf24;
+}
+
+.file-item-meta .separator {
+    color: var(--border-color);
+}
+
+/* Loading state cho từng file */
+.file-item.loading .file-item-duration {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.file-item.loading .file-item-duration::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fbbf24;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Button xóa từng file */
+.btn-remove-file {
+    background: transparent;
+    border: none;
+    color: #777;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 6px;
+    transition: 0.2s;
+    flex-shrink: 0;
+}
+
+.btn-remove-file:hover {
+    color: var(--error);
+}
+
+/* ========== COST DISPLAY ========== */
+.cost-display {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.cost-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+.cost-amount {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fbbf24;
+}
+
+/* ========== STT BUTTON ========== */
+.btn-stt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: auto;
+    flex-shrink: 0;
+    height: 42px;
+    margin-top: 0;
+    padding: 0 24px;
+    background: #444;
+    color: #e0e0e0;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    box-shadow: none;
+}
+
+.btn-stt:hover:not(:disabled) {
+    background: #555;
+    color: #fff;
+}
+
+.btn-stt:disabled {
+    background: #333;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.btn-stt i {
+    font-size: 16px;
+}
+
+/* Upload desc */
+.upload-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+/* Credits Display với animation khi thay đổi */
+#userCreditsDisplay {
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+#userCreditsDisplay.updating {
+    animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Style cho nút tải */
+.btn-download {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    cursor: pointer;
+    text-decoration: none; /* Bỏ gạch chân thẻ a */
+}
+
+.btn-download:hover {
+    border-color: #fff;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-download i {
+    font-size: 14px;
+}
+/* 🔥 1. Sửa Layout Grid thành 5 cột để có chỗ cho nút tải */
+.history-item {
+    display: grid !important;
+    /* Checkbox | Tên file | Trạng thái | NÚT TẢI (Mới) | Credits */
+    grid-template-columns: 32px 1fr auto auto auto !important; 
+    gap: 20px;
+    align-items: center;
+}
+
+/* 🔥 2. Style nút tải giống ảnh (Chữ trắng đậm + Icon) */
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Khoảng cách giữa nút SRT và JSON */
+}
+
+.btn-text-dl {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700; /* Chữ đậm */
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: background 0.2s;
+    background: rgba(255, 255, 255, 0.05); /* Nền mờ nhẹ cho sang */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-text-dl:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-text-dl i {
+    font-size: 14px;
+    color: #bbb; /* Icon màu xám nhạt hơn chữ */
+}
+/* ==========================================================================
+   MOBILE RESPONSIVE CHO STT (DÁN VÀO CUỐI FILE stt.css)
+   ========================================================================== */
+
+@media (max-width: 900px) {
+
+    /* --- 1. LAYOUT CHÍNH --- */
+    .stt-container {
+        grid-template-columns: 1fr; /* Chuyển thành 1 cột dọc */
+        padding: 12px;
+        gap: 20px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    /* --- 2. FILE LIST CONTAINER (DANH SÁCH FILE CHỜ) --- */
+    #fileListContainer {
+        margin-top: 0;
+        margin-bottom: 20px;
+        padding: 12px;
+    }
+
+    .file-list-header {
+        flex-wrap: wrap; /* Cho phép xuống dòng nếu tiêu đề quá dài */
+        gap: 10px;
+    }
+
+    /* Các nút hành động (Thêm file, Xóa tất cả) */
+    .file-list-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .btn-add-more, .btn-clear-all {
+        flex: 1; /* Chia đều chiều rộng */
+        justify-content: center;
+        padding: 10px; /* Tăng vùng chạm */
+    }
+
+    /* --- 3. FILE ITEM (TỪNG FILE TRONG LIST) --- */
+    .file-item {
+        padding: 10px;
+    }
+
+    .file-item-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .file-item-name {
+        font-size: 14px;
+        max-width: 200px; /* Giới hạn chiều dài tên file trên mobile */
+    }
+
+    .file-item-meta {
+        font-size: 10px;
+    }
+
+    .btn-remove-file {
+        padding: 10px; /* Nút xóa to hơn để dễ ấn */
+        color: #ef4444; /* Luôn hiện màu đỏ cho dễ thấy */
+    }
+
+    /* --- 4. KHU VỰC NÚT SUBMIT & COST --- */
+    .bottom-actions {
+        flex-direction: column-reverse; /* Đảo ngược: Nút Submit lên trên */
+        gap: 16px;
+        margin-top: 10px;
+    }
+
+    .cost-display {
+        align-items: center; /* Căn giữa thông tin Credits */
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        background: rgba(251, 191, 36, 0.1); /* Thêm nền vàng nhạt cho nổi */
+        padding: 10px 16px;
+        border-radius: 8px;
+        border: 1px solid rgba(251, 191, 36, 0.2);
+    }
+
+    .btn-stt {
+        width: 100%; /* Nút full chiều ngang */
+        height: 50px; /* Cao hơn dễ bấm */
+        font-size: 16px;
+        margin-top: 0;
+    }
+
+    /* --- 5. LỊCH SỬ (HISTORY ITEM) - QUAN TRỌNG --- */
+    /* Phá vỡ cấu trúc Grid 5 cột cứng nhắc ở desktop */
+    .history-item {
+        display: flex !important; /* Ghi đè grid !important cũ */
+        flex-wrap: wrap; /* Cho phép xuống dòng */
+        padding: 16px;
+        gap: 12px;
+        position: relative;
+    }
+
+    /* Checkbox */
+    .item-checkbox {
+        order: 0;
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Thông tin file (Tên) */
+    .item-info {
+        order: 1;
+        width: calc(100% - 40px); /* Chiếm hết chiều ngang trừ checkbox */
+    }
+    
+    .item-title {
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+
+    /* Trạng thái (Pending/Done) */
+    .status-indicator {
+        position: absolute;
+        top: 20px;
+        right: 16px;
+    }
+
+    /* Credits (Ẩn bớt trên mobile cho gọn) */
+    .item-credits {
+        display: none; 
+    }
+
+    /* --- 6. NÚT TẢI VỀ (SRT / JSON) --- */
+    .action-buttons {
+        order: 3; /* Đẩy xuống cuối cùng */
+        width: 100%;
+        display: flex;
+        justify-content: space-between; /* Dãn đều 2 nút */
+        gap: 10px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05); /* Đường kẻ ngăn cách */
+        margin-top: 4px;
+    }
+
+    .btn-text-dl {
+        flex: 1; /* 2 nút chia đều 50-50 */
+        justify-content: center;
+        height: 40px; /* Cao dễ bấm */
+        font-size: 13px;
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .btn-text-dl i {
+        font-size: 16px;
+    }
+}
+
+/* --- MÀN HÌNH SIÊU NHỎ --- */
+@media (max-width: 380px) {
+    .btn-text-dl {
+        font-size: 11px;
+    }
+    .file-item-name {
+        max-width: 150px;
+    }
+}
