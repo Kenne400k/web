@@ -3,6 +3,69 @@ $page_title = 'Mua Credits - Studio';
 require_once '../../config/header.php';
 require_once '../../config/sidebar.php';
 
+$translations = [
+    'vi' => [
+        'wallet_balance' => 'Số dư ví (USD)',
+        'credits' => 'Credits',
+        'premium_package' => 'GÓI TÍN DỤNG CAO CẤP',
+        'buy_credits' => 'Mua Credits',
+        'sub_desc' => 'Sử dụng cho Text-to-Speech, Dubbing, Cloning và hơn thế nữa.',
+        'package_label' => 'Gói (Max 8)',
+        'total_credits' => 'Tổng Credits nhận:',
+        'total_price' => 'Thành tiền (USD):',
+        'tts_minutes' => 'phút TTS',
+        'feature_unlimited_clone' => 'Nhân bản giọng <b>không giới hạn</b>',
+        'feature_concurrent_tasks' => 'Chạy nhiệm vụ cùng lúc',
+        'feature_api_access' => 'Truy cập API',
+        'feature_no_peak_queue' => 'Không xếp hàng giờ cao điểm',
+        'checkout_button' => 'THANH TOÁN MUA CREDITS',
+        'checkout_hint' => '* Nhấn dấu "+" càng nhiều thì càng rẻ (Bonus thêm Credits)',
+        'confirm_title' => 'Xác nhận thanh toán? (server 3)',
+        'confirm_use_wallet' => 'Bạn sẽ dùng',
+        'confirm_buy_credits' => 'từ ví để mua',
+        'confirm_balance_after' => 'Số dư sau khi mua:',
+        'cancel' => 'Hủy',
+        'confirm' => 'Xác nhận',
+        'success_title' => 'Thanh toán thành công!',
+        'success_message' => 'Đã cộng Credits vào tài khoản của bạn.',
+        'success_button' => 'TUYỆT VỜI',
+        'max_package' => 'Gói tối đa cho phép là 8!',
+        'processing' => 'Đang xử lý...',
+        'server_error' => 'Lỗi kết nối server!',
+    ],
+    'en' => [
+        'wallet_balance' => 'Wallet balance (USD)',
+        'credits' => 'Credits',
+        'premium_package' => 'PREMIUM CREDIT PACKAGE',
+        'buy_credits' => 'Buy Credits',
+        'sub_desc' => 'Use for Text-to-Speech, Dubbing, Cloning, and more.',
+        'package_label' => 'Packages (Max 8)',
+        'total_credits' => 'Total credits received:',
+        'total_price' => 'Total price (USD):',
+        'tts_minutes' => 'TTS minutes',
+        'feature_unlimited_clone' => 'Unlimited <b>voice cloning</b>',
+        'feature_concurrent_tasks' => 'Run tasks concurrently',
+        'feature_api_access' => 'API access',
+        'feature_no_peak_queue' => 'No peak-hour queue',
+        'checkout_button' => 'CHECKOUT FOR CREDITS',
+        'checkout_hint' => '* The more you press "+", the cheaper it gets (bonus credits)',
+        'confirm_title' => 'Confirm payment? (server 3)',
+        'confirm_use_wallet' => 'You will use',
+        'confirm_buy_credits' => 'from your wallet to buy',
+        'confirm_balance_after' => 'Balance after purchase:',
+        'cancel' => 'Cancel',
+        'confirm' => 'Confirm',
+        'success_title' => 'Payment successful!',
+        'success_message' => 'Credits have been added to your account.',
+        'success_button' => 'GREAT',
+        'max_package' => 'Maximum package is 8!',
+        'processing' => 'Processing...',
+        'server_error' => 'Server connection error!',
+    ],
+];
+
+$t = $translations[$lang] ?? $translations['vi'];
+
 // Lấy thông tin User
 $user_identity = $_SESSION['Users'];
 
@@ -544,21 +607,21 @@ $credit3_balance = $user['credits3'] ?? 0;
     
     <div class="stats-grid">
         <div class="stat-card">
-            <h3>Số dư ví (USD)</h3>
+            <h3><?php echo $t['wallet_balance']; ?></h3>
             <div class="value">$<span id="currentBalance"><?php echo number_format($usd_balance, 2); ?></span></div>
             <i class="bi bi-wallet2 stat-icon"></i>
         </div>
         <div class="stat-card" style="border-color: #a855f7;">
-            <h3>Credits</h3>
+            <h3><?php echo $t['credits']; ?></h3>
             <div class="value" style="color: #a855f7;"><?php echo number_format($credit3_balance); ?></div>
             <i class="bi bi-gem stat-icon" style="color: #a855f7;"></i>
         </div>
     </div>
 
     <div class="product-card">
-        <span class="card-badge">GÓI TÍN DỤNG CAO CẤP</span>
-        <div class="main-title">Mua Credits</div>
-        <div class="sub-desc">Sử dụng cho Text-to-Speech, Dubbing, Cloning và hơn thế nữa.</div>
+        <span class="card-badge"><?php echo $t['premium_package']; ?></span>
+        <div class="main-title"><?php echo $t['buy_credits']; ?></div>
+        <div class="sub-desc"><?php echo $t['sub_desc']; ?></div>
 
         <div class="calc-box">
             <div class="control-row">
@@ -567,7 +630,7 @@ $credit3_balance = $user['credits3'] ?? 0;
                 </button>
                 <div>
                     <div class="qty-display" id="qty">1</div>
-                    <span class="qty-label">Gói (Max 8)</span>
+                    <span class="qty-label"><?php echo $t['package_label']; ?></span>
                 </div>
                 <button class="btn-calc" id="btnPlus" onclick="updateQty(1, this)">
                     <i class="bi bi-plus"></i>
@@ -576,47 +639,47 @@ $credit3_balance = $user['credits3'] ?? 0;
 
             <div class="result-row">
                 <div class="res-item">
-                    <span class="res-label">Tổng Credits nhận:</span>
+                    <span class="res-label"><?php echo $t['total_credits']; ?></span>
                     <div style="display:flex; align-items:center;">
                         <span class="res-value credits" id="totalCredits">1,000,000</span>
                         <span class="bonus-tag" id="bonusTag">+0% Bonus</span>
                     </div>
                 </div>
                 <div class="res-item right">
-                    <span class="res-label">Thành tiền (USD):</span>
+                    <span class="res-label"><?php echo $t['total_price']; ?></span>
                     <span class="res-value price">$<span id="totalPrice">5.00</span></span>
                 </div>
             </div>
 
             <div class="usage-grid">
                 <div class="usage-item">
-                    <i class="bi bi-mic"></i> ≈ <span class="usage-val" id="us-tts">1,700</span> phút TTS
+                    <i class="bi bi-mic"></i> ≈ <span class="usage-val" id="us-tts">1,700</span> <?php echo $t['tts_minutes']; ?>
                 </div>
             </div>
         </div>
 
         <div class="features-list">
             <div class="feature-item">
-                <i class="bi bi-check-lg"></i> Nhân bản giọng <b>không giới hạn</b>
+                <i class="bi bi-check-lg"></i> <?php echo $t['feature_unlimited_clone']; ?>
             </div>
             <div class="feature-item">
-                <i class="bi bi-check-lg"></i> Chạy nhiệm vụ cùng lúc
+                <i class="bi bi-check-lg"></i> <?php echo $t['feature_concurrent_tasks']; ?>
             </div>
             <div class="feature-item">
-                <i class="bi bi-check-lg"></i> Truy cập API
+                <i class="bi bi-check-lg"></i> <?php echo $t['feature_api_access']; ?>
             </div>
             <div class="feature-item">
-                <i class="bi bi-check-lg"></i> Không xếp hàng giờ cao điểm
+                <i class="bi bi-check-lg"></i> <?php echo $t['feature_no_peak_queue']; ?>
             </div>
         </div>
 
         <button class="btn-checkout" onclick="openConfirmModal()">
             <i class="bi bi-credit-card-2-front-fill"></i>
-            <span>THANH TOÁN MUA CREDITS</span>
+            <span><?php echo $t['checkout_button']; ?></span>
         </button>
         
         <div class="checkout-hint">
-            * Nhấn dấu "+" càng nhiều thì càng rẻ (Bonus thêm Credits)
+            <?php echo $t['checkout_hint']; ?>
         </div>
     </div>
 
@@ -625,14 +688,15 @@ $credit3_balance = $user['credits3'] ?? 0;
 <div id="confirmModal" class="custom-modal">
     <div class="modal-box">
         <div class="modal-icon">🤔</div>
-        <div class="modal-title">Xác nhận thanh toán? (server 3)</div>
+        <div class="modal-title"><?php echo $t['confirm_title']; ?></div>
         <div class="modal-text">
-            Bạn sẽ dùng <b>$<span id="modalPrice">5.00</span></b> từ ví để mua <b><span id="modalCredits">1,000,000</span></b> Credits.<br>
-            Số dư sau khi mua: <b>$<span id="modalBalance">---</span></b>
+            <?php echo $t['confirm_use_wallet']; ?> <b>$<span id="modalPrice">5.00</span></b>
+            <?php echo $t['confirm_buy_credits']; ?> <b><span id="modalCredits">1,000,000</span></b> <?php echo $t['credits']; ?>.<br>
+            <?php echo $t['confirm_balance_after']; ?> <b>$<span id="modalBalance">---</span></b>
         </div>
         <div class="modal-actions">
-            <button class="btn-cancel" onclick="$('#confirmModal').fadeOut()">Hủy</button>
-            <button class="btn-confirm" onclick="processPayment()">Xác nhận</button>
+            <button class="btn-cancel" onclick="$('#confirmModal').fadeOut()"><?php echo $t['cancel']; ?></button>
+            <button class="btn-confirm" onclick="processPayment()"><?php echo $t['confirm']; ?></button>
         </div>
     </div>
 </div>
@@ -640,11 +704,11 @@ $credit3_balance = $user['credits3'] ?? 0;
 <div id="successModal" class="custom-modal">
     <div class="modal-box">
         <div class="modal-icon">🎉</div>
-        <div class="modal-title" style="color:#4ade80">Thanh toán thành công!</div>
+        <div class="modal-title" style="color:#4ade80"><?php echo $t['success_title']; ?></div>
         <div class="modal-text" id="successMsg">
-            Đã cộng Credits vào tài khoản của bạn.
+            <?php echo $t['success_message']; ?>
         </div>
-        <button class="btn-success-ok" onclick="location.reload()">TUYỆT VỜI</button>
+        <button class="btn-success-ok" onclick="location.reload()"><?php echo $t['success_button']; ?></button>
     </div>
 </div>
 
@@ -680,7 +744,7 @@ $credit3_balance = $user['credits3'] ?? 0;
         
         if (newQty < 1) return;
         if (newQty > MAX_QTY) {
-            alert("Gói tối đa cho phép là 8!");
+            alert("<?php echo $t['max_package']; ?>");
             return;
         }
         
@@ -778,7 +842,7 @@ $credit3_balance = $user['credits3'] ?? 0;
     }
 
     function processPayment() {
-        $('.btn-confirm').prop('disabled', true).text('Đang xử lý...');
+        $('.btn-confirm').prop('disabled', true).text('<?php echo $t['processing']; ?>');
         
         $.post('../../ajaxs/kingcongAI/billing.php', {
             action: 'buy_credits3',
@@ -791,12 +855,12 @@ $credit3_balance = $user['credits3'] ?? 0;
                 triggerSuccessConfetti();
             } else {
                 alert(res.message);
-                $('.btn-confirm').prop('disabled', false).text('Xác nhận');
+                $('.btn-confirm').prop('disabled', false).text('<?php echo $t['confirm']; ?>');
                 $('#confirmModal').fadeOut();
             }
         }, 'json').fail(function() {
-            alert('Lỗi kết nối server!');
-            $('.btn-confirm').prop('disabled', false).text('Xác nhận');
+            alert('<?php echo $t['server_error']; ?>');
+            $('.btn-confirm').prop('disabled', false).text('<?php echo $t['confirm']; ?>');
         });
     }
     

@@ -106,6 +106,66 @@ $translations = [
         'newest' => 'Mới nhất',
         'trending' => 'Xu hướng',
         'chars_generated' => 'Ký tự được tạo',
+
+        // Common
+        'chars' => 'ký tự',
+        'cancel' => 'Hủy',
+        'delete' => 'Xóa',
+        'download' => 'Tải xuống',
+        'close' => 'Đóng',
+        'loading_data' => 'Đang tải dữ liệu...',
+        'refresh_data' => 'Làm mới dữ liệu',
+
+        // Drag & Drop Overlay
+        'drop_overlay_title' => 'Thả tệp vào đây',
+        'drop_overlay_desc' => 'Hỗ trợ .txt, .srt, .zip',
+
+        // Clone Modal
+        'clone_modal_title' => 'Nhân bản giọng nói',
+        'clone_name_label' => 'Tên giọng',
+        'clone_name_placeholder' => 'Ví dụ: Giọng của tôi',
+        'clone_gender_label' => 'Giới tính',
+        'clone_gender_male' => 'Nam (Male)',
+        'clone_gender_female' => 'Nữ (Female)',
+        'clone_sample_file' => 'File mẫu (MP3, < 5 phút, < 20MB)',
+        'clone_sample_hint' => '* Nên dùng file thu âm rõ ràng, không tạp âm',
+        'clone_start' => 'Bắt đầu Clone',
+
+        // Delete Task Modal
+        'delete_task_title' => 'Xóa tác vụ',
+        'delete_task_warn' => 'Bạn có chắc chắn muốn xóa tác vụ này? Hành động này không thể hoàn tác.',
+        'delete_task_note' => 'Nếu tác vụ bị treo quá 24h sẽ được hoàn tín dụng.',
+        'delete_task_preview' => 'Nội dung text sẽ hiện ở đây...',
+
+        // SRT Settings
+        'srt_settings_title' => 'Cài đặt Subtitle',
+        'srt_max_chars' => 'Số ký tự tối đa trên dòng:',
+        'srt_max_lines' => 'Số dòng tối đa trên câu:',
+        'srt_max_duration' => 'Số giây tối đa trên câu:',
+        'srt_reset' => 'Đặt lại giá trị',
+        'export' => 'Xuất',
+
+        // Folder Upload Confirm
+        'folder_confirm_title' => 'Bạn muốn tải <span id="folderFileCount">10</span> tệp lên trang web này?',
+        'folder_confirm_desc' => 'Thao tác này sẽ tải tất cả các tệp từ "Import Folder" lên. Chỉ thực hiện thao tác này nếu bạn tin tưởng trang web.',
+
+        // Pronunciation languages
+        'pron_lang_vi' => 'Tiếng Việt',
+        'pron_lang_en' => 'English',
+        'pron_lang_fr' => 'Français',
+        'pron_lang_zh' => '中文',
+
+        // Normalize examples
+        'ex_newline_before' => '"Xin chào\nCác bạn"',
+        'ex_newline_after' => '"Xin chào. Các bạn"',
+        'ex_whitespace_before' => '"Xin chào , các bạn"',
+        'ex_whitespace_after' => '"Xin chào, các bạn"',
+        'ex_collapse_before' => '"Gì!."',
+        'ex_collapse_after' => '"Gì!"',
+        'ex_stray_before' => '"Xin chào, ."',
+        'ex_stray_after' => '"Xin chào."',
+        'ex_unicode_before' => '"Xin@#$Chào"',
+        'ex_unicode_after' => '"Xin Chào"',
     ],
     
     'en' => [
@@ -203,6 +263,66 @@ $translations = [
         'newest' => 'Newest',
         'trending' => 'Trending',
         'chars_generated' => 'Characters Generated',
+
+        // Common
+        'chars' => 'chars',
+        'cancel' => 'Cancel',
+        'delete' => 'Delete',
+        'download' => 'Download',
+        'close' => 'Close',
+        'loading_data' => 'Loading data...',
+        'refresh_data' => 'Refresh data',
+
+        // Drag & Drop Overlay
+        'drop_overlay_title' => 'Drop files here',
+        'drop_overlay_desc' => 'Supports .txt, .srt, .zip',
+
+        // Clone Modal
+        'clone_modal_title' => 'Clone Voice',
+        'clone_name_label' => 'Voice Name',
+        'clone_name_placeholder' => 'E.g.: My voice',
+        'clone_gender_label' => 'Gender',
+        'clone_gender_male' => 'Male',
+        'clone_gender_female' => 'Female',
+        'clone_sample_file' => 'Sample file (MP3, < 5 minutes, < 20MB)',
+        'clone_sample_hint' => '* Use a clear recording without background noise',
+        'clone_start' => 'Start Cloning',
+
+        // Delete Task Modal
+        'delete_task_title' => 'Delete Task',
+        'delete_task_warn' => 'Are you sure you want to delete this task? This action cannot be undone.',
+        'delete_task_note' => 'If the task is stuck for more than 24 hours, credits will be refunded.',
+        'delete_task_preview' => 'Text content will appear here...',
+
+        // SRT Settings
+        'srt_settings_title' => 'Subtitle Settings',
+        'srt_max_chars' => 'Max characters per line:',
+        'srt_max_lines' => 'Max lines per sentence:',
+        'srt_max_duration' => 'Max seconds per sentence:',
+        'srt_reset' => 'Reset values',
+        'export' => 'Export',
+
+        // Folder Upload Confirm
+        'folder_confirm_title' => 'Do you want to upload <span id="folderFileCount">10</span> files to this website?',
+        'folder_confirm_desc' => 'This action will upload all files from "Import Folder". Only proceed if you trust this website.',
+
+        // Pronunciation languages
+        'pron_lang_vi' => 'Vietnamese',
+        'pron_lang_en' => 'English',
+        'pron_lang_fr' => 'French',
+        'pron_lang_zh' => 'Chinese',
+
+        // Normalize examples
+        'ex_newline_before' => '"Hello\nEveryone"',
+        'ex_newline_after' => '"Hello. Everyone"',
+        'ex_whitespace_before' => '"Hello , everyone"',
+        'ex_whitespace_after' => '"Hello, everyone"',
+        'ex_collapse_before' => '"What!."',
+        'ex_collapse_after' => '"What!"',
+        'ex_stray_before' => '"Hello, ."',
+        'ex_stray_after' => '"Hello."',
+        'ex_unicode_before' => '"Hello@#$World"',
+        'ex_unicode_after' => '"Hello World"',
     ]
 ];
 
@@ -1111,7 +1231,7 @@ if ($elevenlabs_down && $user_id_real) {
     " id="charDisplay">
         <i class="bi bi-file-text" style="font-size: 14px; color: #888;"></i>
         <span id="charCount" style="color: #fff;">0</span>
-        <span style="font-size: 11px; color: #666;">ký tự</span>
+        <span style="font-size: 11px; color: #666;"><?php echo $t['chars']; ?></span>
     </div>
     
     <span style="color: #333;">|</span>
@@ -1667,14 +1787,14 @@ if ($elevenlabs_down && $user_id_real) {
                     <label><?php echo $lang === 'vi' ? 'Ngôn ngữ' : 'Language'; ?></label>
                     <div class="custom-dropdown" id="pronLangDropdown">
                         <div class="custom-dropdown-selected" onclick="togglePronLangDropdown()">
-                            <span id="pronLangText">Tiếng Việt</span>
+                            <span id="pronLangText"><?php echo $t['pron_lang_vi']; ?></span>
                             <i class="bi bi-chevron-down"></i>
                         </div>
                         <div class="custom-dropdown-options" id="pronLangOptions">
-                            <div class="custom-dropdown-option selected" data-value="vi" onclick="selectPronLang('vi', 'Tiếng Việt')">Tiếng Việt</div>
-                            <div class="custom-dropdown-option" data-value="en" onclick="selectPronLang('en', 'English')">English</div>
-                            <div class="custom-dropdown-option" data-value="fr" onclick="selectPronLang('fr', 'Français')">Français</div>
-                            <div class="custom-dropdown-option" data-value="zh" onclick="selectPronLang('zh', '中文')">中文</div>
+                            <div class="custom-dropdown-option selected" data-value="vi" onclick="selectPronLang('vi', '<?php echo $t['pron_lang_vi']; ?>')"><?php echo $t['pron_lang_vi']; ?></div>
+                            <div class="custom-dropdown-option" data-value="en" onclick="selectPronLang('en', '<?php echo $t['pron_lang_en']; ?>')"><?php echo $t['pron_lang_en']; ?></div>
+                            <div class="custom-dropdown-option" data-value="fr" onclick="selectPronLang('fr', '<?php echo $t['pron_lang_fr']; ?>')"><?php echo $t['pron_lang_fr']; ?></div>
+                            <div class="custom-dropdown-option" data-value="zh" onclick="selectPronLang('zh', '<?php echo $t['pron_lang_zh']; ?>')"><?php echo $t['pron_lang_zh']; ?></div>
                         </div>
                     </div>
                     <input type="hidden" id="pronLanguageSelect" value="vi">
@@ -1700,10 +1820,10 @@ if ($elevenlabs_down && $user_id_real) {
                     </div>
                     <div class="custom-dropdown-options" id="pronFilterOptions">
                         <div class="custom-dropdown-option selected" data-value="all" onclick="selectPronFilter('all', '<?php echo $lang === 'vi' ? 'Tất cả' : 'All'; ?>')"><?php echo $lang === 'vi' ? 'Tất cả' : 'All'; ?></div>
-                        <div class="custom-dropdown-option" data-value="vi" onclick="selectPronFilter('vi', 'Tiếng Việt')">Tiếng Việt</div>
-                        <div class="custom-dropdown-option" data-value="en" onclick="selectPronFilter('en', 'English')">English</div>
-                        <div class="custom-dropdown-option" data-value="fr" onclick="selectPronFilter('fr', 'Français')">Français</div>
-                        <div class="custom-dropdown-option" data-value="zh" onclick="selectPronFilter('zh', '中文')">中文</div>
+                        <div class="custom-dropdown-option" data-value="vi" onclick="selectPronFilter('vi', '<?php echo $t['pron_lang_vi']; ?>')"><?php echo $t['pron_lang_vi']; ?></div>
+                        <div class="custom-dropdown-option" data-value="en" onclick="selectPronFilter('en', '<?php echo $t['pron_lang_en']; ?>')"><?php echo $t['pron_lang_en']; ?></div>
+                        <div class="custom-dropdown-option" data-value="fr" onclick="selectPronFilter('fr', '<?php echo $t['pron_lang_fr']; ?>')"><?php echo $t['pron_lang_fr']; ?></div>
+                        <div class="custom-dropdown-option" data-value="zh" onclick="selectPronFilter('zh', '<?php echo $t['pron_lang_zh']; ?>')"><?php echo $t['pron_lang_zh']; ?></div>
                     </div>
                 </div>
                 <input type="hidden" id="pronFilterSelect" value="all">
@@ -2148,7 +2268,7 @@ if ($elevenlabs_down && $user_id_real) {
                         <div class="tn-option-name"><?php echo $lang === 'vi' ? 'Xuống dòng → Dấu chấm' : 'Newline → Period'; ?></div>
                         <div class="tn-option-desc"><?php echo $lang === 'vi' ? 'Thay thế xuống dòng bằng dấu chấm' : 'Replace newlines with periods'; ?></div>
                         <div class="tn-option-example">
-                            <span>"Xin chào\nCác bạn"</span> → <span class="after">"Xin chào. Các bạn"</span>
+                            <span><?php echo $t['ex_newline_before']; ?></span> → <span class="after"><?php echo $t['ex_newline_after']; ?></span>
                         </div>
                     </div>
                     <label class="tn-toggle">
@@ -2162,7 +2282,7 @@ if ($elevenlabs_down && $user_id_real) {
                         <div class="tn-option-name"><?php echo $lang === 'vi' ? 'Chuẩn hóa khoảng trắng' : 'Normalize Whitespace'; ?></div>
                         <div class="tn-option-desc"><?php echo $lang === 'vi' ? 'Sửa khoảng trắng xung quanh dấu câu' : 'Fix spacing around punctuation'; ?></div>
                         <div class="tn-option-example">
-                            <span>"Xin chào , các bạn"</span> → <span class="after">"Xin chào, các bạn"</span>
+                            <span><?php echo $t['ex_whitespace_before']; ?></span> → <span class="after"><?php echo $t['ex_whitespace_after']; ?></span>
                         </div>
                     </div>
                     <label class="tn-toggle">
@@ -2184,7 +2304,7 @@ if ($elevenlabs_down && $user_id_real) {
                         <div class="tn-option-name"><?php echo $lang === 'vi' ? 'Thu gọn dấu câu' : 'Collapse Punctuation'; ?></div>
                         <div class="tn-option-desc"><?php echo $lang === 'vi' ? 'Loại bỏ dấu câu thừa' : 'Remove redundant punctuation'; ?></div>
                         <div class="tn-option-example">
-                            <span>"Gì!."</span> → <span class="after">"Gì!"</span>
+                            <span><?php echo $t['ex_collapse_before']; ?></span> → <span class="after"><?php echo $t['ex_collapse_after']; ?></span>
                         </div>
                     </div>
                     <label class="tn-toggle">
@@ -2198,7 +2318,7 @@ if ($elevenlabs_down && $user_id_real) {
                         <div class="tn-option-name"><?php echo $lang === 'vi' ? 'Xóa dấu câu lạc' : 'Remove Stray Punctuation'; ?></div>
                         <div class="tn-option-desc"><?php echo $lang === 'vi' ? 'Dọn dẹp dấu phẩy và dấu chấm sai vị trí' : 'Clean misplaced commas and periods'; ?></div>
                         <div class="tn-option-example">
-                            <span>"Xin chào, ."</span> → <span class="after">"Xin chào."</span>
+                            <span><?php echo $t['ex_stray_before']; ?></span> → <span class="after"><?php echo $t['ex_stray_after']; ?></span>
                         </div>
                     </div>
                     <label class="tn-toggle">
@@ -2220,7 +2340,7 @@ if ($elevenlabs_down && $user_id_real) {
                         <div class="tn-option-name"><?php echo $lang === 'vi' ? 'Chữ cái & Số Unicode' : 'Unicode Letters & Numbers'; ?></div>
                         <div class="tn-option-desc"><?php echo $lang === 'vi' ? 'Chỉ giữ ký tự hợp lệ cho TTS' : 'Keep only valid TTS characters'; ?></div>
                         <div class="tn-option-example">
-                            <span>"Xin@#$Chào"</span> → <span class="after">"Xin Chào"</span>
+                            <span><?php echo $t['ex_unicode_before']; ?></span> → <span class="after"><?php echo $t['ex_unicode_after']; ?></span>
                         </div>
                     </div>
                     <label class="tn-toggle">
@@ -2675,33 +2795,33 @@ if ($elevenlabs_down && $user_id_real) {
 <div id="cloneModal" class="custom-modal-key" style="z-index: 2500;">
     <div class="modal-box-key" style="text-align: left; max-width: 520px;">
         <h3 style="margin-bottom: 20px; text-align: center; font-size: 20px;">
-            <i class="bi bi-mic-fill"></i> Nhân bản giọng nói
+            <i class="bi bi-mic-fill"></i> <?php echo $t['clone_modal_title']; ?>
         </h3>
         <div class="setting-group">
-            <label>Tên giọng</label>
-            <input type="text" id="cloneName" class="custom-select" placeholder="Ví dụ: Giọng của tôi" style="cursor: text;">
+            <label><?php echo $t['clone_name_label']; ?></label>
+            <input type="text" id="cloneName" class="custom-select" placeholder="<?php echo $t['clone_name_placeholder']; ?>" style="cursor: text;">
         </div>
         <div class="setting-group">
-            <label>Giới tính</label>
+            <label><?php echo $t['clone_gender_label']; ?></label>
             <select id="cloneGender" class="custom-select">
-                <option value="male">Nam (Male)</option>
-                <option value="female">Nữ (Female)</option>
+                <option value="male"><?php echo $t['clone_gender_male']; ?></option>
+                <option value="female"><?php echo $t['clone_gender_female']; ?></option>
             </select>
         </div>
         <div class="setting-group">
-            <label>File mẫu (MP3, < 5 phút, < 20MB)</label>
+            <label><?php echo $t['clone_sample_file']; ?></label>
             <input type="file" id="cloneFile" accept=".mp3" class="custom-select" style="cursor: pointer;">
             <small style="color: #666; font-size: 11px; display: block; margin-top: 8px;">
-                * Nên dùng file thu âm rõ ràng, không tạp âm
+                <?php echo $t['clone_sample_hint']; ?>
             </small>
         </div>
         <div style="display: flex; gap: 12px; margin-top: 24px;">
             <button onclick="$('#cloneModal').fadeOut()" class="btn-close-modal" style="flex: 1;">
-                Hủy
+                <?php echo $t['cancel']; ?>
             </button>
             <button onclick="submitCloneVoice()" id="btnSubmitClone" class="btn-generate" style="flex: 1; margin-top: 0;">
                 <i class="bi bi-mic"></i>
-                <span>Bắt đầu Clone</span>
+                <span><?php echo $t['clone_start']; ?></span>
             </button>
         </div>
     </div>
@@ -2941,33 +3061,33 @@ if ($elevenlabs_down && $user_id_real) {
 ">
     <div style="text-align: center; pointer-events: auto;">
         <i class="bi bi-cloud-upload" style="font-size: 80px; color: #667eea; display: block; margin-bottom: 20px;"></i>
-        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 12px;">Thả tệp vào đây</h2>
-        <p style="font-size: 16px; color: #888;">Hỗ trợ .txt, .srt, .zip</p>
+        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 12px;"><?php echo $t['drop_overlay_title']; ?></h2>
+        <p style="font-size: 16px; color: #888;"><?php echo $t['drop_overlay_desc']; ?></p>
     </div>
 </div>
 <div id="deleteModal" class="custom-modal-overlay" style="display: none;">
     <div class="delete-modal-box">
         <div class="dm-header">
-            <h3>Xóa tác vụ</h3>
+            <h3><?php echo $t['delete_task_title']; ?></h3>
             <i class="bi bi-x-lg" onclick="closeDeleteModal()"></i>
         </div>
         
         <p class="dm-warning">
-            Bạn có chắc chắn muốn xóa tác vụ này? Hành động này không thể hoàn tác.
+            <?php echo $t['delete_task_warn']; ?>
         </p>
         
         <p class="dm-note" id="dmNote">
-            Nếu tác vụ bị treo quá 24h sẽ được hoàn tín dụng.
+            <?php echo $t['delete_task_note']; ?>
         </p>
 
         <div class="dm-preview" id="dmTextPreview">
-            Nội dung text sẽ hiện ở đây...
+            <?php echo $t['delete_task_preview']; ?>
         </div>
 
         <div class="dm-footer">
-            <button class="btn-cancel" onclick="closeDeleteModal()">Hủy</button>
+            <button class="btn-cancel" onclick="closeDeleteModal()"><?php echo $t['cancel']; ?></button>
             <button class="btn-confirm-delete" id="btnConfirmDelete">
-                <i class="bi bi-trash"></i> Xóa
+                <i class="bi bi-trash"></i> <?php echo $t['delete']; ?>
             </button>
         </div>
     </div>
@@ -2976,15 +3096,15 @@ if ($elevenlabs_down && $user_id_real) {
     <div class="dh-modal-content">
         
         <div class="dh-header">
-    <h3>Lịch sử</h3>
+    <h3><?php echo $t['history']; ?></h3>
     
     <div style="display: flex; align-items: center; gap: 8px;">
-        <button class="dh-header-btn dh-refresh-with-text" onclick="refreshDetailedHistory()" title="Làm mới dữ liệu">
+        <button class="dh-header-btn dh-refresh-with-text" onclick="refreshDetailedHistory()" title="<?php echo $t['refresh_data']; ?>">
             <i class="bi bi-arrow-clockwise" id="dhRefreshIcon"></i>
             <span><?php echo $lang === 'vi' ? 'Làm mới' : 'Refresh'; ?></span>
         </button>
 
-        <button class="dh-header-btn" onclick="closeDetailedHistory()" title="Đóng">
+        <button class="dh-header-btn" onclick="closeDetailedHistory()" title="<?php echo $t['close']; ?>">
             <i class="bi bi-x-lg"></i>
         </button>
     </div>
@@ -2997,16 +3117,16 @@ if ($elevenlabs_down && $user_id_real) {
             
             <div class="dh-actions-group">
                 <button class="dh-btn-action" id="btnBulkDelete" onclick="bulkDelete()" disabled>
-                    Xóa (<span>0</span>)
+                    <?php echo $t['delete']; ?> (<span>0</span>)
                 </button>
                 <button class="dh-btn-action" id="btnBulkDownloadAudio" onclick="bulkDownload('audio')" disabled>
-                    Tải xuống (<span>0</span>) Audio
+                    <?php echo $t['download']; ?> (<span>0</span>) Audio
                 </button>
                 <button class="dh-btn-action" id="btnBulkDownloadSrt" onclick="bulkDownload('srt')" disabled>
-                    Tải xuống (<span>0</span>) SRT
+                    <?php echo $t['download']; ?> (<span>0</span>) SRT
                 </button>
                 <button class="dh-btn-action" id="btnBulkDownloadJson" onclick="bulkDownload('json')" disabled>
-                    Tải xuống (<span>0</span>) JSON
+                    <?php echo $t['download']; ?> (<span>0</span>) JSON
                 </button>
             </div>
         </div>
@@ -3014,7 +3134,7 @@ if ($elevenlabs_down && $user_id_real) {
         <div class="dh-list-body" id="detailedHistoryList">
             <div style="text-align:center; padding: 50px; color: #666;">
                 <div class="spinner-border text-primary" role="status"></div>
-                <div style="margin-top:10px">Đang tải dữ liệu...</div>
+                <div style="margin-top:10px"><?php echo $t['loading_data']; ?></div>
             </div>
         </div>
     </div>
@@ -3022,7 +3142,7 @@ if ($elevenlabs_down && $user_id_real) {
 <div id="srtSettingsModal" class="srt-modal-overlay" style="display: none;">
     <div class="srt-modal-box">
         <div class="srt-modal-header">
-            <h3>Cài đặt Subtitle</h3>
+            <h3><?php echo $t['srt_settings_title']; ?></h3>
             <button class="srt-close-btn" onclick="closeSrtModal()">&times;</button>
         </div>
         
@@ -3030,28 +3150,28 @@ if ($elevenlabs_down && $user_id_real) {
             <input type="hidden" id="srtCurrentTaskId" value="">
 
             <div class="srt-form-group">
-                <label>Số ký tự tối đa trên dòng:</label>
+                <label><?php echo $t['srt_max_chars']; ?></label>
                 <input type="number" id="srtMaxChars" value="42" min="1">
             </div>
 
             <div class="srt-form-group">
-                <label>Số dòng tối đa trên câu:</label>
+                <label><?php echo $t['srt_max_lines']; ?></label>
                 <input type="number" id="srtMaxLines" value="2" min="1">
             </div>
 
             <div class="srt-form-group">
-                <label>Số giây tối đa trên câu:</label>
+                <label><?php echo $t['srt_max_duration']; ?></label>
                 <input type="number" id="srtMaxDuration" value="7" min="1">
             </div>
         </div>
 
         <div class="srt-modal-footer">
             <button class="srt-btn-reset" onclick="resetSrtSettings()">
-                <i class="bi bi-arrow-counterclockwise"></i> Đặt lại giá trị
+                <i class="bi bi-arrow-counterclockwise"></i> <?php echo $t['srt_reset']; ?>
             </button>
             <div style="display: flex; gap: 10px;">
-                <button class="srt-btn-close" onclick="closeSrtModal()">Đóng</button>
-                <button class="srt-btn-export" onclick="submitSrtExport()">Xuất</button>
+                <button class="srt-btn-close" onclick="closeSrtModal()"><?php echo $t['close']; ?></button>
+                <button class="srt-btn-export" onclick="submitSrtExport()"><?php echo $t['export']; ?></button>
             </div>
         </div>
     </div>
@@ -3204,10 +3324,10 @@ if ($elevenlabs_down && $user_id_real) {
             <i class="bi bi-folder-fill" style="font-size: 28px; color: #fff;"></i>
         </div>
         
-        <h3 style="margin: 0 0 12px 0; font-size: 20px; font-weight: 700; color: #fff;">Bạn muốn tải <span id="folderFileCount">10</span> tệp lên trang web này?</h3>
+        <h3 style="margin: 0 0 12px 0; font-size: 20px; font-weight: 700; color: #fff;"><?php echo $t['folder_confirm_title']; ?></h3>
         
         <p style="color: #999; font-size: 14px; margin-bottom: 28px; line-height: 1.6;">
-            Thao tác này sẽ tải tất cả các tệp từ "Import Folder" lên. Chỉ thực hiện thao tác này nếu bạn tin tưởng trang web.
+            <?php echo $t['folder_confirm_desc']; ?>
         </p>
         
         <div id="folderFileList" style="max-height: 180px; overflow-y: auto; margin-bottom: 24px; text-align: left; background: #0a0a0a; border: 1px solid #222; border-radius: 8px; padding: 12px;">
@@ -3216,10 +3336,10 @@ if ($elevenlabs_down && $user_id_real) {
         
         <div style="display: flex; gap: 12px;">
             <button id="folderCancelBtn" style="flex: 1; padding: 12px 20px; border-radius: 10px; border: 1px solid #444; background: transparent; color: #ccc; font-weight: 600; cursor: pointer; font-size: 14px; transition: 0.2s;">
-                Huỷ
+                <?php echo $t['cancel']; ?>
             </button>
             <button id="folderUploadBtn" style="flex: 1; padding: 12px 20px; border-radius: 10px; border: none; background: #fff; color: #000; font-weight: 700; cursor: pointer; font-size: 14px; transition: 0.2s;">
-                Tải lên
+                <?php echo $t['upload']; ?>
             </button>
         </div>
     </div>
