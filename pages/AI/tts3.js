@@ -2707,7 +2707,7 @@ $(document).ready(function () {
 
     $("body").empty().css("background", "#000").html(`
             <div style="height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff;">
-                <h1>🚧 Hệ thống đang bảo trì</h1>
+                <h1>🚧 ${tText("Hệ thống đang bảo trì", "System under maintenance")}</h1>
                 <p>${tText("Đang chuyển hướng...", "Redirecting...")}</p>
             </div>
         `);
@@ -4567,8 +4567,8 @@ function loadKingCongClonedVoicesInGrid() {
         $("#voiceGrid").append(`
           <div style="grid-column: 1 / -1; text-align:center; padding:60px 20px; color:#666;">
               <i class="bi bi-mic-mute" style="font-size:48px; opacity:0.5; margin-bottom:16px; display:block;"></i>
-              <p style="font-size:14px; margin-bottom:8px;">Chưa có giọng nhân bản nào</p>
-              <p style="font-size:12px; color:#888;">Nhấn vào card "Tạo mới" để bắt đầu</p>
+              <p style="font-size:14px; margin-bottom:8px;">${tText("Chưa có giọng nhân bản nào", "No cloned voices yet")}</p>
+              <p style="font-size:12px; color:#888;">${tText('Nhấn vào card "Tạo mới" để bắt đầu', 'Click "Create new" to get started')}</p>
           </div>
         `);
       }
@@ -4580,9 +4580,9 @@ function loadKingCongClonedVoicesInGrid() {
       $("#voiceGrid").append(`
         <div style="grid-column: 1 / -1; text-align:center; padding:60px 20px; color:#ef4444;">
             <i class="bi bi-exclamation-triangle" style="font-size:48px; margin-bottom:16px; display:block;"></i>
-            <p style="font-size:14px;">Lỗi tải danh sách giọng clone</p>
+            <p style="font-size:14px;">${tText("Lỗi tải danh sách giọng clone", "Failed to load cloned voices")}</p>
             <button onclick="kingcongClonedLoading = false; renderClonedVoices()" class="btn btn-sm btn-outline-secondary" style="margin-top:16px;">
-                <i class="bi bi-arrow-clockwise"></i> Thử lại
+                <i class="bi bi-arrow-clockwise"></i> ${tText("Thử lại", "Retry")}
             </button>
         </div>
       `);
@@ -4754,7 +4754,8 @@ function createVoiceCardHTML(voice) {
   // Xử lý tên và mô tả an toàn
   let rawName = voice.name || "Unknown";
   let safeName = rawName.replace(/'/g, "\\'");
-  let desc = voice.description || "Giọng đọc AI chất lượng cao.";
+  let desc =
+    voice.description || tText("Giọng đọc AI chất lượng cao.", "High-quality AI voice.");
 
   // --- XỬ LÝ TAGS & METRICS ---
   let tagsHtml = "";
@@ -5710,7 +5711,7 @@ function showVoiceLoadingSpinner() {
         <div style="color:#888; text-align:center; padding:60px 20px; grid-column: 1 / -1;">
             <div class="spinner-border" style="width:40px; height:40px; color:#667eea;"></div>
             <p style="margin-top:15px; font-size:14px;">${tText("Đang tải thư viện giọng nói...", "Loading voice library...")}</p>
-            <p style="font-size:12px; color:#666; margin-top:8px;">Vui lòng đợi trong giây lát</p>
+            <p style="font-size:12px; color:#666; margin-top:8px;">${tText("Vui lòng đợi trong giây lát", "Please wait a moment")}</p>
         </div>
     `);
 }
@@ -5725,7 +5726,7 @@ function showVoiceErrorState(message, details = "") {
             <p style="font-size:14px; margin-bottom:8px; font-weight:600;">${message}</p>
             ${details ? `<p style="font-size:12px; color:#888; margin-bottom:16px;">${details}</p>` : ""}
             <button onclick="reloadSharedVoices()" class="btn-generate" style="margin:0; padding:8px 16px; font-size:13px;">
-                <i class="bi bi-arrow-clockwise"></i> Thử lại
+                <i class="bi bi-arrow-clockwise"></i> ${tText("Thử lại", "Retry")}
             </button>
         </div>
     `);
@@ -5835,17 +5836,17 @@ function renderClonedVoices() {
                                 ${
                                   previewUrl
                                     ? `
-                                <button class="minimax-icon-btn" onclick="event.stopPropagation(); togglePreview('${previewUrl}', '${v.id}')" title="Nghe mẫu" style="background: #222; border: 1px solid #444; width: 32px; height: 32px; border-radius: 50%; color: #fff; cursor: pointer;">
+                                <button class="minimax-icon-btn" onclick="event.stopPropagation(); togglePreview('${previewUrl}', '${v.id}')" title="${tText("Nghe mẫu", "Preview")}" style="background: #222; border: 1px solid #444; width: 32px; height: 32px; border-radius: 50%; color: #fff; cursor: pointer;">
                                     <i class="bi bi-play-fill"></i>
                                 </button>
                                 `
                                     : ""
                                 }
-                                <button class="minimax-icon-btn" onclick="event.stopPropagation(); deleteClone('${v.id}')" title="Xóa giọng" style="background: #222; border: 1px solid #444; width: 32px; height: 32px; border-radius: 50%; color: #ef4444; cursor: pointer;">
+                                <button class="minimax-icon-btn" onclick="event.stopPropagation(); deleteClone('${v.id}')" title="${tText("Xóa giọng", "Delete voice")}" style="background: #222; border: 1px solid #444; width: 32px; height: 32px; border-radius: 50%; color: #ef4444; cursor: pointer;">
                                     <i class="bi bi-trash"></i>
                                 </button>
                                 <button class="minimax-use-btn" onclick="event.stopPropagation(); chooseVoice('${v.id}', '${safeName}')" style="background: #fff; color: #000; border: none; padding: 0 15px; height: 32px; border-radius: 16px; font-weight: 600; cursor: pointer;">
-                                    Dùng
+                                    ${tText("Dùng", "Use")}
                                 </button>
                             </div>
                         </div>
@@ -5857,8 +5858,8 @@ function renderClonedVoices() {
         $("#voiceGrid").append(`
                     <div style="grid-column: 1 / -1; text-align:center; padding:60px 20px; color:#666;">
                         <i class="bi bi-mic-mute" style="font-size:48px; opacity:0.5; margin-bottom:16px; display:block;"></i>
-                        <p style="font-size:14px; margin-bottom:8px;">Chưa có giọng nhân bản nào</p>
-                        <p style="font-size:12px; color:#888;">Nhấn vào card "Tạo mới" để bắt đầu</p>
+                        <p style="font-size:14px; margin-bottom:8px;">${tText("Chưa có giọng nhân bản nào", "No cloned voices yet")}</p>
+                        <p style="font-size:12px; color:#888;">${tText('Nhấn vào card "Tạo mới" để bắt đầu', 'Click \"Create new\" to get started')}</p>
                     </div>
                 `);
       }
@@ -5869,9 +5870,9 @@ function renderClonedVoices() {
       $("#voiceGrid").append(`
                 <div style="grid-column: 1 / -1; text-align:center; padding:60px 20px; color:#ef4444;">
                     <i class="bi bi-exclamation-triangle" style="font-size:48px; margin-bottom:16px; display:block;"></i>
-                    <p style="font-size:14px;">Lỗi tải danh sách giọng clone</p>
+                    <p style="font-size:14px;">${tText("Lỗi tải danh sách giọng clone", "Failed to load cloned voices")}</p>
                     <button onclick="renderClonedVoices()" class="btn btn-sm btn-outline-secondary" style="margin-top:16px;">
-                        <i class="bi bi-arrow-clockwise"></i> Thử lại
+                        <i class="bi bi-arrow-clockwise"></i> ${tText("Thử lại", "Retry")}
                     </button>
                 </div>
             `);
@@ -6104,7 +6105,7 @@ function filterVoices() {
                     <i class="bi bi-search" style="font-size:48px; color:#333; display:block; margin-bottom:15px;"></i>
                     <p style="color:#888; font-size:14px;">${tText("Không tìm thấy kết quả phù hợp", "No matching results")}</p>
                     <button onclick="resetFilters()" class="filter-reset-btn" style="margin: 15px auto; width: auto; padding: 8px 16px;">
-                        Xóa bộ lọc
+                        ${tText("Xóa bộ lọc", "Clear filters")}
                     </button>
                 </div>
             `);
@@ -7387,7 +7388,7 @@ function proceedWithTTS() {
   $("#btnProcess")
     .prop("disabled", true)
     .html(
-      '<span class="spinner-border spinner-border-sm"></span> <span>Đang gửi...</span>',
+      `<span class="spinner-border spinner-border-sm"></span> <span>${tText("Đang gửi...", "Sending...")}</span>`,
     );
   $("#inputLoader").addClass("show");
 
@@ -7709,7 +7710,7 @@ function updateCreditsTooltip() {
       // Tạo element nếu chưa có
       $("#creditsTooltip").append(`
                 <div style="font-size: 12px; color: #ccc; margin-top: 2px;" id="cloneFeeInfo">
-                    • Giọng Clone: <span style="color: #fff; font-weight: 600;">+30%</span>
+                    • ${tText("Giọng Clone", "Voice Clone")}: <span style="color: #fff; font-weight: 600;">+30%</span>
                 </div>
             `);
     } else {
@@ -7724,7 +7725,7 @@ function updateCreditsTooltip() {
 function resetUI() {
   $("#btnProcess")
     .prop("disabled", false)
-    .html('<i class="bi bi-magic"></i> <span>Tạo Giọng Nói</span>');
+    .html(`<i class="bi bi-magic"></i> <span>${tText("Tạo Giọng Nói", "Generate Voice")}</span>`);
   $("#inputLoader").removeClass("show");
 }
 // 🔥 HÀM POLL TÌM TASK MỚI (KHI TIMEOUT)
@@ -8003,7 +8004,7 @@ function startPolling(taskId) {
         else if (res.status === "queued") {
           let queueText = res.queue_position
             ? `${tText("Hàng đợi #", "Queue #")}${res.queue_position}`
-            : "Đang chờ...";
+            : tText("Đang chờ...", "Waiting...");
           console.log("  → In queue:", queueText);
           $(`#time-elapsed-${taskId}`).text(queueText);
 
@@ -8025,7 +8026,7 @@ function startPolling(taskId) {
           $(`#icon-spin-${taskId}`)
             .removeClass("spinning bi-arrow-repeat")
             .addClass("bi-check-circle-fill");
-          $(`#time-elapsed-${taskId}`).text("Hoàn thành");
+          $(`#time-elapsed-${taskId}`).text(tText("Hoàn thành", "Completed"));
           $card.removeClass("processing");
 
           // Lấy dữ liệu file
@@ -8058,7 +8059,7 @@ function startPolling(taskId) {
           $(`#icon-spin-${taskId}`)
             .removeClass("spinning bi-arrow-repeat")
             .addClass("bi-exclamation-triangle-fill");
-          $(`#time-elapsed-${taskId}`).text("Thất bại");
+          $(`#time-elapsed-${taskId}`).text(tText("Thất bại", "Failed"));
           $card.removeClass("processing");
           updateCardToFailed(taskId);
 
@@ -8110,7 +8111,7 @@ function submitCloneVoice() {
   $("#btnSubmitClone")
     .prop("disabled", true)
     .html(
-      '<span class="spinner-border spinner-border-sm"></span> <span>Đang upload...</span>',
+      `<span class="spinner-border spinner-border-sm"></span> <span>${tText("Đang upload...", "Uploading...")}</span>`,
     );
 
   $.ajax({
@@ -8561,7 +8562,7 @@ function addHistoryCard(
     progressBarHtml = `<div class="hc-progress-track" id="track-${taskId}"><div class="hc-progress-fill" id="progress-${taskId}" data-progress="0"></div></div>`;
 
     // 🔥 [MỚI]: Nội dung đếm ngược/xử lý
-    statusTextContent = `<span id="time-elapsed-${taskId}">${status === "queued" ? "Đang chờ" : "0%"}</span>`;
+    statusTextContent = `<span id="time-elapsed-${taskId}">${status === "queued" ? tText("Đang chờ", "Waiting") : "0%"}</span>`;
 
     // Nút xóa hoàn tiền
     deleteButtonHtml = `
@@ -8571,27 +8572,27 @@ function addHistoryCard(
             title="${tText("Xóa task", "Delete task")}"><i class="bi bi-trash"></i></button>`;
   } else if (status === "done") {
     iconClass = "bi-check-circle-fill";
-    statusTextContent = "Hoàn thành";
+    statusTextContent = tText("Hoàn thành", "Completed");
 
     // Nút xóa lịch sử
     deleteButtonHtml = `
         <button onclick="openDeleteModal('${taskId}', '${safeText}', 'history')" 
             class="btn-delete-history"
             style="background: transparent; border: 1px solid #666; color: #999; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 11px; transition: all 0.2s;"
-            title="Xóa lịch sử"><i class="bi bi-trash"></i></button>`;
+            title="${tText("Xóa lịch sử", "Delete history")}"><i class="bi bi-trash"></i></button>`;
   } else if (status === "failed") {
     iconClass = "bi-exclamation-triangle-fill";
-    statusTextContent = "Thất bại";
+    statusTextContent = tText("Thất bại", "Failed");
 
     // Nút xóa lịch sử
     deleteButtonHtml = `
         <button onclick="openDeleteModal('${taskId}', '${safeText}', 'history')" 
             class="btn-delete-history"
             style="background: transparent; border: 1px solid #666; color: #999; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 11px; transition: all 0.2s;"
-            title="Xóa lịch sử"><i class="bi bi-trash"></i></button>`;
+            title="${tText("Xóa lịch sử", "Delete history")}"><i class="bi bi-trash"></i></button>`;
   } else {
     iconClass = "bi-clock";
-    statusTextContent = "Lỗi trạng thái";
+    statusTextContent = tText("Lỗi trạng thái", "Status error");
   }
 
   // 🔥 [FIX]: Thêm class 'processing' nếu biến isProcessing = true
@@ -8601,7 +8602,7 @@ function addHistoryCard(
             <span class="hc-time" style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: #888;">
                 <img src="${logoUrl}" class="hc-provider-icon" title="${provider}" style="width: 18px; height: 18px; border-radius: 50%;">
                 <i class="bi ${iconClass}" id="icon-spin-${taskId}" style="font-size: 14px;"></i> 
-                <span>${time || "Vừa xong"}</span>
+                <span>${time || tText("Vừa xong", "Just now")}</span>
             </span>
             <div style="display: flex; gap: 8px; align-items: center;">
                 ${costBadge}
@@ -8792,7 +8793,7 @@ function updateCardToDone(taskId, audioUrl, srtUrl, jsonUrl, duration) {
       .removeClass("status-pending status-queued")
       .addClass("status-done");
 
-    $(`#time-elapsed-${taskId}`).replaceWith("Xong");
+    $(`#time-elapsed-${taskId}`).replaceWith(tText("Xong", "Done"));
   }
 
   $(`#icon-spin-${taskId}`)
@@ -8806,10 +8807,10 @@ function updateCardToDone(taskId, audioUrl, srtUrl, jsonUrl, duration) {
         "border-color": "#666",
         color: "#999",
       })
-      .attr("title", "Xóa lịch sử đã hoàn thành")
+      .attr("title", tText("Xóa lịch sử đã hoàn thành", "Delete completed history"))
       .attr(
         "onclick",
-        `openDeleteModal('${taskId}', 'Nội dung preview', 'history')`,
+        `openDeleteModal('${taskId}', '${tText("Nội dung preview", "Preview content")}', 'history')`,
       )
       .prop("disabled", false);
   }
@@ -9160,7 +9161,7 @@ async function confirmRemakeTask() {
   let $btnRemake = $("#btnConfirmRemake");
   $btnRemake.addClass("loading").prop("disabled", true);
   $btnRemake.find("i").removeClass("bi-magic").addClass("bi-arrow-repeat");
-  $btnRemake.find("span").text("Đang tạo...");
+  $btnRemake.find("span").text(tText("Đang tạo...", "Creating..."));
 
   // XỬ LÝ voice_id
   let voiceId = taskData.voice_id;
@@ -9363,7 +9364,7 @@ function updateCardToFailed(taskId) {
   $(`#card-${taskId}`).removeClass("processing");
 
   $(`#card-${taskId} #status-${taskId}`)
-    .text("Thất bại")
+    .text(tText("Thất bại", "Failed"))
     .removeClass("status-pending")
     .addClass("status-failed");
 
@@ -10080,7 +10081,7 @@ async function handleBulkFiles(files) {
 
   // Show loading
   $("#bulkDropZone").html(
-    '<div class="spinner-border" style="color: #667eea;"></div><p style="margin-top: 15px; color: #888;">Đang đọc file...</p>',
+    `<div class="spinner-border" style="color: #667eea;"></div><p style="margin-top: 15px; color: #888;">${tText("Đang đọc file...", "Reading files...")}</p>`,
   );
 
   // Process files
@@ -10095,8 +10096,8 @@ async function handleBulkFiles(files) {
   // Reset drop zone
   $("#bulkDropZone").html(`
         <i class="bi bi-cloud-upload" style="font-size: 48px; color: #667eea; display: block; margin-bottom: 16px;"></i>
-        <h4 style="margin-bottom: 8px;">Kéo thả file hoặc click để chọn</h4>
-        <p style="color: #888; font-size: 13px;">Hỗ trợ: .txt, .zip (tối đa 20 file, mỗi file < 5MB)</p>
+        <h4 style="margin-bottom: 8px;">${tText("Kéo thả file hoặc click để chọn", "Drag & drop files or click to select")}</h4>
+        <p style="color: #888; font-size: 13px;">${tText("Hỗ trợ: .txt, .zip (tối đa 20 file, mỗi file < 5MB)", "Supports: .txt, .zip (max 20 files, each < 5MB)")}</p>
     `);
 
   console.log(
@@ -10203,7 +10204,7 @@ function removeFile(index) {
 }
 
 function clearAllFiles() {
-  if (confirm("Xóa tất cả file?")) {
+  if (confirm(tText("Xóa tất cả file?", "Clear all files?"))) {
     bulkFiles = [];
     renderFileList();
     $("#bulkSummary").hide();
@@ -10603,9 +10604,15 @@ async function confirmBulkProcess() {
     switchTab("history");
 
     // 🔥 5. HIỂN THỊ KẾT QUẢ (DÙNG showModernAlert ĐÃ FIX)
-    let resultMsg = `✅ Hoàn thành!\n\n• Thành công: ${successCount}\n• Thất bại: ${failCount}`;
+    let resultMsg =
+      currentLang === "vi"
+        ? `✅ Hoàn thành!\n\n• Thành công: ${successCount}\n• Thất bại: ${failCount}`
+        : `✅ Completed!\n\n• Success: ${successCount}\n• Failed: ${failCount}`;
     if (isGenAIBackup) {
-      resultMsg += `\n\n(Đã sử dụng Backup miễn phí)`;
+      resultMsg +=
+        currentLang === "vi"
+          ? `\n\n(Đã sử dụng Backup miễn phí)`
+          : `\n\n(Backup used for free)`;
     }
 
     showModernAlert(

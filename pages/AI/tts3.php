@@ -148,6 +148,24 @@ $translations = [
         // Folder Upload Confirm
         'folder_confirm_title' => 'Bạn muốn tải <span id="folderFileCount">10</span> tệp lên trang web này?',
         'folder_confirm_desc' => 'Thao tác này sẽ tải tất cả các tệp từ "Import Folder" lên. Chỉ thực hiện thao tác này nếu bạn tin tưởng trang web.',
+
+        // Pronunciation languages
+        'pron_lang_vi' => 'Tiếng Việt',
+        'pron_lang_en' => 'English',
+        'pron_lang_fr' => 'Français',
+        'pron_lang_zh' => '中文',
+
+        // Normalize examples
+        'ex_newline_before' => '"Xin chào\nCác bạn"',
+        'ex_newline_after' => '"Xin chào. Các bạn"',
+        'ex_whitespace_before' => '"Xin chào , các bạn"',
+        'ex_whitespace_after' => '"Xin chào, các bạn"',
+        'ex_collapse_before' => '"Gì!."',
+        'ex_collapse_after' => '"Gì!"',
+        'ex_stray_before' => '"Xin chào, ."',
+        'ex_stray_after' => '"Xin chào."',
+        'ex_unicode_before' => '"Xin@#$Chào"',
+        'ex_unicode_after' => '"Xin Chào"',
     ],
     
     'en' => [
@@ -287,6 +305,24 @@ $translations = [
         // Folder Upload Confirm
         'folder_confirm_title' => 'Do you want to upload <span id="folderFileCount">10</span> files to this website?',
         'folder_confirm_desc' => 'This action will upload all files from "Import Folder". Only proceed if you trust this website.',
+
+        // Pronunciation languages
+        'pron_lang_vi' => 'Vietnamese',
+        'pron_lang_en' => 'English',
+        'pron_lang_fr' => 'French',
+        'pron_lang_zh' => 'Chinese',
+
+        // Normalize examples
+        'ex_newline_before' => '"Hello\nEveryone"',
+        'ex_newline_after' => '"Hello. Everyone"',
+        'ex_whitespace_before' => '"Hello , everyone"',
+        'ex_whitespace_after' => '"Hello, everyone"',
+        'ex_collapse_before' => '"What!."',
+        'ex_collapse_after' => '"What!"',
+        'ex_stray_before' => '"Hello, ."',
+        'ex_stray_after' => '"Hello."',
+        'ex_unicode_before' => '"Hello@#$World"',
+        'ex_unicode_after' => '"Hello World"',
     ]
 ];
 
@@ -1751,14 +1787,14 @@ if ($elevenlabs_down && $user_id_real) {
                     <label><?php echo $lang === 'vi' ? 'Ngôn ngữ' : 'Language'; ?></label>
                     <div class="custom-dropdown" id="pronLangDropdown">
                         <div class="custom-dropdown-selected" onclick="togglePronLangDropdown()">
-                            <span id="pronLangText">Tiếng Việt</span>
+                            <span id="pronLangText"><?php echo $t['pron_lang_vi']; ?></span>
                             <i class="bi bi-chevron-down"></i>
                         </div>
                         <div class="custom-dropdown-options" id="pronLangOptions">
-                            <div class="custom-dropdown-option selected" data-value="vi" onclick="selectPronLang('vi', 'Tiếng Việt')">Tiếng Việt</div>
-                            <div class="custom-dropdown-option" data-value="en" onclick="selectPronLang('en', 'English')">English</div>
-                            <div class="custom-dropdown-option" data-value="fr" onclick="selectPronLang('fr', 'Français')">Français</div>
-                            <div class="custom-dropdown-option" data-value="zh" onclick="selectPronLang('zh', '中文')">中文</div>
+                            <div class="custom-dropdown-option selected" data-value="vi" onclick="selectPronLang('vi', '<?php echo $t['pron_lang_vi']; ?>')"><?php echo $t['pron_lang_vi']; ?></div>
+                            <div class="custom-dropdown-option" data-value="en" onclick="selectPronLang('en', '<?php echo $t['pron_lang_en']; ?>')"><?php echo $t['pron_lang_en']; ?></div>
+                            <div class="custom-dropdown-option" data-value="fr" onclick="selectPronLang('fr', '<?php echo $t['pron_lang_fr']; ?>')"><?php echo $t['pron_lang_fr']; ?></div>
+                            <div class="custom-dropdown-option" data-value="zh" onclick="selectPronLang('zh', '<?php echo $t['pron_lang_zh']; ?>')"><?php echo $t['pron_lang_zh']; ?></div>
                         </div>
                     </div>
                     <input type="hidden" id="pronLanguageSelect" value="vi">
@@ -1784,10 +1820,10 @@ if ($elevenlabs_down && $user_id_real) {
                     </div>
                     <div class="custom-dropdown-options" id="pronFilterOptions">
                         <div class="custom-dropdown-option selected" data-value="all" onclick="selectPronFilter('all', '<?php echo $lang === 'vi' ? 'Tất cả' : 'All'; ?>')"><?php echo $lang === 'vi' ? 'Tất cả' : 'All'; ?></div>
-                        <div class="custom-dropdown-option" data-value="vi" onclick="selectPronFilter('vi', 'Tiếng Việt')">Tiếng Việt</div>
-                        <div class="custom-dropdown-option" data-value="en" onclick="selectPronFilter('en', 'English')">English</div>
-                        <div class="custom-dropdown-option" data-value="fr" onclick="selectPronFilter('fr', 'Français')">Français</div>
-                        <div class="custom-dropdown-option" data-value="zh" onclick="selectPronFilter('zh', '中文')">中文</div>
+                        <div class="custom-dropdown-option" data-value="vi" onclick="selectPronFilter('vi', '<?php echo $t['pron_lang_vi']; ?>')"><?php echo $t['pron_lang_vi']; ?></div>
+                        <div class="custom-dropdown-option" data-value="en" onclick="selectPronFilter('en', '<?php echo $t['pron_lang_en']; ?>')"><?php echo $t['pron_lang_en']; ?></div>
+                        <div class="custom-dropdown-option" data-value="fr" onclick="selectPronFilter('fr', '<?php echo $t['pron_lang_fr']; ?>')"><?php echo $t['pron_lang_fr']; ?></div>
+                        <div class="custom-dropdown-option" data-value="zh" onclick="selectPronFilter('zh', '<?php echo $t['pron_lang_zh']; ?>')"><?php echo $t['pron_lang_zh']; ?></div>
                     </div>
                 </div>
                 <input type="hidden" id="pronFilterSelect" value="all">
@@ -2232,7 +2268,7 @@ if ($elevenlabs_down && $user_id_real) {
                         <div class="tn-option-name"><?php echo $lang === 'vi' ? 'Xuống dòng → Dấu chấm' : 'Newline → Period'; ?></div>
                         <div class="tn-option-desc"><?php echo $lang === 'vi' ? 'Thay thế xuống dòng bằng dấu chấm' : 'Replace newlines with periods'; ?></div>
                         <div class="tn-option-example">
-                            <span>"Xin chào\nCác bạn"</span> → <span class="after">"Xin chào. Các bạn"</span>
+                            <span><?php echo $t['ex_newline_before']; ?></span> → <span class="after"><?php echo $t['ex_newline_after']; ?></span>
                         </div>
                     </div>
                     <label class="tn-toggle">
@@ -2246,7 +2282,7 @@ if ($elevenlabs_down && $user_id_real) {
                         <div class="tn-option-name"><?php echo $lang === 'vi' ? 'Chuẩn hóa khoảng trắng' : 'Normalize Whitespace'; ?></div>
                         <div class="tn-option-desc"><?php echo $lang === 'vi' ? 'Sửa khoảng trắng xung quanh dấu câu' : 'Fix spacing around punctuation'; ?></div>
                         <div class="tn-option-example">
-                            <span>"Xin chào , các bạn"</span> → <span class="after">"Xin chào, các bạn"</span>
+                            <span><?php echo $t['ex_whitespace_before']; ?></span> → <span class="after"><?php echo $t['ex_whitespace_after']; ?></span>
                         </div>
                     </div>
                     <label class="tn-toggle">
@@ -2268,7 +2304,7 @@ if ($elevenlabs_down && $user_id_real) {
                         <div class="tn-option-name"><?php echo $lang === 'vi' ? 'Thu gọn dấu câu' : 'Collapse Punctuation'; ?></div>
                         <div class="tn-option-desc"><?php echo $lang === 'vi' ? 'Loại bỏ dấu câu thừa' : 'Remove redundant punctuation'; ?></div>
                         <div class="tn-option-example">
-                            <span>"Gì!."</span> → <span class="after">"Gì!"</span>
+                            <span><?php echo $t['ex_collapse_before']; ?></span> → <span class="after"><?php echo $t['ex_collapse_after']; ?></span>
                         </div>
                     </div>
                     <label class="tn-toggle">
@@ -2282,7 +2318,7 @@ if ($elevenlabs_down && $user_id_real) {
                         <div class="tn-option-name"><?php echo $lang === 'vi' ? 'Xóa dấu câu lạc' : 'Remove Stray Punctuation'; ?></div>
                         <div class="tn-option-desc"><?php echo $lang === 'vi' ? 'Dọn dẹp dấu phẩy và dấu chấm sai vị trí' : 'Clean misplaced commas and periods'; ?></div>
                         <div class="tn-option-example">
-                            <span>"Xin chào, ."</span> → <span class="after">"Xin chào."</span>
+                            <span><?php echo $t['ex_stray_before']; ?></span> → <span class="after"><?php echo $t['ex_stray_after']; ?></span>
                         </div>
                     </div>
                     <label class="tn-toggle">
@@ -2304,7 +2340,7 @@ if ($elevenlabs_down && $user_id_real) {
                         <div class="tn-option-name"><?php echo $lang === 'vi' ? 'Chữ cái & Số Unicode' : 'Unicode Letters & Numbers'; ?></div>
                         <div class="tn-option-desc"><?php echo $lang === 'vi' ? 'Chỉ giữ ký tự hợp lệ cho TTS' : 'Keep only valid TTS characters'; ?></div>
                         <div class="tn-option-example">
-                            <span>"Xin@#$Chào"</span> → <span class="after">"Xin Chào"</span>
+                            <span><?php echo $t['ex_unicode_before']; ?></span> → <span class="after"><?php echo $t['ex_unicode_after']; ?></span>
                         </div>
                     </div>
                     <label class="tn-toggle">
