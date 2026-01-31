@@ -8,6 +8,16 @@ let selectedModel = 'lingual_speech_v1'; // Kingcong model
 let selectedFile = null;
 let previewUrl = null; // Biến lưu URL file nghe thử
 
+const vcLang = window.vcLang || {};
+const t = (key, fallback) => vcLang[key] || fallback || key;
+const tFormat = (key, vars, fallback) => {
+    let text = t(key, fallback);
+    Object.keys(vars || {}).forEach((k) => {
+        text = text.replace(new RegExp(`\\{${k}\\}`, 'g'), vars[k]);
+    });
+    return text;
+};
+
 // Cấu hình giới hạn cho từng provider
 const providerLimits = {
     minimax: {
@@ -30,7 +40,7 @@ const providerLimits = {
 // 2. DỮ LIỆU VĂN BẢN MẪU (40 QUỐC GIA)
 // ==========================================
 const defaultPreviewTexts = {
-    "Auto": "Xin chào, hãy nhập văn bản bất kỳ và tôi sẽ tự động nhận diện ngôn ngữ của bạn.", // ✅ Thêm dòng này
+    "Auto": "",
     "English": "Hello, I'm delighted to assist you with our voice services. Choose a voice that resonates with you, and let's begin our creative audio journey together",
     "Vietnamese": "Xin chào, tôi rất vui được hỗ trợ bạn với các dịch vụ giọng nói của chúng tôi. Hãy chọn một giọng nói phù hợp với bạn và cùng bắt đầu hành trình âm thanh sáng tạo của chúng ta",
     "Arabic": "مرحبًا، يسعدني أن أقدم لكم خدماتنا الصوتي. أختر النبرة التي تثير اهتمامك، ودعنا ننطلق معاً في رحلة ساحرة لصناعة الصوت",
@@ -77,9 +87,10 @@ const defaultPreviewTexts = {
 // 3. KHỞI TẠO (DOCUMENT READY)
 // ==========================================
 $(document).ready(function() {
+    defaultPreviewTexts.Auto = t('preview_auto_text', defaultPreviewTexts.Auto);
     // 🔥 THÊM ĐOẠN NÀY ĐỂ UI HIỆN "TỰ XÁC ĐỊNH"
-    $('#selectedLangText').text('Tự xác định'); 
-    $('#previewText').attr('placeholder', `Mẫu câu: ${defaultPreviewTexts['Auto']}`);
+    $('#selectedLangText').text(t('auto_detect')); 
+    $('#previewText').attr('placeholder', `${t('sample_prefix')}: ${defaultPreviewTexts['Auto']}`);
     // ------------------------------------------
     // Tải danh sách giọng
     loadClonedVoices();
@@ -128,7 +139,7 @@ function selectItem(type, value, htmlText, el) {
 
         if ($('#previewText').val().trim() === '') {
             let sample = defaultPreviewTexts[value] || defaultPreviewTexts["English"];
-            $('#previewText').attr('placeholder', `Mẫu câu: ${sample.substring(0, 40)}...`);
+            $('#previewText').attr('placeholder', `${t('sample_prefix')}: ${sample.substring(0, 40)}...`);
         }
     } else if (type === 'gender') {
         selectedGender = value;
@@ -214,7 +225,7 @@ function filterLang(input) {
 
 function updateCharCount() {
     const count = $('#previewText').val().length;
-    $('#charCount').text(`${count} / 500 ký tự`);
+    $('#charCount').text(`${count} / 500 ${t('chars')}`);
 }
 
 // ==========================================
@@ -267,7 +278,7 @@ function validateAndSetFile(file) {
     // Kiểm tra định dạng
     const isValidFormat = limits.allowedFormats.some(ext => fileName.endsWith(ext));
     if (!isValidFormat) {
-        showToast('error', `❌ Sai định dạng! Chỉ chấp nhận: ${limits.formatText}`);
+        showToast('error', tFormat('invalid_format', { formats: limits.formatText }));
         $('#fileInput').val('');
         return;
     }
@@ -275,7 +286,7 @@ function validateAndSetFile(file) {
     // Giới hạn upload tạm thời cao hơn để cho phép trim (50MB)
     const uploadLimit = 50 * 1024 * 1024;
     if (file.size > uploadLimit) {
-        showToast('error', `❌ File quá lớn! Tối đa 50MB để xử lý.`);
+        showToast('error', tFormat('upload_limit', { max: 50 }));
         $('#fileInput').val('');
         return;
     }
@@ -291,7 +302,10 @@ function validateAndSetFile(file) {
 
         // Kiểm tra thời lượng tối thiểu
         if (duration < limits.minDuration) {
-            showToast('error', `❌ File quá ngắn (${duration.toFixed(1)}s). Tối thiểu ${limits.minDuration} giây!`);
+            showToast('error', tFormat('file_too_short', {
+                duration: duration.toFixed(1),
+                min: limits.minDuration
+            }));
             removeFile();
             return;
         }
@@ -309,7 +323,10 @@ function validateAndSetFile(file) {
         // Kiểm tra kích thước file (chỉ khi duration OK)
         const maxSizeMB = limits.maxSize / (1024 * 1024);
         if (file.size > limits.maxSize) {
-            showToast('error', `❌ File quá lớn (${(file.size / 1024 / 1024).toFixed(1)}MB)! Tối đa ${maxSizeMB}MB.`);
+            showToast('error', tFormat('file_too_large', {
+                size: (file.size / 1024 / 1024).toFixed(1),
+                max: maxSizeMB
+            }));
             $('#fileInput').val('');
             return;
         }
@@ -321,7 +338,7 @@ function validateAndSetFile(file) {
 
     testAudio.onerror = function() {
         console.error('❌ Audio load error');
-        showToast('error', '❌ File lỗi không thể đọc!');
+        showToast('error', t('audio_read_error'));
         removeFile();
     };
 }
@@ -347,7 +364,7 @@ function setValidFile(file, duration) {
     const audioPlayer = document.getElementById('audioPreviewPlayer');
     audioPlayer.src = previewUrl;
 
-    showToast('success', `✅ File hợp lệ! (${duration.toFixed(1)}s)`);
+    showToast('success', tFormat('file_valid', { duration: duration.toFixed(1) }));
 }
 
 // ==========================================
@@ -427,7 +444,7 @@ async function drawWaveform(file) {
     ctx.fillStyle = '#666';
     ctx.font = '13px Arial, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('Đang tải waveform...', width / 2, centerY);
+    ctx.fillText(t('waveform_loading'), width / 2, centerY);
 
     try {
         // Decode audio
@@ -545,7 +562,7 @@ async function drawWaveform(file) {
         ctx.fillStyle = '#ef4444';
         ctx.font = '13px Arial, sans-serif';
         ctx.textAlign = 'center';
-        ctx.fillText('Lỗi tải waveform: ' + error.message, width / 2, height / 2);
+        ctx.fillText(tFormat('waveform_error', { error: error.message }), width / 2, height / 2);
     }
 }
 
@@ -610,7 +627,7 @@ function updateTrimDuration() {
 
 async function confirmTrim() {
     if (!pendingTrimFile) {
-        showToast('error', 'Không có file để cắt!');
+        showToast('error', t('trim_no_file'));
         return;
     }
 
@@ -620,12 +637,15 @@ async function confirmTrim() {
 
     const limits = providerLimits[selectedProvider];
     if (duration < limits.minDuration || duration > limits.maxDuration) {
-        showToast('error', `Thời lượng phải từ ${limits.minDuration}s đến ${limits.maxDuration}s!`);
+        showToast('error', tFormat('trim_invalid_duration', {
+            min: limits.minDuration,
+            max: limits.maxDuration
+        }));
         return;
     }
 
     // Disable button
-    $('#btnTrimConfirm').prop('disabled', true).html('<i class="bi bi-hourglass-split"></i> Đang cắt...');
+    $('#btnTrimConfirm').prop('disabled', true).html(`<i class="bi bi-hourglass-split"></i> ${t('trim_processing')}`);
 
     try {
         // Trim audio using Web Audio API
@@ -641,13 +661,13 @@ async function confirmTrim() {
         setValidFile(trimmedFile, duration);
         closeTrimModal();
 
-        showToast('success', `✅ Đã cắt audio thành công! (${duration.toFixed(1)}s)`);
+        showToast('success', tFormat('trim_success', { duration: duration.toFixed(1) }));
 
     } catch (error) {
         console.error('Trim error:', error);
-        showToast('error', '❌ Lỗi khi cắt audio: ' + error.message);
+        showToast('error', tFormat('trim_error', { error: error.message }));
     } finally {
-        $('#btnTrimConfirm').prop('disabled', false).html('<i class="bi bi-scissors"></i> Cắt & Sử dụng');
+        $('#btnTrimConfirm').prop('disabled', false).html(`<i class="bi bi-scissors"></i> ${t('trim_confirm')}`);
     }
 }
 
@@ -769,18 +789,18 @@ function createClone() {
 
     // Validate tên
     if (!name) {
-        showToast('error', 'Vui lòng nhập tên giọng nói!');
+        showToast('error', t('voice_name_required'));
         $('#cloneName').focus();
         return;
     }
     if (name.length > 50) {
-        showToast('error', 'Tên giọng quá dài (Max 50 ký tự)');
+        showToast('error', t('voice_name_too_long'));
         return;
     }
 
     // Validate file
     if (!selectedFile) {
-        showToast('error', 'Vui lòng chọn file âm thanh!');
+        showToast('error', t('audio_required'));
         const uploadBox = selectedProvider === 'kingcong' ? 'uploadBoxKingcong' : 'uploadBox';
         document.getElementById(uploadBox).scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
@@ -809,7 +829,7 @@ function createClone() {
         }
 
         if (finalPreviewText.length > 500) {
-            showToast('error', 'Văn bản mẫu quá dài (Max 500 ký tự)');
+            showToast('error', t('sample_text_too_long'));
             return;
         }
 
@@ -824,9 +844,9 @@ function createClone() {
 
     // Cập nhật loading hint theo provider
     if (selectedProvider === 'kingcong') {
-        $('.loading-hint').text('Đang tạo giọng nhân bản. Vui lòng chờ...');
+        $('.loading-hint').text(t('loading_hint_kingcong'));
     } else {
-        $('.loading-hint').text('AI đang học giọng nói của bạn. Quá trình này có thể mất 1-2 phút.');
+        $('.loading-hint').text(t('processing_hint'));
     }
 
     let progress = 0;
@@ -855,7 +875,7 @@ function createClone() {
                 $('#loadingBar').css('width', '0%');
 
                 if (res.status === 'success') {
-                    showToast('success', 'Clone giọng thành công! 🎉');
+                    showToast('success', t('clone_success'));
 
                     $('#cloneName').val('');
                     if (selectedProvider === 'minimax') {
@@ -869,7 +889,7 @@ function createClone() {
                         loadClonedVoices();
                     }, 1000);
                 } else {
-                    showToast('error', res.message || 'Có lỗi xảy ra.');
+                    showToast('error', res.message || t('generic_error'));
                 }
             }, 500);
         },
@@ -881,11 +901,11 @@ function createClone() {
 
             console.error('Error:', error);
             if (status === 'timeout') {
-                showToast('error', 'Quá thời gian chờ (Timeout).');
+                showToast('error', t('timeout_error'));
             } else if (xhr.status === 413) {
-                showToast('error', 'File quá lớn so với cấu hình Server!');
+                showToast('error', t('server_file_too_large'));
             } else {
-                showToast('error', 'Lỗi kết nối hoặc file không hợp lệ.');
+                showToast('error', t('connection_or_invalid'));
             }
         }
     });
@@ -906,7 +926,7 @@ function loadClonedVoices() {
             $('#clonedVoiceGrid').html(`
                 <div class="empty-state">
                     <i class="bi bi-exclamation-triangle"></i>
-                    <div class="title">Lỗi tải danh sách</div>
+                    <div class="title">${t('load_list_error')}</div>
                     <div class="hint">${res.message}</div>
                 </div>
             `);
@@ -915,7 +935,7 @@ function loadClonedVoices() {
         $('#clonedVoiceGrid').html(`
             <div class="empty-state">
                 <i class="bi bi-wifi-off"></i>
-                <div class="title">Lỗi kết nối</div>
+                <div class="title">${t('connection_error')}</div>
             </div>
         `);
     });
@@ -926,8 +946,8 @@ function renderGrid(list) {
         $('#clonedVoiceGrid').html(`
             <div class="empty-state">
                 <i class="bi bi-mic-mute"></i>
-                <div class="title">Chưa có giọng nào</div>
-                <div class="hint">Bắt đầu tạo giọng nhân bản ngay!</div>
+                <div class="title">${t('no_voices')}</div>
+                <div class="hint">${t('start_create_voice')}</div>
             </div>
         `);
         return;
@@ -972,12 +992,12 @@ function renderGrid(list) {
                 <img src="${img}" class="vc-avatar" onerror="this.src='https://ui-avatars.com/api/?name=V&background=333&color=fff'">
                 
                 <div class="vc-actions">
-                    <button class="btn-icon-action delete" onclick="deleteVoice('${v.voice_id}')" title="Xóa">
+                    <button class="btn-icon-action delete" onclick="deleteVoice('${v.voice_id}')" title="${t('delete_title')}">
                         <i class="bi bi-trash"></i>
                     </button>
                     
                     <button class="btn-icon-action play" onclick="playPreview('${v.sample_audio || ''}')" 
-                            ${!canPlay ? 'disabled' : ''} title="Nghe thử">
+                            ${!canPlay ? 'disabled' : ''} title="${t('preview_title')}">
                         <i class="bi bi-play-circle"></i>
                     </button>
                 </div>
@@ -1008,7 +1028,7 @@ function closeDeleteModal() {
 
 function confirmDelete() {
     if (!voiceToDelete.id) {
-        showToast('error', 'Không có giọng nào được chọn!');
+        showToast('error', t('delete_none_selected'));
         return;
     }
     
@@ -1030,7 +1050,7 @@ function confirmDelete() {
         dataType: 'json',
         success: function(res) {
             if (res.status === 'success') {
-                showToast('success', '✅ Đã xóa giọng thành công!');
+                showToast('success', t('delete_success'));
                 
                 card.fadeOut(300, function() { 
                     $(this).remove();
@@ -1044,13 +1064,13 @@ function confirmDelete() {
                 });
             } else {
                 card.css('opacity', '1');
-                showToast('error', res.message || '❌ Xóa thất bại');
+                showToast('error', res.message || t('delete_failed'));
             }
         },
         error: function(xhr, status, error) {
             console.error('Delete Error:', {xhr, status, error});
             card.css('opacity', '1');
-            showToast('error', '❌ Lỗi kết nối!');
+            showToast('error', t('delete_connection_error'));
         }
     });
     
@@ -1061,12 +1081,12 @@ function confirmDelete() {
 let audioObj = document.getElementById('previewAudio');
 function playPreview(url) {
     if (!url) {
-        showToast('info', 'Không có file nghe thử');
+        showToast('info', t('no_preview_file'));
         return;
     }
     audioObj.src = url;
     audioObj.play();
-    showToast('info', '🎵 Đang phát mẫu giọng...');
+    showToast('info', t('playing_preview'));
 }
 
 // Toast thông báo
